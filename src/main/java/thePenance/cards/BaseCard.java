@@ -759,4 +759,20 @@ public abstract class BaseCard extends CustomCard {
             return forceModified || base != value;
         }
     }
+
+    protected void triggerWolfAutoplay() {
+        // 1. 视觉提示：闪烁卡牌
+        this.flash();
+
+        // 2. 强制等待 1.0 秒 (WaitAction)
+        // 注意：这里直接传入 1.0F (float)，不要乘 Settings.ACTION_DUR_FAST
+        // 这样即使玩家开启了快速模式，这个等待时间也是固定的，不会被缩短。
+        addToBot(new com.megacrit.cardcrawl.actions.utility.WaitAction(1.0F));
+
+        // 3. 加入打出队列
+        // 参数含义: (卡牌本身, 随机目标, 不忽略费用, 是自动打出)
+        // 这里的 false (不忽略费用) 沿用了你之前的逻辑，意味着如果没费可能打不出(看你设计)，
+        // 或者像 TangledThreads 那样是 X 费消耗。
+        addToBot(new com.megacrit.cardcrawl.actions.utility.NewQueueCardAction(this, true, false, true));
+    }
 }

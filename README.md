@@ -1,36 +1,80 @@
-# Basic Mod
+# Slay the Spire - The Penance Mod (斥罪)
 
-This is an empty Slay the Spire mod + a modding tutorial.
+> “这次，我会做出公正的判决。”
+> "This time, I will hand down a fair verdict."
 
-This tutorial will help with setup and the basics of Slay the Spire modding, but it will not teach you Java. If you know nothing of Java or programming in general, you are strongly recommended to look up a free online course and do at least some of it. It is possible to do modding with almost no proper knowledge, but it will make things much more difficult.
+## 简介 (Introduction)
+本 Mod 将《明日方舟》中的叙拉古法官 **斥罪 (Penance)** 带入了尖塔。
+不同于传统的防御者，斥罪不依赖脆弱的格挡，而是通过**“屏障”**构筑绝对的防线，并通过**“裁决”**与**“荆棘”**让攻击者付出代价。
+
+打破常规的“休息回血”逻辑，体验在苦难中前行的律法之路。
+
+## 核心机制 (Keywords)
+
+### 🛡️ 屏障 (Barrier)
+斥罪的生存核心。
+*   **独立计算：** 屏障独立于格挡，结算顺序为：格挡 -> **屏障** -> 生命值。
+*   **永不衰减：** 回合结束时，屏障**不会**消失。你可以像存钱一样积累防御。
+*   **作为资源：** 屏障不仅是盾，更是弹药。部分卡牌需要消耗屏障来造成巨额伤害或回复生命。
+
+### ⚖️ 裁决 (Judgement)
+主动的反击机制。
+*   当你的**屏障**受到攻击伤害时，消耗层数对攻击者造成等量伤害。
+*   **蓄势待发：** 裁决层数越高，反击越致命。配合“一锤定音”流派，可将裁决转化为直接的力量爆发。
+
+### 🌹 荆棘环身 (Thorns Aura)
+被动的法术光环。
+*   回合结束时，对**所有**敌人造成等同于层数的伤害。
+*   不仅是输出，更是威慑。部分卡牌会根据荆棘层数提供额外的控制或防御效果。
+
+### 🚫 正当防卫 (Just Defense)
+钓鱼执法，后发制人。
+*   当你**受到攻击**时触发。
+*   在你的下个回合提供 **能量** 与 **抽牌** 补偿。让敌人的攻势成为你反击的燃料。
 
 ---
 
-## Check the wiki to get started:
+## 主要流派 (Playstyles)
 
-https://github.com/Alchyr/BasicMod/wiki
+*   **坚心苦修 (The Stoic):**
+    叠最厚的甲，挨最毒的打。利用 **屏障** 吸收伤害，通过 **裁决** 和 **荆棘** 自动反死敌人。
+    *核心卡牌：* `坚心苦修`、`苦行`、`最后防线`
+
+*   **一锤定音 (The Verdict):**
+    防守是为了更好的进攻。将积累的防御属性瞬间转化为 **力量** 和 **爆发伤害**。
+    *核心卡牌：* `有罪！`、`一锤定音`、`清算时刻`
+
+*   **披荆斩棘 (The Thorny Path):**
+    以血肉为代价。通过 **自残** 压低血线，触发半血以下的强力特效，在濒死边缘获得极致收益。
+    *核心卡牌：* `负荆前行`、`休庭`、`淬炼`
+
+*   **狼群诅咒 (The Wolf Pack):**
+    与混乱共舞。利用 **诅咒牌** 获取力量与资源，将负面效果转化为胜势。
+    *核心卡牌：* `叙拉古的狼群`、`刚正不阿`、`自证其罪`
+
+---
+
+## 特色内容 (Features)
+
+*   **全新的初始体验：**
+    初始遗物 **“通往未来的荆棘之路”** 彻底改变了游戏节奏。你无法通过篝火或药水回血，但能获得巨额的开局屏障。
+    
+*   **叙拉古式剧情事件：**
+    体验 **“雨夜盘查”** 的道德抉择，参与 **“开幕时刻”** 的狂欢，并在 **“第1184号卷宗”** 中决定正义的走向。
+
+*   **独特的敌人：**
+    在第三阶段遭遇 **黑帮教父** 与他的 **家族灭迹人**，挑战叙拉古地下世界的秩序。
 
 ---
 
-## Know what you're doing?
-
-You can still use this mod as a base, or you could use another template like https://github.com/DarkVexon/ProTemplate
-
-You can find more options in the pins of the #modding-technical channel in the Slay the Spire discord server.
-
----
-
-### Some HD Slay the Spire art assets (courtesy of Gremious, creator of DefaultMod):
-
-Includes:
-- Empty Relic Template feat. empty bottle
-- Empty Card Template
-- Color-Changable cardback
-- A couple of HD Monster vectors (Louse, Nob, Sentry, Sneaky Gremlin)
-- A coupe of HD items (J.A.X., A Coin)
-- 2 people silhouettes
-- A curse Background
-
-https://github.com/Gremious/StS-DefaultModBase#some-hd-slay-the-spire-art-assets
+## 安装 (Installation)
+1. 确保已安装 BaseMod 和 ModTheSpire。
+2. 将 `ThePenance.jar` 放入 `SlayTheSpire/mods` 文件夹。
+3. 运行 ModTheSpire 并勾选 The Penance。
 
 ---
+
+## 鸣谢 (Credits)
+*   角色原型：Arknights (HyperGryph)
+*   代码/设计：[食草兽]
+*   特别感谢：Slay the Spire Modding Community

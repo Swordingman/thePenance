@@ -66,9 +66,9 @@ public class ContinuousRain extends BaseCard {
         }
     }
 
-    // 抽到时自动释放
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new NewQueueCardAction(this, true, false, true));
+        // 直接调用 BaseCard 里的通用方法
+        triggerWolfAutoplay();
     }
 }

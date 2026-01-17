@@ -36,18 +36,19 @@ public class WandAntiGravity extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 1. 抽牌
-        addToBot(new DrawCardAction(magicNumber));
-
-        // 2. 施加混乱 (原版逻辑)
+        // 1. 施加混乱 (原版逻辑)
         addToBot(new ApplyPowerAction(p, p, new ConfusionPower(p)));
 
-        // 3. 施加“回合结束移除混乱”的标记 (新逻辑)
+        // 2. 施加“回合结束移除混乱”的标记 (新逻辑)
         addToBot(new ApplyPowerAction(p, p, new TemporaryConfusionPower(p)));
+
+        // 3. 抽牌
+        addToBot(new DrawCardAction(magicNumber));
     }
 
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new NewQueueCardAction(this, true, false, true));
+        // 直接调用 BaseCard 里的通用方法
+        triggerWolfAutoplay();
     }
 }

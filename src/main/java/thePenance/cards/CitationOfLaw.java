@@ -24,10 +24,9 @@ public class CitationOfLaw extends BaseCard {
                 CardTarget.SELF,
                 COST
         ));
-        // 自定义变量：基础屏障
         setCustomVar("BaseBarrier", BASE_BARRIER);
-        // 魔法数字：百分比
         setMagic(PERCENT, UPG_PERCENT);
+        setExhaust(true);
     }
 
     @Override

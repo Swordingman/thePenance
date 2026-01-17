@@ -98,8 +98,8 @@
   },
   "thePenance:SyracusanWolves": {
     "NAME": "叙拉古的狼群",
-    "DESCRIPTION": "将全部5张 狼群诅咒 洗入你的抽牌堆 。 NL 它们拥有强力的效果，且抽到时会 自动释放 。",
-    "UPGRADE_DESCRIPTION": "将全部5张升级后的 狼群诅咒 洗入你的抽牌堆 。 NL 它们拥有强力的效果，且抽到时会 自动释放 。"
+    "DESCRIPTION": "将随机5张 狼群诅咒 洗入你的抽牌堆 。",
+    "UPGRADE_DESCRIPTION": "将随机5张升级后的 狼群诅咒 洗入你的抽牌堆 。"
   },
   "thePenance:ContinuousRain": {
     "NAME": "阵雨连绵",
@@ -159,7 +159,7 @@
   },
   "thePenance:ASip": {
     "NAME": "小酌一杯",
-    "DESCRIPTION": "虚无 。 NL 消耗 。 NL 获得 !M! 点 临时力量 和 2 层 易伤 。 NL 将此牌的一张复制品加入手牌。"
+    "DESCRIPTION": "消耗 。 NL 获得 !M! 点 临时力量 和 2 层 易伤 。 NL 将此牌的一张拥有虚无的复制品加入手牌。"
   },
   "thePenance:CodeSmash": {
     "NAME": "法典猛砸",
@@ -243,7 +243,7 @@
   },
   "thePenance:CitationOfLaw": {
     "NAME": "法条援引",
-    "DESCRIPTION": "获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 层数 !M!% 的 屏障 。"
+    "DESCRIPTION": "消耗。 NL 获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 层数 !M!% 的 屏障 。"
   },
   "thePenance:Overrule": {
     "NAME": "驳回",

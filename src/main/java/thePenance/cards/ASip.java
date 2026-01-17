@@ -2,8 +2,10 @@ package thePenance.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -30,7 +32,6 @@ public class ASip extends BaseCard {
 
         setMagic(TEMP_STR, UPG_TEMP_STR); // 临时力量
         setExhaust(true);
-        setEthereal(true); // 虚无
     }
 
     @Override
@@ -42,7 +43,15 @@ public class ASip extends BaseCard {
         // 获得易伤
         addToBot(new ApplyPowerAction(p, p, new VulnerablePower(p, VULN, false), VULN));
 
-        // 将一张复制品加入手牌 (makeStatEquivalentCopy 确保复制出的卡状态一致)
-        addToBot(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
+        AbstractCard c = this.makeStatEquivalentCopy();
+        c.isEthereal = true;
+
+         if (!c.rawDescription.toLowerCase().contains("ethereal")) {
+             c.rawDescription = "Ethereal. NL " + c.rawDescription;
+             c.rawDescription = "虚无。 NL " + c.rawDescription;
+             c.initializeDescription();
+         }
+
+         addToBot(new MakeTempCardInHandAction(c));
     }
 }

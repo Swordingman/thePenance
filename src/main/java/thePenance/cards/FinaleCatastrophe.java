@@ -46,7 +46,8 @@ public class FinaleCatastrophe extends BaseCard {
 
     @Override
     public void triggerWhenDrawn() {
-        addToBot(new NewQueueCardAction(this, true, false, true));
+        // 直接调用 BaseCard 里的通用方法
+        triggerWolfAutoplay();
     }
 
     // --- 内部 Action 类 ---
