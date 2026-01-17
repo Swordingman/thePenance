@@ -31,6 +31,7 @@ public class WandAntiGravity extends BaseCard {
         ));
         setMagic(DRAW, UPG_DRAW);
         setExhaust(true);
+        tags.add(PenanceMod.CURSE_OF_WOLVES);
     }
 
     @Override

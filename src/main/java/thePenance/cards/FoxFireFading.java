@@ -13,8 +13,13 @@ public class FoxFireFading extends BaseCard {
 
     public static final String ID = PenanceMod.makeID("FoxFireFading");
     private static final int COST = 1;
-    private static final int MAGIC = 2; // 缓慢层数
-    private static final int UPG_MAGIC = -1; // 2->1 (注意这是减少层数)
+
+    // 敌人的缓慢层数：基础2，升级+1 -> 3
+    private static final int ENEMY_MAGIC = 2;
+    private static final int UPG_ENEMY_MAGIC = 1;
+
+    // 玩家的缓慢层数：固定2
+    private static final int PLAYER_SLOW_AMT = 2;
 
     public FoxFireFading() {
         super(ID, new CardStats(
@@ -24,17 +29,19 @@ public class FoxFireFading extends BaseCard {
                 CardTarget.ALL,
                 COST
         ));
-        // 这里基础值是2，升级后增加-1，即变为1
-        setMagic(MAGIC, UPG_MAGIC);
+        // 设置魔法值，用于控制敌人的层数
+        setMagic(ENEMY_MAGIC, UPG_ENEMY_MAGIC);
         setExhaust(true);
+        tags.add(PenanceMod.CURSE_OF_WOLVES);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 对玩家施加缓慢
-        addToBot(new ApplyPowerAction(p, p, new SlowPower(p, magicNumber), magicNumber));
+        // 1. 对玩家施加固定层数 (2层) 缓慢
+        // 注意：原版缓慢对玩家可能无效，除非你的Mod修改了SlowPower逻辑或怪物AI
+        addToBot(new ApplyPowerAction(p, p, new SlowPower(p, PLAYER_SLOW_AMT), PLAYER_SLOW_AMT));
 
-        // 对所有敌人施加缓慢
+        // 2. 对所有敌人施加 !M! 层 (2->3) 缓慢
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             if (!mo.isDeadOrEscaped()) {
                 addToBot(new ApplyPowerAction(mo, p, new SlowPower(mo, magicNumber), magicNumber));

@@ -32,6 +32,7 @@ public class TangledThreads extends BaseCard {
                 COST
         ));
         setExhaust(true);
+        tags.add(PenanceMod.CURSE_OF_WOLVES);
     }
 
     @Override

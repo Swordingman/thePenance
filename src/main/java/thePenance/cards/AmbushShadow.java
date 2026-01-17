@@ -26,6 +26,7 @@ public class AmbushShadow extends BaseCard {
         ));
         setMagic(DISCARD_AMT, UPG_DISCARD_AMT);
         setExhaust(true);
+        tags.add(PenanceMod.CURSE_OF_WOLVES);
     }
 
     @Override

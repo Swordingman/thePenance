@@ -123,6 +123,23 @@
     "NAME": "弑君者威名",
     "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 使所有意图为攻击的敌人获得 3 点 临时力量 。 NL 抽 !M! 张牌。 "
   },
+  "thePenance:AmbushShadow": {
+    "NAME": "伏击之影",
+    "DESCRIPTION": "抽到时施放。 NL 消耗。 NL 随机丢弃 !M! 张手牌。 NL 获得 1 层 无实体 。"
+  },
+  "thePenance:FoxFireFading": {
+    "NAME": "狐火渺然",
+    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 使你获得 2 层 缓慢 。 NL 使所有敌人获得 !M! 层 缓慢 。"
+  },
+  "thePenance:TangledThreads": {
+    "NAME": "缝线缠身",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中的 X 张牌。 NL 随机对敌人造成等同于被消耗牌总耗能数值的伤害 X 次。",
+    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中的 X 张牌。 NL 随机对敌人造成等同于被消耗牌总耗能数值的伤害 X+X 次。"
+  },
+  "thePenance:WandAntiGravity": {
+    "NAME": "秘杖·反重力模式",
+    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 抽 !M! 张卡。 NL 本回合给予你 混乱 。"
+  },
   "thePenance:Upright": {
     "NAME": "刚正不阿",
     "DESCRIPTION": "获得 !thePenance:StrGain! 点 力量 。 NL （会随着抽牌堆、弃牌堆、手牌与消耗堆中的诅咒牌数量而增加）"
