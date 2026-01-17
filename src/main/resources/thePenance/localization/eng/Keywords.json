@@ -1,0 +1,27 @@
+[
+  {
+    "PROPER_NAME": "屏障",
+    "NAMES": ["屏障", "Barrier"],
+    "DESCRIPTION": "一种特殊的防御数值。当格挡耗尽后，屏障会抵挡剩余的伤害。屏障不会在回合结束时消失。"
+  },
+  {
+    "PROPER_NAME": "裁决",
+    "NAMES": ["裁决", "Judgement"],
+    "DESCRIPTION": "当屏障受到来自敌人的伤害时，对攻击者造成等同于 #y裁决 层数的伤害。"
+  },
+  {
+    "PROPER_NAME": "荆棘环身",
+    "NAMES": ["荆棘环身", "thorn_aura"],
+    "DESCRIPTION": "回合结束时，对所有敌人造成 #b 点伤害。"
+  },
+  {
+    "PROPER_NAME": "止戈",
+    "NAMES": ["止戈", "ceasefire"],
+    "DESCRIPTION": "处于止戈状态的玩家无法打出攻击牌。处于止戈状态的敌人如果意图攻击，将跳过该回合。"
+  },
+  {
+    "PROPER_NAME": "狼群诅咒",
+    "NAMES": ["狼群诅咒", "wolves_curse"],
+    "DESCRIPTION": "由叙拉古的狼群带来的诅咒，它们拥有强大的效果，但同时也会带来混乱。"
+  }
+]

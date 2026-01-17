@@ -1,0 +1,345 @@
+{
+  "thePenance:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "thePenance:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "thePenance:Resolute": {
+    "NAME": "坚决",
+    "DESCRIPTION": "获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
+  },
+  "thePenance:LawModification": {
+    "NAME": "法则修正",
+    "DESCRIPTION": "消耗。 NL 保留。 NL 将你当前的 格挡 转换为 屏障 。"
+  },
+  "thePenance:ImmediateExecution": {
+    "NAME": "即刻行刑",
+    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 对一名敌人造成等同于 裁决 层数的伤害。"
+  },
+  "thePenance:CodeOfRevenge": {
+    "NAME": "复仇法典",
+    "DESCRIPTION": "每当你触发 裁决 造成伤害时，获得 !M! 点 屏障 。"
+  },
+  "thePenance:Castigation": {
+    "NAME": "责罚",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !thePenance:Barrier! 点 屏障 （屏障量受力量加成）。"
+  },
+  "thePenance:ReadCharges": {
+    "NAME": "宣读罪状",
+    "DESCRIPTION": "获得 2 点 裁决 。 NL 抽 !M! 张牌"
+  },
+  "thePenance:Purge": {
+    "NAME": "肃清",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得等同于未被格挡伤害量的 屏障 。"
+  },
+  "thePenance:Silence": {
+    "NAME": "缄默",
+    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 如果当前生命值低于 50% ，额外获得 2 点 裁决 。"
+  },
+  "thePenance:ThornyPath": {
+    "NAME": "披荆斩棘",
+    "DESCRIPTION": "回合结束时，获得等同于当前 裁决 层数 !M!% 的 荆棘环身 。"
+  },
+  "thePenance:Sting": {
+    "NAME": "刺痛",
+    "DESCRIPTION": "失去 3 点生命值。 NL 获得 !M! 层 荆棘环身 和 !thePenance:Judge! 点 裁决 。"
+  },
+  "thePenance:SilenceWrath": {
+    "NAME": "沉默之怒",
+    "DESCRIPTION": "每当 屏障 被击碎时，获得 !M! 点 力量 ，并给予所有敌人 !M! 层 虚弱 。"
+  },
+  "thePenance:GuardianOfTheLaw": {
+    "NAME": "律法卫士",
+    "DESCRIPTION": "每当你的 屏障 受到伤害时，获得 !M! 点 裁决 。"
+  },
+  "thePenance:TheTrial": {
+    "NAME": "审判",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果为 !M! 倍。 NL 此牌被打出后将从战斗中移除，然后将一张复制品洗入你的抽牌堆。"
+  },
+  "thePenance:TippingScales": {
+    "NAME": "倾斜天平",
+    "DESCRIPTION": "消耗所有 裁决 。 NL 每消耗 !M! 层 裁决 ，便获得 !thePenance:Str! 点 力量 。"
+  },
+  "thePenance:ConsultTheDossier": {
+    "NAME": "查阅卷宗",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 如果抽到了 能力牌 ，则获得 !thePenance:Judge! 点 裁决 。"
+  },
+  "thePenance:GavelStrike": {
+    "NAME": "落下法槌",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你的 屏障 高于目标生命值，且目标非精英或首领，则直接将其 处决 。"
+  },
+  "thePenance:BreakTheShackles": {
+    "NAME": "挣脱枷锁",
+    "DESCRIPTION": "消耗。 NL 消耗所有 屏障 。每消耗 !M! 点 屏障 ，便获得 1 点 力量 和 1 点 [E] 。"
+  },
+  "thePenance:LawIsCanon": {
+    "NAME": "法为正典",
+    "DESCRIPTION": "回合结束时，如果你拥有 屏障 ，获得等同于 力量 值的 裁决 。"
+  },
+  "thePenance:InTheNameOfTheLaw": {
+    "NAME": "法律之名",
+    "DESCRIPTION": "你的 裁决 伤害现在会受到 力量 加成。"
+  },
+  "thePenance:Unwavering": {
+    "NAME": "坚定不移",
+    "DESCRIPTION": "使你的所有 攻击牌 获得 消耗 。 NL 使你受到的伤害减少 30% 。 NL 在你的回合结束时，获得 !M! 层 荆棘环身 。"
+  },
+  "thePenance:SolidDefense": {
+    "NAME": "坚固防守",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 屏障 。"
+  },
+  "thePenance:FlailSmash": {
+    "NAME": "链锤猛击",
+    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害，并给予目标一层 止戈。"
+  },
+  "thePenance:SyracusanWolves": {
+    "NAME": "叙拉古的狼群",
+    "DESCRIPTION": "将全部5张 狼群诅咒 洗入你的抽牌堆 。 NL 它们拥有强力的效果，且抽到时会 自动释放 。",
+    "UPGRADE_DESCRIPTION": "将全部5张升级后的 狼群诅咒 洗入你的抽牌堆 。 NL 它们拥有强力的效果，且抽到时会 自动释放 。"
+  },
+  "thePenance:ContinuousRain": {
+    "NAME": "阵雨连绵",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 对场上所有单位造成 !D! 点伤害。 NL 给予所有单位 2 层 易伤 和 脆弱 。",
+    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 对场上所有单位造成 !D! 点伤害。 NL 给予所有敌人 2 层 易伤 和 脆弱 ，给予自己 1 层。"
+  },
+  "thePenance:FinaleCatastrophe": {
+    "NAME": "终幕·浩劫",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 造成 !M! 点伤害，随机分配给场上的所有单位（包括你自己）。"
+  },
+  "thePenance:DignityOfTheLeader": {
+    "NAME": "领袖的尊严",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 给予场上所有单位 1 层 止戈 。获得 !M! 点 [E] 。"
+  },
+  "thePenance:ArtOfTheHidingFox": {
+    "NAME": "隐狐之艺",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 跳过你的回合 。获得 !M! 点 力量 、 !M! 点 裁决 、 !M! 点 荆棘环身 和 !thePenance:Barrier! 点 屏障 。",
+    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 跳过你的回合 。获得 !M! 点 力量 、 !M! 点 裁决 、 !M! 点 荆棘环身 和 !thePenance:Barrier! 点 屏障 。 NL 本回合 保留 手牌。"
+  },
+  "thePenance:FameOfTheCrownSlayer": {
+    "NAME": "弑君者威名",
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 使所有意图为攻击的敌人获得 3 点 临时力量 。 NL 抽 !M! 张牌。 "
+  },
+  "thePenance:Upright": {
+    "NAME": "刚正不阿",
+    "DESCRIPTION": "获得 !thePenance:StrGain! 点 力量 。 NL （会随着抽牌堆、弃牌堆、手牌与消耗堆中的诅咒牌数量而增加）"
+  },
+  "thePenance:Asceticism": {
+    "NAME": "苦行",
+    "DESCRIPTION": "每当你的 屏障 受到伤害时，获得 !M! 层 荆棘环身 。"
+  },
+  "thePenance:LastStand": {
+    "NAME": "最后防线",
+    "DESCRIPTION": "消耗 。 NL 获得 !thePenance:Barrier! 点 屏障 。 NL 获得 !M! 层 止戈 。"
+  },
+  "thePenance:BadOpera": {
+    "NAME": "烂歌剧",
+    "DESCRIPTION": "消耗 。 NL 随机将 2 张 攻击牌 加入手牌。",
+    "UPGRADE_DESCRIPTION": "消耗 。 NL 随机将 2 张 升级后的 攻击牌 加入手牌。"
+  },
+  "thePenance:ASip": {
+    "NAME": "小酌一杯",
+    "DESCRIPTION": "虚无 。 NL 消耗 。 NL 获得 !M! 点 临时力量 和 2 层 易伤 。 NL 将此牌的一张复制品加入手牌。"
+  },
+  "thePenance:CodeSmash": {
+    "NAME": "法典猛砸",
+    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害。 NL 每造成 7 点未被格挡的伤害，便获得 1 点 [E] 。"
+  },
+  "thePenance:CourtRehearsal": {
+    "NAME": "庭审预演",
+    "DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。 NL 打出后获得 1 点 [E] 。"
+  },
+  "thePenance:CrownOfThorns": {
+    "NAME": "荆棘冠冕",
+    "DESCRIPTION": "你的回合开始时，失去 2 点生命值，获得 !M! 层 荆棘环身 。"
+  },
+  "thePenance:BurdenedJourney": {
+    "NAME": "负荆前行",
+    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 如果你的生命值低于 50% ，获得等量的 荆棘环身 。"
+  },
+  "thePenance:MaliciousCompetition": {
+    "NAME": "恶意竞争",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标的生命值高于你的生命值，获得 !thePenance:Barrier! 点 屏障 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标的生命值高于你的生命值的一半，获得 !thePenance:Barrier! 点 屏障 。"
+  },
+  "thePenance:Adjourn": {
+    "NAME": "休庭",
+    "DESCRIPTION": "消耗 。 结束你的回合。 NL 本回合每打出一张牌，获得 1 点 屏障 。 NL （若生命值低于 50% ，改为恢复 1 点生命）"
+  },
+  "thePenance:Objection": {
+    "NAME": "我反对！",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 目标意图为攻击时，获得 !M! 点 裁决 。 NL 意图为格挡时，获得 !M! 层 荆棘环身 。 NL 否则，获得 !thePenance:LargeAmt! 点 屏障 。"
+  },
+  "thePenance:BarbedRebuke": {
+    "NAME": "你荆然敢!",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 触发一次 荆棘环身 伤害。 NL 如果目标意图为攻击，额外再造成一半数值的 荆棘环身 伤害。"
+  },
+  "thePenance:Tempering": {
+    "NAME": "淬炼",
+    "DESCRIPTION": "失去 6 点生命值。 NL 获得 !M! 点 屏障 。"
+  },
+  "thePenance:EmergencyRepair": {
+    "NAME": "紧急修补",
+    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 抽 1 张牌。"
+  },
+  "thePenance:ForcedSummons": {
+    "NAME": "强制传唤",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 1 张牌。如果目标意图是攻击，改为抽 2 张。"
+  },
+  "thePenance:LawEnforcement": {
+    "NAME": "执法",
+    "DESCRIPTION": "造成等同于你当前 屏障 值 !M!% 的伤害。 NL 如果造成的伤害不足 10 点，获得该伤害值两倍的 屏障 。",
+    "EXTENDED_DESCRIPTION": ["（当前造成 !D! 点伤害）"]
+  },
+  "thePenance:WallBreakerSmash": {
+    "NAME": "破壁重击",
+    "DESCRIPTION": "消耗 !M! 点 屏障 。 NL 造成 !D! 点伤害。"
+  },
+  "thePenance:JointLiability": {
+    "NAME": "连带责任",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 你每有一层 裁决 ，伤害增加 1 点。"
+  },
+  "thePenance:FinalVerdict": {
+    "NAME": "终审判决",
+    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害（受 裁决 加成）。 NL 如果此牌击杀了非爪牙敌人，获得 !M! 点最大生命值。"
+  },
+  "thePenance:WeightOfLaw": {
+    "NAME": "律法之重",
+    "DESCRIPTION": "消耗 。 NL 失去 6 点生命值。 NL 获得 !M! 点最大生命值。"
+  },
+  "thePenance:SceneInvestigation": {
+    "NAME": "调查现场",
+    "DESCRIPTION": "连续打出 2 张 攻击牌 时，获得 1 张随机 技能牌 。 NL 连续打出 2 张 技能牌 时，获得 1 张随机 攻击牌 。 NL 连续打出 2 张 能力牌 时，获得 !M! 点 [E] 。 NL （生成的卡牌具有 消耗 和 虚无 ）",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 连续打出 2 张 攻击牌 时，获得 1 张随机 升级后的 技能牌 。 NL 连续打出 2 张 技能牌 时，获得 1 张随机 升级后的 攻击牌 。 NL 连续打出 2 张 能力牌 时，获得 !M! 点 [E] 。 NL （生成的卡牌具有 消耗 和 虚无 ）"
+  },
+  "thePenance:DeadlyEnemy": {
+    "NAME": "死敌",
+    "DESCRIPTION": "无法打出 。 NL 只要此牌在你手中，你受到的所有伤害增加 1 点。"
+  },
+  "thePenance:CumulativePrecedent": {
+    "NAME": "判例累积",
+    "DESCRIPTION": "每当你打出一张 技能牌 ，获得 !M! 点 屏障 。"
+  },
+  "thePenance:CitationOfLaw": {
+    "NAME": "法条援引",
+    "DESCRIPTION": "获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 层数 !M!% 的 屏障 。"
+  },
+  "thePenance:Overrule": {
+    "NAME": "驳回",
+    "DESCRIPTION": "造成 !D! 点伤害。给予 1 层 虚弱 。 NL 如果目标已经拥有 虚弱 ，获得 !thePenance:Barrier! 点 屏障 。"
+  },
+  "thePenance:InescapableNet": {
+    "NAME": "法网恢恢",
+    "DESCRIPTION": "下回合开始时，获得 !M! 点 屏障 ，并抽 1 张牌。"
+  },
+  "thePenance:JudicialDiscretion": {
+    "NAME": "司法斟酌",
+    "DESCRIPTION": "失去 !thePenance:BarrierCost! 点 屏障 。 NL 获得 1 点 [E] 。抽 !M! 张牌。"
+  },
+  "thePenance:ProceduralJustice": {
+    "NAME": "程序正义",
+    "DESCRIPTION": "每当你获得 格挡 时，获得等量的 屏障 。"
+  },
+  "thePenance:IroncladDoctrine": {
+    "NAME": "铁律护体",
+    "DESCRIPTION": "在你的回合开始时，消耗 !M! 点 屏障 ，恢复 3 点生命值。"
+  },
+  "thePenance:GuiltyAsCharged": {
+    "NAME": "有罪！",
+    "DESCRIPTION": "移除目标所有 格挡 。造成 !D! 点伤害。 NL 若 裁决 ≥ 10 ，额外造成 裁决 伤害。 NL 若 荆棘 ≥ 10 ，给予 1 层 止戈 。 NL 若 力量 ≥ 10 ，以上效果触发两次。"
+  },
+  "thePenance:SelfIncrimination": {
+    "NAME": "自证其罪",
+    "DESCRIPTION": "消耗 。 NL 必须消耗手牌中一张 诅咒 牌才能打出。 NL 将一张 证据 和 伪证 置入你的手牌。"
+  },
+  "thePenance:ExhibitA": {
+    "NAME": "证据",
+    "DESCRIPTION": "消耗 。 NL 将一张 疑惑 置入你的手牌。抽 2 张牌。"
+  },
+  "thePenance:Perjury": {
+    "NAME": "伪证",
+    "DESCRIPTION": "消耗 。 NL 将一张 悔恨 置入你的手牌。获得 2 点 [E] 。"
+  },
+  "thePenance:JustifiedRetaliation": {
+    "NAME": "你先动手的",
+    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 获得 1 层 正当防卫 。"
+  },
+  "thePenance:HourOfReckoning": {
+    "NAME": "清算时刻",
+    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 本场战斗你每失去 1 点生命值，伤害增加 1 点。"
+  },
+  "thePenance:BloodForBlood": {
+    "NAME": "以伤换伤",
+    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害。 NL 获得 1 层 正当防卫 。"
+  },
+  "thePenance:CaseReconstruction": {
+    "NAME": "案情梳理",
+    "DESCRIPTION": "预见 !thePenance:Scry! 。 NL 抽 !M! 张牌。"
+  },
+  "thePenance:PunishmentForTransgression": {
+    "NAME": "越界必罚",
+    "DESCRIPTION": "回合结束时，获得 !M! 层 正当防卫 。"
+  },
+  "thePenance:PendingJudgment": {
+    "NAME": "待命裁定",
+    "DESCRIPTION": "每有一个意图为 攻击 的敌人，便获得 !M! 点 屏障 。"
+  },
+  "thePenance:JudgmentHasBegun": {
+    "NAME": "裁决早已开始",
+    "DESCRIPTION": "消耗 。 NL 本回合每使用 1 张 攻击牌 ，获得 5 点 屏障 、 1 点 力量 和 1 点 裁决 。 NL 累积使用 3 张后，获得 2 点 [E] 。",
+    "UPGRADE_DESCRIPTION": "保留 。 消耗。 NL 本回合每使用 1 张 攻击牌 ，获得 5 点 屏障 、 1 点 力量 和 1 点 裁决 。 NL 累积使用 3 张后，获得 2 点 [E] 。"
+  },
+  "thePenance:UnwrittenLaw": {
+    "NAME": "不成文的法律",
+    "DESCRIPTION": "从抽牌堆随机抽一张 能力牌 。 NL 如果你在本回合打出了它，额外打出一次。"
+  },
+  "thePenance:JudgementBacklash": {
+    "NAME": "裁决反冲",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每拥有 3 层 裁决 ，额外触发一次。"
+  },
+  "thePenance:PenaltyRegression": {
+    "NAME": "刑责回溯",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 使你身上的所有减益效果层数减少 1 。"
+  },
+  "thePenance:FamilyArbitration": {
+    "NAME": "家族仲裁",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 狼群诅咒 置入你的弃牌堆。"
+  },
+  "thePenance:PreExecutionPrep": {
+    "NAME": "执行前准备",
+    "DESCRIPTION": "消耗 。 NL 抽牌直到手牌上限。每抽出一张： NL 攻击牌 -> 获得 1 点 裁决 ； NL 技能牌 -> 获得 1 层 荆棘环身 ； NL 能力牌 -> 获得 1 点 力量 ； NL 诅咒牌 -> 获得 1 点 [E] 。"
+  },
+  "thePenance:NoSentenceNeeded": {
+    "NAME": "无需宣判",
+    "DESCRIPTION": "消耗 。 无法打出 。 NL 如果你的 屏障 为 0 ，此牌可以打出。 NL 造成 !D! 点伤害。"
+  },
+  "thePenance:GavelBarrage": {
+    "NAME": "法槌连击",
+    "DESCRIPTION": "对敌人造成 !D! 点伤害 X 次。 NL 每次造成伤害，获得 1 点 裁决 和 1 层 荆棘环身 。",
+    "UPGRADE_DESCRIPTION": "对敌人造成 !D! 点伤害 X+1 次。 NL 每次造成伤害，获得 1 点 裁决 和 1 层 荆棘环身 。"
+  },
+  "thePenance:Quell": {
+    "NAME": "镇暴",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你拥有 屏障 ，给予 !M! 层 虚弱 。"
+  },
+  "thePenance:ClearTheScene": {
+    "NAME": "肃清现场",
+    "DESCRIPTION": "失去 3 点生命值。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "thePenance:GlowOfSuffering": {
+    "NAME": "苦难辉光",
+    "DESCRIPTION": "每当你通过卡牌效果失去生命值时，获得失去值 !thePenance:Multiplier! 倍的 屏障 ，和 !M! 层 荆棘环身 。"
+  },
+  "thePenance:ToothForTooth": {
+    "NAME": "以牙还牙",
+    "DESCRIPTION": "失去 2 点生命值。 NL 造成 !D! 点伤害。 NL 向你的弃牌堆中洗入一张 狼群诅咒 。 NL 如果你的生命值低于 50% ，抽 !M! 张牌。"
+  },
+  "thePenance:BloodDebtClause": {
+    "NAME": "血债条款",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 每有一个敌人受到伤害，将一张随机的 狼群诅咒 加入你的弃牌堆。"
+  }
+}

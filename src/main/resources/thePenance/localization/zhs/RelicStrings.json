@@ -1,0 +1,89 @@
+{
+  "thePenance:PenanceBasicRelic": {
+    "NAME": "通往未来的荆棘之路",
+    "FLAVOR": "它时刻刺痛着你，提醒着你正义的重量。",
+    "DESCRIPTIONS": [
+      "战斗开始时，获得 #b10% 最大生命值的 #y屏障 和 #b1 点 #y裁决 。 NL 药物 ， 事件 与 休息 的治疗效果将转化为等量的 屏障 （非战斗时会储存）。 NL 目前已储存： #b",
+      " 点屏障。 NL 战斗结束时，将剩余 #y屏障 的 #b10% 转化为 生命回复。"
+    ]
+  },
+  "thePenance:Innocent": {
+    "NAME": "“无罪”",
+    "FLAVOR": "在黎明前，与黑夜相处的方式有两种，或是任由它浸透自己，直至感觉不到它的存在；或是在黑夜中寻找一切本不该被其吞噬的事物，然后小心珍藏。",
+    "DESCRIPTIONS": [
+      "你的 #y裁决 造成的伤害提升 #b20% 。"
+    ]
+  },
+  "thePenance:LetterOfGratitude": {
+    "NAME": "感谢信",
+    "FLAVOR": "......但至少你所做的一切，都是值得的。",
+    "DESCRIPTIONS": [
+      "每当你获得 #y屏障 时，额外获得 #b20% （至少为 #b1 点）。"
+    ]
+  },
+  "thePenance:BloodstainedCloth": {
+    "NAME": "染血的布料",
+    "FLAVOR": "你无法保护所有人......",
+    "DESCRIPTIONS": [
+      "在战斗开始时，获得 #b-2 点 #y力量 ，和 #b8 层 #y荆棘环身 。"
+    ]
+  },
+  "thePenance:LittleGavel": {
+    "NAME": "小木槌",
+    "FLAVOR": "再大的公义，也要从小处着手。",
+    "DESCRIPTIONS": [
+      "每当你的 #y格挡 被击碎时，获得等同于被击碎时格挡受到伤害量的 #y屏障 。"
+    ]
+  },
+  "thePenance:BlackUmbrella": {
+    "NAME": "黑雨伞",
+    "FLAVOR": "真不赶巧，你选择在这时候来叙拉古？",
+    "DESCRIPTIONS": [
+      "每次战斗中，你的 #y格挡 首次被击碎时，给予攻击者 1 层 #y易伤 ，给予自己 1 点 #y力量 。"
+    ]
+  },
+  "thePenance:GoldenScales": {
+    "NAME": "金天平",
+    "FLAVOR": "法典之外的罪恶，是否可以用法典之外的方式惩戒呢？",
+    "DESCRIPTIONS": [
+      "回合结束时，如果你本回合丢弃了 #y攻击牌 ，获得 1 层 #y正当防卫 。"
+    ]
+  },
+  "thePenance:ThornboundCodex": {
+    "NAME": "荆棘法典",
+    "FLAVOR": "法典中未曾详述的，我会以实践来探明。",
+    "DESCRIPTIONS": [
+      "每回合开始时获得 [E] 。 NL 每回合结束时，向你的抽牌堆顶部置入一张 #r狼群诅咒 。"
+    ]
+  },
+  "thePenance:ShopVoucher": {
+    "NAME": "某个小店的消费券",
+    "FLAVOR": "如果你在叙拉古的雨季来到了这里，不妨找家街边的小店坐会吧。",
+    "DESCRIPTIONS": [
+      "在你触发 #y裁决 伤害时，额外造成 #b2 点伤害。"
+    ]
+  },
+  "thePenance:PlasticMole": {
+    "NAME": "塑料鼹兽",
+    "FLAVOR": "至少在游戏中，那把槌子会实在地落在这些塑料鼹兽头上。",
+    "DESCRIPTIONS": [
+      "每当敌人做出 #b3 次攻击意图，获得 #b1 点能量。",
+      " NL (当前计数： #b",
+      " )"
+    ]
+  },
+  "thePenance:SiracusanWine": {
+    "NAME": "叙拉古红酒",
+    "FLAVOR": "叙拉古的昂贵货。它所生成的功效不管是纾解疲乏，还是缓解痛苦，在看到价格的那一刻，都会变为压力。",
+    "DESCRIPTIONS": [
+      "每场战斗中，当你首次失去 #b8 点或以上生命值时，获得 #b3 点最大生命值并回复 #b4 点生命值。"
+    ]
+  },
+  "thePenance:CarnivalMoment": {
+    "NAME": "狂欢时刻",
+    "FLAVOR": "看吧，这就是叙拉古——狂欢之主邀你共赏！",
+    "DESCRIPTIONS": [
+      "你目前及以后获得的 #r狼群诅咒 全部 #y升级 。"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "thePenance:JudgementPower": {
+    "NAME": "裁决",
+    "DESCRIPTIONS": ["当屏障受到攻击时，对攻击者造成 #b", " 点伤害。"]
+  },
+  "thePenance:BarrierPower": {
+    "NAME": "屏障",
+    "DESCRIPTIONS": ["抵挡 #b", " 点伤害。屏障受击时触发裁决。"]
+  },
+  "thePenance:ThornAuraPower": {
+    "NAME": "荆棘环身",
+    "DESCRIPTIONS": ["回合结束时，对所有敌人造成 #b", " 点伤害。"]
+  },
+  "thePenance:CodeOfRevengePower": {
+    "NAME": "复仇法典",
+    "DESCRIPTIONS": ["每当你触发 #y裁决 造成伤害时，获得 #b", " 点 #y屏障 。"]
+  },
+  "thePenance:ThornyPathPower": {
+    "NAME": "披荆斩棘",
+    "DESCRIPTIONS": ["回合结束时，获得等同于当前 #y裁决 层数 #b", "% 的 #y荆棘环身 。"]
+  },
+  "thePenance:SilenceWrathPower": {
+    "NAME": "沉默之怒",
+    "DESCRIPTIONS": ["每当 #y屏障 被击碎时，获得 #b", " 点 #y力量 ，并给予所有敌人 #b", " 层 #y虚弱 。"]
+  },
+  "thePenance:GuardianOfTheLawPower": {
+    "NAME": "律法卫士",
+    "DESCRIPTIONS": ["每当你的 屏障 受到伤害时，获得 ", " 点 裁决 。"]
+  },
+  "thePenance:LawIsCanonPower": {
+    "NAME": "法为正典",
+    "DESCRIPTIONS": ["回合结束时，如果你拥有 #y屏障 ，获得等同于 #y力量 值的 #y裁决 。"]
+  },
+  "thePenance:InTheNameOfTheLawPower": {
+    "NAME": "法律之名",
+    "DESCRIPTIONS": ["你的 #y裁决 伤害现在会受到 #y力量 加成。"]
+  },
+  "thePenance:UnwaveringPower": {
+    "NAME": "坚定不移",
+    "DESCRIPTIONS": ["你的 #y攻击牌 被打出时会 #y消耗 。 NL 你受到的伤害减少 #b30% 。 NL 回合结束时，获得 #b", " 层 #y荆棘环身 。"]
+  },
+  "thePenance:StunMonsterPower": {
+    "NAME": "眩晕",
+    "DESCRIPTIONS": ["目标被 眩晕 了，无法在本回合行动。"]
+  },
+  "thePenance:AsceticismPower": {
+    "NAME": "苦行",
+    "DESCRIPTIONS": ["每当你的 #y屏障 受到伤害时，获得 #b", " 层 #y荆棘环身 。"]
+  },
+  "thePenance:CeasefirePower": {
+    "NAME": "止戈",
+    "DESCRIPTIONS": [
+      "你无法打出 攻击牌 。",
+      "如果意图是攻击，将跳过回合。"
+    ]
+  },
+  "thePenance:CrownOfThornsPower": {
+    "NAME": "荆棘冠冕",
+    "DESCRIPTIONS": ["你的回合开始时，失去 #b", " 点生命值，获得 #b", " 层 #y荆棘环身 。"]
+  },
+  "thePenance:SceneInvestigationPower": {
+    "NAME": "调查现场",
+    "DESCRIPTIONS": [
+      "你的回合中： NL 连续使用 2 张攻击牌，获得 #b ",
+      " 随机技能牌； NL 连续使用 2 张技能牌，获得 #b ",
+      " 随机攻击牌； NL 连续使用 2 张能力牌，获得 #b ",
+      " 点 [E] 。 NL (生成的卡牌具有 #y消耗 和 #y虚无 )"
+    ]
+  },
+  "thePenance:PlayerFacingPower": {
+    "NAME": "被包围",
+    "DESCRIPTIONS": ["你正处于包围之中。打出 #y攻击牌 会改变你的朝向。 NL 当你 #y背对 敌人时，敌人会优先攻击平民。"]
+  },
+  "thePenance:CumulativePrecedentPower": {
+    "NAME": "判例累积",
+    "DESCRIPTIONS": ["每当你打出一张 技能牌 ，获得 #b", " 点 屏障 。"]
+  },
+  "thePenance:InescapableNetPower": {
+    "NAME": "法网恢恢",
+    "DESCRIPTIONS": ["下回合开始时，获得 #b", " 点 屏障 ，并抽 1 张牌。"]
+  },
+  "thePenance:ProceduralJusticePower": {
+    "NAME": "程序正义",
+    "DESCRIPTIONS": ["每当你获得 #y格挡 时，获得等量的 #y屏障 。"]
+  },
+  "thePenance:IroncladDoctrinePower": {
+    "NAME": "铁律护体",
+    "DESCRIPTIONS": ["回合开始时，消耗 #b", " 点 #y屏障 ，恢复 #b", " 点生命值。"]
+  },
+  "thePenance:JustifiedDefensePower": {
+    "NAME": "正当防卫",
+    "DESCRIPTIONS": ["受到攻击时层数 -1 并触发效果 。 NL 触发时：在你的下个回合开始时，获得等同于消耗层数的 能量 和 抽牌 。"]
+  },
+  "thePenance:JustifiedDefenseTriggeredPower": {
+    "NAME": "正当防卫(触发)",
+    "DESCRIPTIONS": ["下回合开始时，获得 #b", " 点能量，并抽 #b", " 张牌。"]
+  },
+  "thePenance:PunishmentForTransgressionPower": {
+    "NAME": "越界必罚",
+    "DESCRIPTIONS": ["回合结束时，获得 #b", " 层 #y正当防卫 。"]
+  },
+  "thePenance:JudgmentHasBegunPower": {
+    "NAME": "裁决早已开始",
+    "DESCRIPTIONS": ["每使用 1 张攻击牌，获得 #b", " 点屏障、 #b", " 点力量和裁决。 NL 再使用 #b", " 张攻击牌后，获得 2 点能量。"]
+  },
+  "thePenance:UnwrittenLawPower": {
+    "NAME": "不成文的法律",
+    "DESCRIPTIONS": ["本回合被选中的那张 #y能力牌 将会被打出两次。"]
+  },
+  "thePenance:GlowOfSufferingPower": {
+    "NAME": "苦难辉光",
+    "DESCRIPTIONS": ["每当你通过卡牌效果失去生命值时，获得失去值 #b", " 倍的 #y屏障 ，和 #b", " 层 #y荆棘环身 。"]
+  }
+}
