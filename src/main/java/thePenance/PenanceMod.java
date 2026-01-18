@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.Exordium;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import thePenance.character.Penance;
 import thePenance.events.*;
+import thePenance.potions.BarrierPotion;
+import thePenance.potions.BottleOfWolfBlood;
+import thePenance.potions.JudgementPotion;
 import thePenance.relics.*;
 import thePenance.util.GeneralUtils;
 import thePenance.util.KeywordInfo;
@@ -87,6 +91,10 @@ public class PenanceMod implements
         BaseMod.addEvent(VolsiniiCourtEvent.ID, VolsiniiCourtEvent.class, TheCity.ID);
         BaseMod.addEvent(CaseFile1184Event.ID, CaseFile1184Event.class, TheBeyond.ID);
 
+        BaseMod.addPotion(BarrierPotion.class, Color.SKY, null, null, BarrierPotion.ID);
+        BaseMod.addPotion(BottleOfWolfBlood.class, Color.FIREBRICK, Color.SCARLET, null, BottleOfWolfBlood.ID, Penance.Meta.PENANCE);
+        BaseMod.addPotion(JudgementPotion.class, Color.GOLD, Color.ORANGE, null, JudgementPotion.ID, Penance.Meta.PENANCE);
+
         // 如果你想设置一个配置面板，就在这里进行。
         // 你可以在 BaseMod wiki 页面 "Mod Config and Panel" 找到相关信息。
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
@@ -130,9 +138,6 @@ public class PenanceMod implements
         BaseMod.addRelic(new LittleGavel(), RelicType.SHARED);
         BaseMod.addRelic(new BlackUmbrella(), RelicType.SHARED);
         BaseMod.addRelic(new GoldenScales(), RelicType.SHARED);
-
-        // 如果你想做一个所有角色都能用的遗物，使用下面这行：
-        // BaseMod.addRelic(new PenanceStone(), RelicType.SHARED);
     }
 
     @Override

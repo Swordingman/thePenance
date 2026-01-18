@@ -10,7 +10,7 @@ public class CarnivalMoment extends BaseRelic { // 如果你有 BaseRelic 类，
 
     public CarnivalMoment() {
         // 请确保图片路径正确，或使用内置图片占位
-        super(ID, "CarnivalMoment", RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, "CarnivalMoment", RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

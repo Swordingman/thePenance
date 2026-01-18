@@ -95,8 +95,14 @@ public class TextureLoader {
                 case POWER:
                     textureString = imagePath("cards/power/default.png");
                     break;
-                default:
+                case SKILL:
                     textureString = imagePath("cards/skill/default.png");
+                    break;
+                case CURSE:
+                    textureString = imagePath("cards/curse/default.png");
+                    break;
+                default:
+                    textureString = imagePath("cards/default.png");
                     break;
             }
         }

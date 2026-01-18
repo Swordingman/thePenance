@@ -1,8 +1,13 @@
 package thePenance.actions;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thePenance.PenanceMod;
 
 import java.util.ArrayList;
@@ -24,9 +29,7 @@ public class WolfCurseHelper {
         return list;
     }
 
-    /**
-     * 随机获取一张狼之诅咒
-     */
+    // 随机狼群诅咒
     public static AbstractCard getRandomWolfCurse() {
         ArrayList<AbstractCard> list = getAllWolfCurses();
         if (list.isEmpty()) {
@@ -34,5 +37,56 @@ public class WolfCurseHelper {
             return new com.megacrit.cardcrawl.cards.curses.Clumsy();
         }
         return list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
+    }
+
+    // 选择狼群诅咒
+    public static class ChooseAction extends AbstractGameAction {
+        private final String tipMsg;
+
+        public ChooseAction(int amount, String tipMsg) {
+            this.actionType = ActionType.CARD_MANIPULATION;
+            this.duration = Settings.ACTION_DUR_FAST;
+            this.amount = amount;
+            this.tipMsg = tipMsg;
+        }
+
+        @Override
+        public void update() {
+            // 阶段一：打开选择界面
+            if (this.duration == Settings.ACTION_DUR_FAST) {
+                // 直接调用外面的静态方法获取列表
+                ArrayList<AbstractCard> sourceCards = WolfCurseHelper.getAllWolfCurses();
+
+                CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+                for (AbstractCard c : sourceCards) {
+                    group.addToTop(c);
+                }
+
+                if (group.isEmpty()) {
+                    this.isDone = true;
+                    return;
+                }
+
+                AbstractDungeon.gridSelectScreen.open(group, this.amount, this.tipMsg, false, false, false, false);
+                tickDuration();
+                return;
+            }
+
+            // 阶段二：处理选择结果
+            if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
+                    AbstractCard copy = c.makeStatEquivalentCopy();
+                    if (AbstractDungeon.player.hand.size() < 10) {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(copy, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                    } else {
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(copy, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+                    }
+                }
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                AbstractDungeon.player.hand.refreshHandLayout();
+                this.isDone = true;
+            }
+            tickDuration();
+        }
     }
 }

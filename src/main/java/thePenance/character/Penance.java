@@ -73,7 +73,7 @@ public class Penance extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         // 这用于给*某些*图片着色，但**不是**实际的卡牌。要修改卡牌外观，请编辑cardback文件夹中的图片！
-        private static final Color cardColor = new Color(50f/255f, 50f/255f, 50f/255f, 1f);
+        private static final Color cardColor = new Color(71f/255f, 63f/255f, 34f/255f, 1f);
 
         // 将在主模组文件中使用的方法
         public static void registerColor() {
