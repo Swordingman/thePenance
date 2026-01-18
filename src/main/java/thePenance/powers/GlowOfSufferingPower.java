@@ -17,7 +17,6 @@ public class GlowOfSufferingPower extends BasePower {
     public GlowOfSufferingPower(AbstractCreature owner, int thornsAmt, int barrierMultiplier) {
         super(POWER_ID, PowerType.BUFF, false, owner, thornsAmt);
         this.barrierMultiplier = barrierMultiplier;
-        this.loadRegion("rupture"); // 借用撕裂图标
         this.updateDescription();
     }
 

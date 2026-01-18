@@ -25,7 +25,6 @@ public class UnwaveringPower extends BasePower implements CloneablePowerInterfac
                 owner,
                 thornsAmount // 这里的 amount 用来存储回合结束加多少荆棘
         );
-        this.loadRegion("barricade"); // 暂时借用"街垒"的图标，很有坚定不移的感觉
     }
 
     // 效果1：所有攻击牌获得消耗

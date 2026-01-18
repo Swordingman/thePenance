@@ -13,7 +13,6 @@ public class AsceticismPower extends BasePower implements CloneablePowerInterfac
 
     public AsceticismPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-        this.loadRegion("painfulStabs");
     }
 
     public void onBarrierDamaged() {

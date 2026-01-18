@@ -19,11 +19,8 @@ public class ThornyPathPower extends BasePower implements CloneablePowerInterfac
                 null,              // source
                 amount,            // 层数 (这里代表百分比，例如 50 代表 50%)
                 true,              // initDescription
-                false              // loadImage -> 设为 false，禁止自动找图
+                true              // loadImage -> 设为 false，禁止自动找图
         );
-
-        // 暂时借用原版 "Evolve" (进化) 图标
-        this.loadRegion("evolve");
     }
 
     @Override

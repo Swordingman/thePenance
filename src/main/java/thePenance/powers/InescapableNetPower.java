@@ -12,7 +12,6 @@ public class InescapableNetPower extends BasePower {
 
     public InescapableNetPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-        this.loadRegion("entangled"); // 借用缠绕图标
     }
 
     @Override

@@ -17,11 +17,8 @@ public class InTheNameOfTheLawPower extends BasePower implements CloneablePowerI
                 null,              // source
                 amount,            // 层数
                 true,              // initDescription
-                false              // loadImage -> 设为 false，因为要借用 thorns 图标
+                true              // loadImage -> 设为 false，因为要借用 thorns 图标
         );
-
-        // 暂时借用 恶魔形态 的图标
-        this.loadRegion("demonForm");
     }
 
     @Override

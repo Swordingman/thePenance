@@ -11,7 +11,6 @@ public class CeasefirePower extends BasePower {
 
     public CeasefirePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.DEBUFF, true, owner, amount);
-        this.loadRegion("entangled");
     }
 
     // --- 玩家侧效果：无法打出攻击牌 ---

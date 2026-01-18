@@ -24,8 +24,6 @@ public class SceneInvestigationPower extends BasePower {
         this.energyPerTrigger = energyAmount;
         this.cardsShouldUpgrade = upgrade;
 
-        this.loadRegion("focus");
-
         updateDescription();
     }
 

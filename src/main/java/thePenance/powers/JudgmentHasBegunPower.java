@@ -23,7 +23,6 @@ public class JudgmentHasBegunPower extends BasePower {
 
     public JudgmentHasBegunPower(AbstractCreature owner) {
         super(POWER_ID, PowerType.BUFF, false, owner, -1);
-        this.loadRegion("accuracy"); // 借用"旋转"图标
     }
 
     @Override

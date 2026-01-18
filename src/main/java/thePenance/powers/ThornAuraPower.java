@@ -21,12 +21,8 @@ public class ThornAuraPower extends BasePower implements CloneablePowerInterface
                 null,              // source
                 amount,            // 层数
                 true,              // initDescription
-                false              // loadImage -> 设为 false，禁止自动找图
+                true              // loadImage -> 设为 false，禁止自动找图
         );
-
-        // 借用原版 "Thorns" (荆棘) 图标
-        // 以后如果你画好了图片，把上面的 false 改成 true，并删掉下面这行即可
-        this.loadRegion("thorns");
     }
 
     @Override

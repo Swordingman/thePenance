@@ -20,7 +20,6 @@ public class GuardianOfTheLawPower extends AbstractPower implements CloneablePow
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("juggernaut"); // 暂时借用"主宰"图标，或者用其他
         updateDescription();
     }
 

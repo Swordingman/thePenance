@@ -21,7 +21,6 @@ public class UnwrittenLawPower extends BasePower {
     public UnwrittenLawPower(AbstractCreature owner, UUID targetUuid) {
         super(POWER_ID, PowerType.BUFF, false, owner, 1);
         this.targetUuid = targetUuid;
-        this.loadRegion("double_tap"); // 借用双发图标
     }
 
     @Override

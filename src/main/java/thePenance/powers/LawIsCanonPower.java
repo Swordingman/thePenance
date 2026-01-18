@@ -20,12 +20,8 @@ public class LawIsCanonPower extends BasePower implements CloneablePowerInterfac
                 null,              // source
                 amount,            // 层数
                 true,              // initDescription
-                false              // loadImage -> 设为 false，禁止自动找图
+                true              // loadImage -> 设为 false，禁止自动找图
         );
-
-        // 暂时借用原版 "Omega" (欧米伽) 的图标
-        // 你也可以换成 "mantra" (真言/敬拜) 或者 "accuracy" (精准)
-        this.loadRegion("omega");
     }
 
     @Override

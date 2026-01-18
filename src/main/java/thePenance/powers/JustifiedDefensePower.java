@@ -11,7 +11,6 @@ public class JustifiedDefensePower extends BasePower {
 
     public JustifiedDefensePower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-        this.loadRegion("buffer"); // 暂时借用缓冲图标
     }
 
     // 受到攻击时触发

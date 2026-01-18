@@ -12,7 +12,6 @@ public class CumulativePrecedentPower extends BasePower {
 
     public CumulativePrecedentPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-        this.loadRegion("artifact");
     }
 
     @Override

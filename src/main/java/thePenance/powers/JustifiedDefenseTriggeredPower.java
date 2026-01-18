@@ -12,7 +12,6 @@ public class JustifiedDefenseTriggeredPower extends BasePower {
     public JustifiedDefenseTriggeredPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
         this.name = "正当防卫(已触发)"; // 玩家可见，提示下回合有收益
-        this.loadRegion("energized_blue");
     }
 
     @Override

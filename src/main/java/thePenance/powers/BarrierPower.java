@@ -20,13 +20,10 @@ public class BarrierPower extends BasePower implements CloneablePowerInterface {
                 null,              // 来源 (source)，这里设为 null
                 amount,            // 层数
                 true,              // initDescription (是否立即初始化描述)
-                false              // loadImage -> 【关键点】设为 false，禁止 BasePower 自动找图
+                true              // loadImage -> 【关键点】设为 false，禁止 BasePower 自动找图
         );
 
         this.canGoNegative = false; // 屏障不能为负数
-
-        // 因为上面 loadImage 设为了 false，我们在这里手动加载原版图标
-        this.loadRegion("buffer");
     }
 
     // BasePower 继承自 AbstractPower，所以 stackPower 逻辑保留即可

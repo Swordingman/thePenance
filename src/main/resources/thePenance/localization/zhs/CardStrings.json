@@ -197,7 +197,7 @@
   },
   "thePenance:Tempering": {
     "NAME": "淬炼",
-    "DESCRIPTION": "失去 6 点生命值。 NL 获得 !M! 点 屏障 。"
+    "DESCRIPTION": "失去 3 点生命值。 NL 获得 !M! 点 屏障 。"
   },
   "thePenance:EmergencyRepair": {
     "NAME": "紧急修补",

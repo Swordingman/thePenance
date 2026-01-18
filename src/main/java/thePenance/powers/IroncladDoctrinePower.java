@@ -15,7 +15,6 @@ public class IroncladDoctrinePower extends BasePower {
 
     public IroncladDoctrinePower(AbstractCreature owner, int costAmount) {
         super(POWER_ID, PowerType.BUFF, false, owner, costAmount);
-        this.loadRegion("juggernaut"); // 借用不动如山图标
     }
 
     @Override

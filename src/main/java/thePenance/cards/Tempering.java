@@ -13,7 +13,7 @@ public class Tempering extends BaseCard {
     public static final String ID = makeID("Tempering");
 
     private static final int COST = 1;
-    private static final int HP_LOSS = 6;
+    private static final int HP_LOSS = 3;
     private static final int BARRIER = 12;
     private static final int UPG_BARRIER = 3; // 12 -> 15
 

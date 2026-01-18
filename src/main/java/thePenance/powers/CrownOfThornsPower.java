@@ -14,7 +14,6 @@ public class CrownOfThornsPower extends BasePower {
 
     public CrownOfThornsPower(AbstractCreature owner, int thornsAmount) {
         super(POWER_ID, PowerType.BUFF, false, owner, thornsAmount);
-        this.loadRegion("buffer");
     }
 
     @Override

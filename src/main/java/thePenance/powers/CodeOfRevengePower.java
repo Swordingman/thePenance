@@ -19,11 +19,8 @@ public class CodeOfRevengePower extends BasePower implements CloneablePowerInter
                 null,              // source
                 amount,            // 这里的 amount 是每次获得的屏障数
                 true,              // initDescription
-                false              // loadImage -> 设为 false，因为你要借用原版图标
+                true              // loadImage -> 设为 false，因为你要借用原版图标
         );
-
-        // 暂时借用原版“进化”的图标
-        this.loadRegion("evolve");
     }
 
     // 外部调用的接口保持不变
