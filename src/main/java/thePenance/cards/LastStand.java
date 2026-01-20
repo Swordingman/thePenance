@@ -13,7 +13,7 @@ public class LastStand extends BaseCard {
     public static final String ID = makeID("LastStand");
 
     private static final int COST = 2;
-    private static final int BARRIER = 40;
+    private static final int BARRIER = 30;
 
     // 止戈层数：基础3，升级后-1(变为2)
     private static final int CEASEFIRE = 3;

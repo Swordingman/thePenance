@@ -18,14 +18,17 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import thePenance.PenanceMod;
 import thePenance.cards.Defend;
 import thePenance.cards.Resolute;
 import thePenance.cards.Strike;
 import thePenance.relics.PenanceBasicRelic;
+import thePenance.util.Sounds;
 
 import java.util.ArrayList;
 
@@ -92,7 +95,6 @@ public class Penance extends CustomPlayer {
     // 游戏内图片
     private static final String SHOULDER_1 = characterPath("shoulder.png"); // 肩部图1和2用于篝火休息处。
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
-    private static final String CORPSE = characterPath("corpse.png"); // 尸体图用于死亡时。
 
     // 用于能量球的纹理
     private static final String[] orbTextures = {
@@ -129,7 +131,7 @@ public class Penance extends CustomPlayer {
         initializeClass(null,
                 SHOULDER_2,
                 SHOULDER_1,
-                CORPSE,
+                null,
                 getLoadout(),
                 20.0F, -30.0F, 220.0F, 290.0F, // 角色碰撞箱。x y 坐标，然后是宽度和高度。
                 new EnergyManager(ENERGY_PER_TURN));
@@ -190,7 +192,7 @@ public class Penance extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         // 这张卡用于地精翻牌配对游戏。
         // 它应该是一张非打击、非防御的基础卡，但并非强制要求。
-        return new Strike_Red();
+        return new Resolute();
     }
 
     /*- 以下是你*可能*应该调整的方法，但不调整也可以。 -*/
@@ -204,28 +206,27 @@ public class Penance extends CustomPlayer {
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         // 当你攻击心脏时，将使用这些攻击特效。
         return new AbstractGameAction.AttackEffect[] {
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL,
-                AbstractGameAction.AttackEffect.SLASH_HEAVY,
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
+                AbstractGameAction.AttackEffect.SMASH,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY
         };
     }
 
-    private final Color cardRenderColor = Color.LIGHT_GRAY.cpy(); // 用于移动卡牌时的某些视觉特效（有时）（也许）
-    private final Color cardTrailColor = Color.LIGHT_GRAY.cpy(); // 用于游戏过程中的卡牌拖尾视觉特效。
-    private final Color slashAttackColor = Color.LIGHT_GRAY.cpy(); // 当你攻击心脏时用于屏幕变色效果。
+    private final Color penanceThemeColor = CardHelper.getColor(71, 63, 34);
+    private final Color PenanceEffectColor = new Color(218f/255f, 165f/255f, 32f/255f, 1f);
     @Override
     public Color getCardRenderColor() {
-        return cardRenderColor;
+        return penanceThemeColor;
     }
 
     @Override
     public Color getCardTrailColor() {
-        return cardTrailColor;
+        return PenanceEffectColor;
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return slashAttackColor;
+        return PenanceEffectColor;
     }
 
     @Override
@@ -240,13 +241,13 @@ public class Penance extends CustomPlayer {
     public void doCharSelectScreenSelectEffect() {
         // 当你在角色选择屏幕点击该角色按钮时触发。
         // 查看 SoundMaster 获取现有音效的完整列表，或查看 BaseMod wiki 了解如何添加自定义音频。
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_2", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA(Sounds.PENANCE_SELECT, 0.0F);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
         // 与 doCharSelectScreenSelectEffect 类似，但用于自定义模式屏幕。无震动。
-        return "ATTACK_DAGGER_2";
+        return Sounds.PENANCE_SELECT;
     }
 
     // 不要直接调整这四个方法，请调整 CharacterStrings.json 文件的内容。

@@ -83,6 +83,7 @@ public class PenanceMod implements
     public void receivePostInitialize() {
         // 加载游戏内模组菜单中使用的图标。
         Texture badgeTexture = TextureLoader.getTexture(imagePath("badge.png"));
+
         // 设置游戏内模组菜单中显示的模组信息。
         // 这些信息取自你的 pom.xml 文件。
         BaseMod.addEvent(RainyNightInspectionEvent.ID, RainyNightInspectionEvent.class, Exordium.ID);

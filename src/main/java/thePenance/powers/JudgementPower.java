@@ -10,7 +10,6 @@ import thePenance.PenanceMod;
 
 public class JudgementPower extends BasePower implements CloneablePowerInterface {
     public static final String POWER_ID = PenanceMod.makeID("JudgementPower");
-    // 移除了 PowerStrings, NAME, DESCRIPTIONS，BasePower 已自动处理
 
     public JudgementPower(AbstractCreature owner, int amount) {
         super(
@@ -28,18 +27,7 @@ public class JudgementPower extends BasePower implements CloneablePowerInterface
     // 核心逻辑保持不变
     public void onBarrierDamaged(AbstractCreature attacker) {
         if (attacker != null && attacker != this.owner && this.amount > 0) {
-            this.flash();
-            // 对攻击者造成等同于裁决值的伤害
-            addToTop(new DamageAction(attacker,
-                    new DamageInfo(this.owner, this.amount, DamageInfo.DamageType.THORNS),
-                    AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-
-            if (this.owner.hasPower(CodeOfRevengePower.POWER_ID)) {
-                // 获取复仇法典能力，并调用触发方法
-                // 注意：这里需要强转，确保 CodeOfRevengePower 类也已经更新并存在
-                CodeOfRevengePower power = (CodeOfRevengePower) this.owner.getPower(CodeOfRevengePower.POWER_ID);
-                power.onJudgementTriggered();
-            }
+            addToTop(new thePenance.actions.TriggerJudgementAction(attacker));
         }
     }
 

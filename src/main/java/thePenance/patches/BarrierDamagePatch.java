@@ -16,16 +16,13 @@ public class BarrierDamagePatch {
 
     @SpireInsertPatch(
             locator = Locator.class,
-            localvars = {"damageAmount"} // 获取当前的伤害值（此时格挡已经抵消过了）
+            localvars = {"damageAmount"}
     )
     public static void Insert(AbstractPlayer __instance, DamageInfo info, @ByRef int[] damageAmount) {
-        // 如果伤害无效，或者不是来自敌人的攻击（比如自残），根据需求可能不需要触发屏障
-        // 这里假设只要是 HP 伤害，屏障都能挡
         if (damageAmount[0] <= 0 || info.type == DamageInfo.DamageType.HP_LOSS) {
             return;
         }
 
-        // 检查玩家是否有屏障
         if (__instance.hasPower(BarrierPower.POWER_ID)) {
             BarrierPower barrier = (BarrierPower) __instance.getPower(BarrierPower.POWER_ID);
             int barrierAmount = barrier.amount;
@@ -34,46 +31,55 @@ public class BarrierDamagePatch {
             if (barrierAmount > 0) {
                 int damageBlockedByBarrier = 0;
 
+                // --- 1. 计算抵扣逻辑 ---
                 if (damage >= barrierAmount) {
-                    // 伤害超过屏障：屏障全碎，扣除部分伤害
+                    // 【情况A：屏障破碎】
                     damageBlockedByBarrier = barrierAmount;
-                    damageAmount[0] = damage - barrierAmount; // 修改传入的伤害值，剩下的去扣血
+                    damageAmount[0] = damage - barrierAmount;
 
-                    // 移除屏障能力
+                    // 移除屏障
                     AbstractDungeon.actionManager.addToTop(
                             new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(__instance, __instance, barrier)
                     );
 
+                    // 只有屏障彻底破碎才触发的能力放这里
                     if (__instance.hasPower(SilenceWrathPower.POWER_ID)) {
                         SilenceWrathPower wrathPower = (SilenceWrathPower) __instance.getPower(SilenceWrathPower.POWER_ID);
                         wrathPower.onBarrierBroken();
                     }
 
+                } else {
+                    // 【情况B：屏障幸存】
+                    damageBlockedByBarrier = damage;
+                    barrier.amount -= damage;
+                    barrier.updateDescription();
+                    barrier.flash();
+
+                    damageAmount[0] = 0;
+                }
+
+                // --- 2. 统一触发逻辑 (只要屏障受损就触发) ---
+                if (damageBlockedByBarrier > 0) {
+
+                    // === 修复点：将苦修移到这里 ===
+                    // 无论屏障是碎了还是仅仅掉了层数，只要抵挡了伤害，就算"Damaged"
+                    if (__instance.hasPower(AsceticismPower.POWER_ID)) {
+                        AsceticismPower asceticismPower = (AsceticismPower) __instance.getPower(AsceticismPower.POWER_ID);
+                        asceticismPower.onBarrierDamaged();
+                    }
+
+                    // 你的法律守护者如果是受损触发，也应该放这里；如果是破碎触发，就放回上面
                     if(__instance.hasPower(GuardianOfTheLawPower.POWER_ID)) {
                         GuardianOfTheLawPower guardianPower = (GuardianOfTheLawPower) __instance.getPower(GuardianOfTheLawPower.POWER_ID);
                         guardianPower.onBarrierDamaged();
                     }
 
-                     if (__instance.hasPower(AsceticismPower.POWER_ID)) {
-                         AsceticismPower asceticismPower = (AsceticismPower) __instance.getPower(AsceticismPower.POWER_ID);
-                         asceticismPower.onBarrierDamaged();
-                     }
-                } else {
-                    // 屏障足够抵挡伤害
-                    damageBlockedByBarrier = damage;
-                    barrier.amount -= damage; // 减少屏障数值
-                    barrier.updateDescription(); // 更新文本
-                    barrier.flash(); // 闪烁特效
-
-                    damageAmount[0] = 0; // 伤害被完全吸收，血量不受损
-                }
-
-                // --- 触发裁决机制 ---
-                // 如果屏障确实吸收了伤害，且伤害来源是敌人
-                if (damageBlockedByBarrier > 0 && info.owner != null && info.owner != __instance) {
-                    if (__instance.hasPower(JudgementPower.POWER_ID)) {
-                        JudgementPower judgement = (JudgementPower) __instance.getPower(JudgementPower.POWER_ID);
-                        judgement.onBarrierDamaged(info.owner);
+                    // 裁决机制 (通常要求来源是敌人)
+                    if (info.owner != null && info.owner != __instance) {
+                        if (__instance.hasPower(JudgementPower.POWER_ID)) {
+                            JudgementPower judgement = (JudgementPower) __instance.getPower(JudgementPower.POWER_ID);
+                            judgement.onBarrierDamaged(info.owner);
+                        }
                     }
                 }
             }

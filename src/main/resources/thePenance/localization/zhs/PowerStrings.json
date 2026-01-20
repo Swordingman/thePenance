@@ -89,7 +89,7 @@
   },
   "thePenance:JustifiedDefensePower": {
     "NAME": "正当防卫",
-    "DESCRIPTIONS": ["受到攻击时层数 -1 并触发效果 。 NL 触发时：在你的下个回合开始时，获得等同于消耗层数的 能量 和 抽牌 。"]
+    "DESCRIPTIONS": ["受到攻击时层数 -1 。 NL 在你的下个回合开始时，获得等同于消耗层数的 能量 和 抽牌 。 NL 回合开始时，失去所有层数。"]
   },
   "thePenance:JustifiedDefenseTriggeredPower": {
     "NAME": "正当防卫(触发)",
@@ -97,7 +97,7 @@
   },
   "thePenance:PunishmentForTransgressionPower": {
     "NAME": "越界必罚",
-    "DESCRIPTIONS": ["回合结束时，获得 #b", " 层 #y正当防卫 。"]
+    "DESCRIPTIONS": ["如果你本回合没有使用过攻击牌，回合结束时，获得 #b", " 层 #y正当防卫 。"]
   },
   "thePenance:JudgmentHasBegunPower": {
     "NAME": "裁决早已开始",

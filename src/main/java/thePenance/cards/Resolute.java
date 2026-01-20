@@ -1,9 +1,11 @@
 package thePenance.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.actions.ResoluteAction;
 import thePenance.character.Penance;
+import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
 public class Resolute extends BaseCard {
@@ -23,15 +25,12 @@ public class Resolute extends BaseCard {
                 COST
         ));
 
-        // 设置魔法数字作为屏障倍率
         setMagic(BARRIER_MULTIPLIER, UPGRADE_BARRIER_MULTIPLIER);
-
-        // BaseCard 构造函数会自动检查 JSON 里有没有 UPGRADE_DESCRIPTION
-        // 如果有，BaseCard 的 upgrade() 方法会自动处理描述替换
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, 4), 4));
         // 这里的 magicNumber 会自动包含升级后的数值
         addToBot(new ResoluteAction(p, magicNumber, upgraded, freeToPlayOnce, energyOnUse));
     }

@@ -3,24 +3,24 @@ package thePenance.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePenance.PenanceMod;
 
-public class GuardianOfTheLawPower extends AbstractPower implements CloneablePowerInterface {
+public class GuardianOfTheLawPower extends BasePower implements CloneablePowerInterface {
     public static final String POWER_ID = PenanceMod.makeID("GuardianOfTheLawPower");
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-    public static final String NAME = powerStrings.NAME;
-    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    // 不需要手动定义 NAME 和 DESCRIPTIONS，BasePower 会自动读取 localization
 
     public GuardianOfTheLawPower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
-        this.amount = amount;
-        this.type = PowerType.BUFF;
-        updateDescription();
+        super(
+                POWER_ID,          // ID
+                PowerType.BUFF,    // 类型
+                false,             // 是否回合制
+                owner,             // 拥有者
+                null,              // 来源
+                amount,            // 层数
+                true,              // 是否初始化描述
+                true              // loadImage -> 设为 false，表示我们要手动指定原版图标
+        );
     }
 
     // --- 当屏障受到伤害时调用 ---
@@ -32,6 +32,7 @@ public class GuardianOfTheLawPower extends AbstractPower implements CloneablePow
 
     @Override
     public void updateDescription() {
+        // 使用父类 BasePower 提供的 DESCRIPTIONS
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 

@@ -54,7 +54,7 @@ public class GuiltyAsCharged extends BaseCard {
                 }
             }
 
-            // 4. 荆棘 >= 10 施加止戈
+            // 4. 荆棘环身 >= 10 施加止戈
             if (p.hasPower(ThornAuraPower.POWER_ID)) {
                 int thorns = p.getPower(ThornAuraPower.POWER_ID).amount;
                 if (thorns >= 10) {

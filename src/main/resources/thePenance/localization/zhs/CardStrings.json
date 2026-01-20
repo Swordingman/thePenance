@@ -9,8 +9,8 @@
   },
   "thePenance:Resolute": {
     "NAME": "坚决",
-    "DESCRIPTION": "获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
+    "DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
+    "UPGRADE_DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
   },
   "thePenance:LawModification": {
     "NAME": "法则修正",
@@ -267,7 +267,7 @@
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "有罪！",
-    "DESCRIPTION": "移除目标所有 格挡 。造成 !D! 点伤害。 NL 若 裁决 ≥ 10 ，额外造成 裁决 伤害。 NL 若 荆棘 ≥ 10 ，给予 1 层 止戈 。 NL 若 力量 ≥ 10 ，以上效果触发两次。"
+    "DESCRIPTION": "移除目标所有 格挡 。造成 !D! 点伤害。 NL 若 裁决 ≥ 10 ，额外造成 裁决 伤害。 NL 若 荆棘环身 ≥ 10 ，给予 1 层 止戈 。 NL 若 力量 ≥ 10 ，以上效果触发两次。"
   },
   "thePenance:SelfIncrimination": {
     "NAME": "自证其罪",
@@ -299,7 +299,7 @@
   },
   "thePenance:PunishmentForTransgression": {
     "NAME": "越界必罚",
-    "DESCRIPTION": "回合结束时，获得 !M! 层 正当防卫 。"
+    "DESCRIPTION": "如果你本回合没有使用过攻击牌，回合结束时，获得 !M! 层 正当防卫 。"
   },
   "thePenance:PendingJudgment": {
     "NAME": "待命裁定",
