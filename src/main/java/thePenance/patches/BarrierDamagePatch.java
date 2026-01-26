@@ -37,6 +37,9 @@ public class BarrierDamagePatch {
                     damageBlockedByBarrier = barrierAmount;
                     damageAmount[0] = damage - barrierAmount;
 
+                    barrier.amount = 0;
+                    barrier.updateDescription();
+
                     // 移除屏障
                     AbstractDungeon.actionManager.addToTop(
                             new com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction(__instance, __instance, barrier)

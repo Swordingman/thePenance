@@ -13,8 +13,11 @@ public class DeadlyEnemy extends BaseCard {
                 CardType.CURSE,
                 CardRarity.SPECIAL,
                 CardTarget.NONE,
-                -2
+                1
         ));
+
+        setSelfRetain(true);
+        setExhaust(true);
     }
 
     @Override

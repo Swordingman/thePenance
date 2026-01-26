@@ -38,7 +38,7 @@
   },
   "thePenance:Silence": {
     "NAME": "缄默",
-    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 如果当前生命值低于 50% ，额外获得 2 点 裁决 。"
+    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 如果当前生命值低于 50% ，额外获得 3 点 裁决 。"
   },
   "thePenance:ThornyPath": {
     "NAME": "披荆斩棘",
@@ -58,7 +58,7 @@
   },
   "thePenance:TheTrial": {
     "NAME": "审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果为 !M! 倍。 NL 此牌被打出后将从战斗中移除，然后将一张复制品洗入你的抽牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果为 *乘算 。 NL 此牌被打出后将从战斗中移除，然后将一张复制品洗入你的抽牌堆。"
   },
   "thePenance:TippingScales": {
     "NAME": "倾斜天平",
@@ -94,7 +94,7 @@
   },
   "thePenance:FlailSmash": {
     "NAME": "链锤猛击",
-    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害，并给予目标一层 止戈。"
+    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害，并给予目标一层 止戈 。"
   },
   "thePenance:SyracusanWolves": {
     "NAME": "叙拉古的狼群",
@@ -138,7 +138,7 @@
   },
   "thePenance:WandAntiGravity": {
     "NAME": "秘杖·反重力模式",
-    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 抽 !M! 张卡。 NL 本回合给予你 混乱 。"
+    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 本回合给予你 混乱 。 NL 抽 !M! 张卡。"
   },
   "thePenance:Upright": {
     "NAME": "刚正不阿",
@@ -235,7 +235,7 @@
   },
   "thePenance:DeadlyEnemy": {
     "NAME": "死敌",
-    "DESCRIPTION": "无法打出 。 NL 只要此牌在你手中，你受到的所有伤害增加 1 点。"
+    "DESCRIPTION": "消耗 。 保留 。 NL 只要此牌在你手中，你受到的所有伤害增加 1 点。"
   },
   "thePenance:CumulativePrecedent": {
     "NAME": "判例累积",

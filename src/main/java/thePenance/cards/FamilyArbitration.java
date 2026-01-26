@@ -1,5 +1,6 @@
 package thePenance.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
@@ -11,13 +12,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.actions.WolfCurseHelper;
 import thePenance.character.Penance;
 import thePenance.util.CardStats;
-
 import java.util.ArrayList;
 
 public class FamilyArbitration extends BaseCard {
     public static final String ID = makeID("FamilyArbitration");
     private static final int COST = 1;
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 14;
     private static final int UPG_DAMAGE = 3;
 
     public FamilyArbitration() {
@@ -29,6 +29,8 @@ public class FamilyArbitration extends BaseCard {
                 COST
         ));
         setDamage(DAMAGE, UPG_DAMAGE);
+
+        setCarousel(WolfCurseHelper.getAllWolfCurses());
     }
 
     @Override

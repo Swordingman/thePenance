@@ -14,11 +14,11 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thePenance.PenanceMod;
-import thePenance.powers.PlayerFacingPower; // ★★★ 确保你有这个 Power 类，否则删掉相关代码 ★★★
+import thePenance.powers.PlayerFacingPower;
+import basemod.ReflectionHacks;
 
 public class VolsiniiMob extends AbstractMonster {
     public static final String ID = PenanceMod.makeID("VolsiniiMob");
-    // 这里的 ID "thePenance:VolsiniiMob" 必须对应 MonstersStrings.json 里的键名
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
 
     public static final int TYPE_AGILE = 0;
@@ -44,41 +44,85 @@ public class VolsiniiMob extends AbstractMonster {
 
         if (this.mobType == TYPE_AGILE) {
             this.setHp(42);
+            // 伤害索引 0: Multi-Attack (4x3)
             this.damage.add(new DamageInfo(this, 4));
+            // 伤害索引 1: Normal Attack (10)
             this.damage.add(new DamageInfo(this, 10));
             this.loadAnimation("images/monsters/theBottom/angryGremlin/skeleton.atlas", "images/monsters/theBottom/angryGremlin/skeleton.json", 1.0F);
             this.state.setAnimation(0, "idle", true);
-            // 对应 JSON 里的 DIALOG[0]
             this.name = monsterStrings.DIALOG[0];
         } else {
             this.setHp(65);
+            // 伤害索引 0: Normal Attack (12)
             this.damage.add(new DamageInfo(this, 12));
+            // 伤害索引 1: Heavy Attack (30)
             this.damage.add(new DamageInfo(this, 30));
             this.loadAnimation("images/monsters/theBottom/fatGremlin/skeleton.atlas", "images/monsters/theBottom/fatGremlin/skeleton.json", 1.0F);
             this.state.setAnimation(0, "idle", true);
-            // 对应 JSON 里的 DIALOG[1]
             this.name = monsterStrings.DIALOG[1];
         }
     }
 
     @Override
     public void usePreBattleAction() {
-        // 确保你的 PlayerFacingPower 路径正确
         if (!AbstractDungeon.player.hasPower(PlayerFacingPower.POWER_ID)) {
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlayerFacingPower(AbstractDungeon.player)));
         }
     }
 
-    // ★★★ 修复后的核心方法 ★★★
-    private void executeAttack(DamageInfo originalInfo, AbstractGameAction.AttackEffect effect) {
-        // 获取玩家朝向
-        PlayerFacingPower facingPower = (PlayerFacingPower) AbstractDungeon.player.getPower(PlayerFacingPower.POWER_ID);
-        boolean backExposed = false;
-        if (facingPower != null) {
-            backExposed = facingPower.isBackExposedTo(this.drawX);
+    /**
+     * 辅助方法：判断是否应该背刺玩家（双倍伤害）。
+     * 条件：1. 没有平民活着 2. 玩家背对当前怪物
+     */
+    private boolean shouldBackstabPlayer() {
+        // 1. 检查平民是否存活
+        boolean civilianAlive = false;
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (m instanceof VolsiniiCivilian && !m.isDeadOrEscaped()) {
+                civilianAlive = true;
+                break;
+            }
+        }
+        if (civilianAlive) return false;
+
+        // 2. 检查玩家朝向
+        if (AbstractDungeon.player.hasPower(PlayerFacingPower.POWER_ID)) {
+            PlayerFacingPower facingPower = (PlayerFacingPower) AbstractDungeon.player.getPower(PlayerFacingPower.POWER_ID);
+            return facingPower.isBackExposedTo(this.drawX);
+        }
+        return false;
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        if (this.intent != Intent.ATTACK && this.intent != Intent.ATTACK_BUFF && this.intent != Intent.ATTACK_DEBUFF && this.intent != Intent.ATTACK_DEFEND) {
+            return;
         }
 
-        // 寻找平民
+        // 修改：将倍率从 2 (双倍) 改为 1.5 (后方攻击机制)
+        if (shouldBackstabPlayer()) {
+            int currentBaseDamage = 0;
+            if (this.mobType == TYPE_AGILE) {
+                if (this.nextMove == A_MULTI_ATTACK) currentBaseDamage = this.damage.get(0).base;
+                else if (this.nextMove == A_NORMAL_ATTACK) currentBaseDamage = this.damage.get(1).base;
+            } else {
+                if (this.nextMove == B_NORMAL_ATTACK) currentBaseDamage = this.damage.get(0).base;
+                else if (this.nextMove == B_HEAVY_ATTACK) currentBaseDamage = this.damage.get(1).base;
+            }
+
+            // 此处应用 1.5 倍伤害
+            int backAttackDmg = (int)(currentBaseDamage * 1.5F);
+            DamageInfo info = new DamageInfo(this, backAttackDmg, DamageInfo.DamageType.NORMAL);
+            info.applyPowers(this, AbstractDungeon.player);
+
+            ReflectionHacks.setPrivate(this, AbstractMonster.class, "intentDmg", info.output);
+        }
+    }
+
+    private void executeAttack(DamageInfo originalInfo, AbstractGameAction.AttackEffect effect) {
+        // 再次获取相关状态，判断攻击逻辑
         AbstractMonster civilian = null;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m instanceof VolsiniiCivilian && !m.isDeadOrEscaped()) {
@@ -87,33 +131,36 @@ public class VolsiniiMob extends AbstractMonster {
             }
         }
 
-        if (backExposed) {
-            if (civilian != null) {
-                // === 1. 背对且平民活着：攻击平民 ===
-                // 修正：直接创建新的 DamageInfo 传给 Action，不要调用不存在的 applyPowers
-                DamageInfo civInfo = new DamageInfo(this, originalInfo.base, DamageInfo.DamageType.NORMAL);
+        PlayerFacingPower facingPower = (PlayerFacingPower) AbstractDungeon.player.getPower(PlayerFacingPower.POWER_ID);
+        boolean backExposed = (facingPower != null && facingPower.isBackExposedTo(this.drawX));
 
-                if (mobType == TYPE_AGILE) addToBot(new AnimateFastAttackAction(this));
-                else addToBot(new AnimateSlowAttackAction(this));
+        if (backExposed && civilian != null) {
+            // === 情况 1: 玩家背对，但有平民存活 -> 攻击平民 ===
+            DamageInfo civInfo = new DamageInfo(this, originalInfo.base, DamageInfo.DamageType.NORMAL);
+            civInfo.applyPowers(this, civilian);
 
-                // 伤害动作会自动计算力量加成
-                addToBot(new DamageAction(civilian, civInfo, effect));
+            if (mobType == TYPE_AGILE) addToBot(new AnimateFastAttackAction(this));
+            else addToBot(new AnimateSlowAttackAction(this));
 
-            } else {
-                // === 2. 背对且平民已死：背刺玩家 (双倍伤害) ===
-                // 修正：简单粗暴地将基础伤害 x2，然后传入 DamageAction，让系统叠加力量
-                // (Base * 2) + Strength
-                DamageInfo backstabInfo = new DamageInfo(this, originalInfo.base * 2, DamageInfo.DamageType.NORMAL);
+            addToBot(new DamageAction(civilian, civInfo, effect));
 
-                if (mobType == TYPE_AGILE) addToBot(new AnimateFastAttackAction(this));
-                else addToBot(new AnimateSlowAttackAction(this));
+        } else if (shouldBackstabPlayer()) {
+            // === 情况 2: 玩家背对且无平民 -> 后方攻击玩家 (Base * 1.5) ===
+            // 修改：将倍率从 2 改为 1.5
+            int backAttackDmg = (int)(originalInfo.base * 1.5F);
+            DamageInfo backstabInfo = new DamageInfo(this, backAttackDmg, DamageInfo.DamageType.NORMAL);
+            backstabInfo.applyPowers(this, AbstractDungeon.player);
 
-                addToBot(new DamageAction(AbstractDungeon.player, backstabInfo, AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            }
+            if (mobType == TYPE_AGILE) addToBot(new AnimateFastAttackAction(this));
+            else addToBot(new AnimateSlowAttackAction(this));
+
+            // 音效可以保持 Slash Heavy 或视情况改为 Blunt Heavy
+            addToBot(new DamageAction(AbstractDungeon.player, backstabInfo, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+
         } else {
-            // === 3. 正面面对：正常攻击玩家 ===
-            // 修正：创建新的 DamageInfo 实例以避免引用问题
+            // === 情况 3: 正常正面攻击 ===
             DamageInfo normalInfo = new DamageInfo(this, originalInfo.base, DamageInfo.DamageType.NORMAL);
+            normalInfo.applyPowers(this, AbstractDungeon.player);
 
             if (mobType == TYPE_AGILE) addToBot(new AnimateFastAttackAction(this));
             else addToBot(new AnimateSlowAttackAction(this));
@@ -165,6 +212,7 @@ public class VolsiniiMob extends AbstractMonster {
 
     @Override
     protected void getMove(int num) {
+        // 简单的队友检测，用于判断攻击频率（逻辑保持原样）
         boolean partnerAlive = false;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (m != this && !m.isDeadOrEscaped() && m instanceof VolsiniiMob) {

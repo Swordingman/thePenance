@@ -1,5 +1,6 @@
 package thePenance.relics;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +12,10 @@ import thePenance.powers.BarrierPower;
 import thePenance.powers.JudgementPower;
 
 import static thePenance.PenanceMod.makeID;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.vfx.SpeechBubble;
+// 记得引入你新写的奖杯遗物
+import thePenance.relics.MedalOfPerseverance;
 
 public class PenanceBasicRelic extends BaseRelic {
     private static final String NAME = "PenanceBasicRelic"; // 对应图片文件名
@@ -42,6 +47,11 @@ public class PenanceBasicRelic extends BaseRelic {
             addToTop(new ApplyPowerAction(p, p, new BarrierPower(p, this.counter), this.counter));
             // 结算后清零，因为这些屏障这局打完就没了，不能留到下下一局
             this.counter = 0;
+
+            this.description = getUpdatedDescription();
+            if (!this.tips.isEmpty()) {
+                this.tips.get(0).body = this.description;
+            }
         }
 
         addToTop(new RelicAboveCreatureAction(p, this));
@@ -56,35 +66,54 @@ public class PenanceBasicRelic extends BaseRelic {
         if (p.hasPower(BarrierPower.POWER_ID)) {
             int currentBarrier = p.getPower(BarrierPower.POWER_ID).amount;
 
-            // 计算回复量：20%
+            // 计算回复量：10%
+            // 注意：Java整数除法会向下取整。300 * 0.1 = 30，满足条件。
+            // 但如果是 299 * 0.1 = 29.9 -> 29，则不满足。
             int healAmount = (int)(currentBarrier * 0.10f);
 
             if (healAmount > 0) {
                 this.flash();
-                // 视觉特效
                 addToBot(new RelicAboveCreatureAction(p, this));
 
+                // 执行真正的治疗
                 PenanceHealPatches.forceRealHeal(p, healAmount);
+
+                // --- 毅力奖杯判定逻辑 (修复版) ---
+                // 必须检查 healAmount 是否 >= 30
+                if (healAmount >= 30 && !p.hasRelic(MedalOfPerseverance.ID)) {
+
+                    // 【重要修改】不要使用 addToBot，直接执行！
+                    // 这样能确保在奖励界面生成前，遗物就已经进去了。
+                    AbstractDungeon.getCurrRoom().addRelicToRewards(new MedalOfPerseverance());
+
+                    // 气泡特效是视觉效果，可以直接加到 effectList，或者用 Action 都可以
+                    // 这里直接加到 effectList 响应最快
+                    AbstractDungeon.effectList.add(new SpeechBubble(
+                            p.dialogX,
+                            p.dialogY,
+                            3.0F, "我...做到了！", true));
+                }
             }
         }
     }
 
-    // 这个方法会被下面的 Patch 调用
     public void onTriggerHealing(int amount) {
         AbstractPlayer p = AbstractDungeon.player;
-
-        // 判断当前是否处于战斗中
         boolean inCombat = (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT);
 
         if (inCombat) {
-            // 战斗中：直接转化为屏障
             this.flash();
             addToBot(new RelicAboveCreatureAction(p, this));
             addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, amount), amount));
         } else {
-            // 非战斗中（比如篝火、事件）：存储起来
             this.counter += amount;
             this.flash();
+
+            this.description = getUpdatedDescription();
+
+            if (!this.tips.isEmpty()) {
+                this.tips.get(0).body = this.description;
+            }
         }
     }
 

@@ -3,7 +3,7 @@
 
     <properties>
         <modID>thePenance</modID>
-        <author>Me! (Or well, you. If you want to use \"quotes\" make sure you have slashes in front of them like this.)</author>
+        <author>Chirpchump</author>
 
         <!-- Change the path for your system to match your Steam installation. -->
         <!-- If you're not sure, go to Slay the Spire in the Steam library, and choose Manage -> Browse local files -->
@@ -23,13 +23,14 @@
     </properties>
 
     <!-- This information will be displayed in ModTheSpire, the modded launcher. -->
-    <name>thePenance</name>
-    <version>0.0.0</version>
+
+    <name>【明日方舟】 斥罪 / Penance</name>
+    <version>0.8.0</version>
     <!-- Avoid using \ in this description, as they can cause the description to fail to load. -->
     <!-- If you really want to use them, you'll need to "escape" them by putting another one in front, like \\ -->
-    <description>This is a description!\n"This" is a second line of description.
-        This "\\" is a slash. If you add another line like this:
-        All the spaces on the left of this will be gone. If you want spacing on a new line, do it:\n    like this.</description>
+    <description>本 Mod 将《明日方舟》中的叙拉古法官 斥罪 (Penance) 带入了尖塔。\n
+        不同于传统的防御者，斥罪不依赖脆弱的格挡，而是通过“屏障”构筑绝对的防线，并通过“裁决”与“荆棘”让攻击者付出代价。\n
+        打破常规的“休息回血”逻辑，体验在苦难中前行的律法之路。</description>
 
     <!--You shouldn't need to change anything below this point, but feel free to look at it.-->
     <!--You'll get a warning regarding these when you package your mod, but don't worry, it's just set up like this for convenience.-->

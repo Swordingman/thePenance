@@ -20,7 +20,7 @@ public class JudgementPower extends BasePower implements CloneablePowerInterface
                 null,              // source
                 amount,            // 层数
                 true,              // initDescription
-                true              // loadImage -> 设为 false，因为要借用 thorns 图标
+                true              // loadImage
         );
     }
 

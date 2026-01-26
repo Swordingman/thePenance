@@ -16,9 +16,8 @@ public class TheTrial extends BaseCard {
     public static final String ID = makeID("TheTrial");
 
     private static final int COST = 2;
-    private static final int DAMAGE = 15;
-    private static final int UPGRADE_PLUS_DMG = 10;
-    private static final int STR_MULTIPLIER = 4;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     public TheTrial() {
         super(ID, new CardStats(
@@ -30,19 +29,19 @@ public class TheTrial extends BaseCard {
         ));
 
         setDamage(DAMAGE, UPGRADE_PLUS_DMG);
-        setMagic(STR_MULTIPLIER); // 力量倍率通常不升级，如果需要升级可加参数
     }
 
-    // --- 核心逻辑：4倍力量加成 (重刃逻辑) ---
-    // 这种直接修改 baseDamage 的逻辑最好保持原样，而不是使用 BaseCard 的 VariableType
     @Override
     public void applyPowers() {
-        AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         int realBaseDamage = this.baseDamage;
 
-        if (strength != null) {
-            // 额外增加 (倍率-1) 倍的力量，因为游戏本体已经计算了1倍
-            this.baseDamage += strength.amount * (this.magicNumber - 1);
+        AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+        int strAmt = (strength != null) ? strength.amount : 0;
+
+        if (strAmt <= 0) {
+            this.baseDamage = -strAmt;
+        } else {
+            this.baseDamage = (realBaseDamage * strAmt) - strAmt;
         }
 
         super.applyPowers();
@@ -55,11 +54,15 @@ public class TheTrial extends BaseCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        AbstractPower strength = AbstractDungeon.player.getPower("Strength");
         int realBaseDamage = this.baseDamage;
 
-        if (strength != null) {
-            this.baseDamage += strength.amount * (this.magicNumber - 1);
+        AbstractPower strength = AbstractDungeon.player.getPower("Strength");
+        int strAmt = (strength != null) ? strength.amount : 0;
+
+        if (strAmt <= 0) {
+            this.baseDamage = -strAmt;
+        } else {
+            this.baseDamage = (realBaseDamage * strAmt) - strAmt;
         }
 
         super.calculateCardDamage(mo);

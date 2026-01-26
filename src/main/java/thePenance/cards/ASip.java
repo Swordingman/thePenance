@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
@@ -17,9 +18,9 @@ public class ASip extends BaseCard {
     public static final String ID = makeID("ASip");
 
     private static final int COST = 1;
-    private static final int TEMP_STR = 2;
-    private static final int UPG_TEMP_STR = 1; // 2->3
-    private static final int VULN = 2;
+    private static final int TEMP_STR = 5;
+    private static final int UPG_TEMP_STR = 2; // 2->3
+    private static final int VULN = 1;
 
     public ASip() {
         super(ID, new CardStats(
@@ -46,11 +47,14 @@ public class ASip extends BaseCard {
         AbstractCard c = this.makeStatEquivalentCopy();
         c.isEthereal = true;
 
-         if (!c.rawDescription.toLowerCase().contains("ethereal")) {
-             c.rawDescription = "Ethereal. NL " + c.rawDescription;
-             c.rawDescription = "虚无。 NL " + c.rawDescription;
-             c.initializeDescription();
-         }
+        if (!c.rawDescription.contains("NL")) {
+            if (Settings.language == Settings.GameLanguage.ZHS) {
+                c.rawDescription = "虚无。 NL " + c.rawDescription;
+            } else {
+                c.rawDescription = "Ethereal. NL " + c.rawDescription;
+            }
+            c.initializeDescription();
+        }
 
          addToBot(new MakeTempCardInHandAction(c));
     }

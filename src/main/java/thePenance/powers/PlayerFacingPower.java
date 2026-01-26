@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePenance.PenanceMod;
 
@@ -55,9 +56,23 @@ public class PlayerFacingPower extends AbstractPower {
         }
     }
 
-    // 更新角色视觉朝向
+    // 更新角色视觉朝向，并通知怪物刷新意图
     public void updateFacingVisuals() {
+        // 1. 改变玩家贴图朝向
         owner.flipHorizontal = facingLeft;
+
+        // 2. 【关键新增】强制刷新所有怪物的意图数值
+        // 因为朝向改变了，怪物的“是否背刺”判断结果可能变了，必须重新计算 applyPowers
+        if (AbstractDungeon.getMonsters() != null) {
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                if (m != null && !m.isDeadOrEscaped()) {
+                    m.applyPowers(); // 这会触发 VolsiniiMob 的 calculateDamage/applyPowers 重写逻辑
+
+                    // 可选：如果只是数值变了，applyPowers通常够了。
+                    // 如果你发现意图图标没变（虽然这里不需要变图标，只变数值），可以使用 m.createIntent();
+                }
+            }
+        }
     }
 
     @Override

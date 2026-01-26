@@ -81,5 +81,11 @@ public class VolsiniiCivilian extends AbstractMonster {
         super.die();
         VolsiniiCourtEvent.civilianDied = true;
         AbstractDungeon.actionManager.addToBottom(new TalkAction(this, monsterStrings.DIALOG[1], 1.0F, 2.0F));
+
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (m != null && !m.isDeadOrEscaped()) {
+                m.applyPowers();
+            }
+        }
     }
 }

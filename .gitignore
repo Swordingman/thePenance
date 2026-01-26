@@ -1,3 +1,586 @@
 # Project exclude paths
 /target/
 /.idea/
+/characterResource/char_4065_judge_1.dbproj
+/characterResource/library/7e7fb962-016a-41df-be19-93e42b574609.png
+/characterResource/library/F_Bangs_M.png
+/characterResource/library/F_Bangs_R.png
+/characterResource/library/F_Belly.png
+/characterResource/library/F_Braids.png
+/characterResource/library/F_Chest.png
+/characterResource/library/F_Coat.png
+/characterResource/library/F_Hair.png
+/characterResource/library/F_Head.png
+/characterResource/library/F_Head_A.png
+/characterResource/library/F_L_Arm.png
+/characterResource/library/F_L_Calf.png
+/characterResource/library/F_L_Collar.png
+/characterResource/library/F_L_Ear.png
+/characterResource/library/F_L_Eye.png
+/characterResource/library/F_L_Eye_a.png
+/characterResource/library/F_L_Eye_d.png
+/characterResource/library/F_L_Eyeball.png
+/characterResource/library/F_L_Eyebrow.png
+/characterResource/library/F_L_Eyeclose.png
+/characterResource/library/F_L_Eyelight.png
+/characterResource/library/F_L_Eyewhite.png
+/characterResource/library/F_L_Finger_a.png
+/characterResource/library/F_L_Finger_b.png
+/characterResource/library/F_L_Finger_c.png
+/characterResource/library/F_L_Finger_d.png
+/characterResource/library/F_L_Finger_e.png
+/characterResource/library/F_L_Foot.png
+/characterResource/library/F_L_Forearm.png
+/characterResource/library/F_L_Forearm_a.png
+/characterResource/library/F_L_Hand.png
+/characterResource/library/F_L_Leg.png
+/characterResource/library/F_Ls_Book.png
+/characterResource/library/F_Ls_Finger_a.png
+/characterResource/library/F_Ls_Finger_b.png
+/characterResource/library/F_Ls_Finger_c.png
+/characterResource/library/F_Ls_Finger_d.png
+/characterResource/library/F_Ls_Finger_e.png
+/characterResource/library/F_Ls_Hand.png
+/characterResource/library/F_Mouth.png
+/characterResource/library/F_Mouth_O.png
+/characterResource/library/F_Necklace.png
+/characterResource/library/F_R_Arm.png
+/characterResource/library/F_R_Calf.png
+/characterResource/library/F_R_Coat.png
+/characterResource/library/F_R_Ear.png
+/characterResource/library/F_R_Eye.png
+/characterResource/library/F_R_Eye_a.png
+/characterResource/library/F_R_Eye_d.png
+/characterResource/library/F_R_Eyeball.png
+/characterResource/library/F_R_Eyebrow.png
+/characterResource/library/F_R_Eyeclose.png
+/characterResource/library/F_R_Eyelight.png
+/characterResource/library/F_R_Eyewhite.png
+/characterResource/library/F_R_Finger.png
+/characterResource/library/F_R_Foot.png
+/characterResource/library/F_R_Hand.png
+/characterResource/library/F_R_Leg.png
+/characterResource/library/F_Rw_Arm.png
+/characterResource/library/F_Rw_Arm_a.png
+/characterResource/library/F_Rw_Collar.png
+/characterResource/library/F_Rw_Finger_aclose.png
+/characterResource/library/F_Rw_Finger_bclose.png
+/characterResource/library/F_Rw_Forearm.png
+/characterResource/library/F_Rw_Hand.png
+/characterResource/library/F_Skill2_Arm_a.png
+/characterResource/library/F_Skill2_Arm_b.png
+/characterResource/library/F_Skill2_Coat.png
+/characterResource/library/F_Skill2_Finger_a.png
+/characterResource/library/F_Skill2_Finger_b.png
+/characterResource/library/F_Skill2_Finger_c.png
+/characterResource/library/F_Skill2_Finger_d.png
+/characterResource/library/F_Skill2_Finger_e.png
+/characterResource/library/F_Skill2_Forearm.png
+/characterResource/library/F_Skill2_Hand.png
+/characterResource/library/F_Skill2_weapon.png
+/characterResource/library/F_Skill2_weapon_a.png
+/characterResource/library/F_Skill2_weapon_shadow.png
+/characterResource/library/F_Skirt.png
+/characterResource/library/F_Tail.png
+/characterResource/library/F_Temple_L.png
+/characterResource/library/F_Temple_R.png
+/characterResource/library/F_Temple_Ra.png
+/characterResource/library/F_Waist.png
+/characterResource/library/F_Weapon.png
+/characterResource/library/F_Weapon_a.png
+/characterResource/library/F_Weapon_b.png
+/characterResource/library/F_Weapon_e.png
+/characterResource/library/Weapon_C.png
+/characterResource/library/Weapon_Cains.png
+/src - 手机版/main/java/thePenance/PenanceMod.java
+/src - 手机版/main/java/thePenance/actions/BlockToBarrierAction.java
+/src - 手机版/main/java/thePenance/actions/PurgeAction.java
+/src - 手机版/main/java/thePenance/actions/ResoluteAction.java
+/src - 手机版/main/java/thePenance/actions/TriggerJudgementAction.java
+/src - 手机版/main/java/thePenance/actions/WolfCurseHelper.java
+/src - 手机版/main/java/thePenance/cards/ASip.java
+/src - 手机版/main/java/thePenance/cards/Adjourn.java
+/src - 手机版/main/java/thePenance/cards/AmbushShadow.java
+/src - 手机版/main/java/thePenance/cards/ArtOfTheHidingFox.java
+/src - 手机版/main/java/thePenance/cards/Asceticism.java
+/src - 手机版/main/java/thePenance/cards/BadOpera.java
+/src - 手机版/main/java/thePenance/cards/BarbedRebuke.java
+/src - 手机版/main/java/thePenance/cards/BaseCard.java
+/src - 手机版/main/java/thePenance/cards/BloodDebtClause.java
+/src - 手机版/main/java/thePenance/cards/BloodForBlood.java
+/src - 手机版/main/java/thePenance/cards/BreakTheShackles.java
+/src - 手机版/main/java/thePenance/cards/BurdenedJourney.java
+/src - 手机版/main/java/thePenance/cards/CaseReconstruction.java
+/src - 手机版/main/java/thePenance/cards/Castigation.java
+/src - 手机版/main/java/thePenance/cards/CitationOfLaw.java
+/src - 手机版/main/java/thePenance/cards/ClearTheScene.java
+/src - 手机版/main/java/thePenance/cards/CodeOfRevenge.java
+/src - 手机版/main/java/thePenance/cards/CodeSmash.java
+/src - 手机版/main/java/thePenance/cards/ConsultTheDossier.java
+/src - 手机版/main/java/thePenance/cards/ContinuousRain.java
+/src - 手机版/main/java/thePenance/cards/CourtRehearsal.java
+/src - 手机版/main/java/thePenance/cards/CrownOfThorns.java
+/src - 手机版/main/java/thePenance/cards/CumulativePrecedent.java
+/src - 手机版/main/java/thePenance/cards/DeadlyEnemy.java
+/src - 手机版/main/java/thePenance/cards/Defend.java
+/src - 手机版/main/java/thePenance/cards/DignityOfTheLeader.java
+/src - 手机版/main/java/thePenance/cards/EmergencyRepair.java
+/src - 手机版/main/java/thePenance/cards/ExhibitA.java
+/src - 手机版/main/java/thePenance/cards/FameOfTheCrownSlayer.java
+/src - 手机版/main/java/thePenance/cards/FamilyArbitration.java
+/src - 手机版/main/java/thePenance/cards/FinalVerdict.java
+/src - 手机版/main/java/thePenance/cards/FinaleCatastrophe.java
+/src - 手机版/main/java/thePenance/cards/FlailSmash.java
+/src - 手机版/main/java/thePenance/cards/ForcedSummons.java
+/src - 手机版/main/java/thePenance/cards/FoxFireFading.java
+/src - 手机版/main/java/thePenance/cards/GavelBarrage.java
+/src - 手机版/main/java/thePenance/cards/GavelStrike.java
+/src - 手机版/main/java/thePenance/cards/GlowOfSuffering.java
+/src - 手机版/main/java/thePenance/cards/GuardianOfTheLaw.java
+/src - 手机版/main/java/thePenance/cards/GuiltyAsCharged.java
+/src - 手机版/main/java/thePenance/cards/HourOfReckoning.java
+/src - 手机版/main/java/thePenance/cards/ImmediateExecution.java
+/src - 手机版/main/java/thePenance/cards/InTheNameOfTheLaw.java
+/src - 手机版/main/java/thePenance/cards/InescapableNet.java
+/src - 手机版/main/java/thePenance/cards/IroncladDoctrine.java
+/src - 手机版/main/java/thePenance/cards/JointLiability.java
+/src - 手机版/main/java/thePenance/cards/JudgementBacklash.java
+/src - 手机版/main/java/thePenance/cards/JudgmentHasBegun.java
+/src - 手机版/main/java/thePenance/cards/JudicialDiscretion.java
+/src - 手机版/main/java/thePenance/cards/JustifiedRetaliation.java
+/src - 手机版/main/java/thePenance/cards/LastStand.java
+/src - 手机版/main/java/thePenance/cards/LawEnforcement.java
+/src - 手机版/main/java/thePenance/cards/LawIsCanon.java
+/src - 手机版/main/java/thePenance/cards/LawModification.java
+/src - 手机版/main/java/thePenance/cards/MaliciousCompetition.java
+/src - 手机版/main/java/thePenance/cards/NoSentenceNeeded.java
+/src - 手机版/main/java/thePenance/cards/Objection.java
+/src - 手机版/main/java/thePenance/cards/Overrule.java
+/src - 手机版/main/java/thePenance/cards/PenaltyRegression.java
+/src - 手机版/main/java/thePenance/cards/PendingJudgment.java
+/src - 手机版/main/java/thePenance/cards/Perjury.java
+/src - 手机版/main/java/thePenance/cards/PreExecutionPrep.java
+/src - 手机版/main/java/thePenance/cards/ProceduralJustice.java
+/src - 手机版/main/java/thePenance/cards/PunishmentForTransgression.java
+/src - 手机版/main/java/thePenance/cards/Purge.java
+/src - 手机版/main/java/thePenance/cards/Quell.java
+/src - 手机版/main/java/thePenance/cards/ReadCharges.java
+/src - 手机版/main/java/thePenance/cards/Resolute.java
+/src - 手机版/main/java/thePenance/cards/SceneInvestigation.java
+/src - 手机版/main/java/thePenance/cards/SelfIncrimination.java
+/src - 手机版/main/java/thePenance/cards/Silence.java
+/src - 手机版/main/java/thePenance/cards/SilenceWrath.java
+/src - 手机版/main/java/thePenance/cards/SolidDefense.java
+/src - 手机版/main/java/thePenance/cards/Sting.java
+/src - 手机版/main/java/thePenance/cards/Strike.java
+/src - 手机版/main/java/thePenance/cards/SyracusanWolves.java
+/src - 手机版/main/java/thePenance/cards/TangledThreads.java
+/src - 手机版/main/java/thePenance/cards/Tempering.java
+/src - 手机版/main/java/thePenance/cards/TheTrial.java
+/src - 手机版/main/java/thePenance/cards/ThornyPath.java
+/src - 手机版/main/java/thePenance/cards/TippingScales.java
+/src - 手机版/main/java/thePenance/cards/ToothForTooth.java
+/src - 手机版/main/java/thePenance/cards/Unwavering.java
+/src - 手机版/main/java/thePenance/cards/UnwrittenLaw.java
+/src - 手机版/main/java/thePenance/cards/Upright.java
+/src - 手机版/main/java/thePenance/cards/WallBreakerSmash.java
+/src - 手机版/main/java/thePenance/cards/WandAntiGravity.java
+/src - 手机版/main/java/thePenance/cards/WeightOfLaw.java
+/src - 手机版/main/java/thePenance/character/Penance.java
+/src - 手机版/main/java/thePenance/events/CaseFile1184Event.java
+/src - 手机版/main/java/thePenance/events/GreyDealEvent.java
+/src - 手机版/main/java/thePenance/events/OpeningMomentEvent.java
+/src - 手机版/main/java/thePenance/events/RainyNightInspectionEvent.java
+/src - 手机版/main/java/thePenance/events/VolsiniiCourtEvent.java
+/src - 手机版/main/java/thePenance/monsters/FamilyCleaner.java
+/src - 手机版/main/java/thePenance/monsters/MafiaGodfather.java
+/src - 手机版/main/java/thePenance/monsters/VolsiniiCivilian.java
+/src - 手机版/main/java/thePenance/monsters/VolsiniiMob.java
+/src - 手机版/main/java/thePenance/patches/BarrierDamagePatch.java
+/src - 手机版/main/java/thePenance/patches/BarrierRenderPatch.java
+/src - 手机版/main/java/thePenance/patches/CeasefireActionPatch.java
+/src - 手机版/main/java/thePenance/patches/CivilianTargetingPatch.java
+/src - 手机版/main/java/thePenance/patches/DeadlyEnemyPatch.java
+/src - 手机版/main/java/thePenance/patches/HpLostTracker.java
+/src - 手机版/main/java/thePenance/patches/PenanceHealPatches.java
+/src - 手机版/main/java/thePenance/patches/ProceduralJusticePatch.java
+/src - 手机版/main/java/thePenance/patches/RelicPatches.java
+/src - 手机版/main/java/thePenance/potions/BarrierPotion.java
+/src - 手机版/main/java/thePenance/potions/BasePotion.java
+/src - 手机版/main/java/thePenance/potions/BottleOfWolfBlood.java
+/src - 手机版/main/java/thePenance/potions/JudgementPotion.java
+/src - 手机版/main/java/thePenance/powers/AsceticismPower.java
+/src - 手机版/main/java/thePenance/powers/BarrierPower.java
+/src - 手机版/main/java/thePenance/powers/BasePower.java
+/src - 手机版/main/java/thePenance/powers/CeasefirePower.java
+/src - 手机版/main/java/thePenance/powers/CodeOfRevengePower.java
+/src - 手机版/main/java/thePenance/powers/CrownOfThornsPower.java
+/src - 手机版/main/java/thePenance/powers/CumulativePrecedentPower.java
+/src - 手机版/main/java/thePenance/powers/GlowOfSufferingPower.java
+/src - 手机版/main/java/thePenance/powers/GuardianOfTheLawPower.java
+/src - 手机版/main/java/thePenance/powers/InTheNameOfTheLawPower.java
+/src - 手机版/main/java/thePenance/powers/InescapableNetPower.java
+/src - 手机版/main/java/thePenance/powers/IroncladDoctrinePower.java
+/src - 手机版/main/java/thePenance/powers/JudgementPower.java
+/src - 手机版/main/java/thePenance/powers/JudgmentHasBegunPower.java
+/src - 手机版/main/java/thePenance/powers/JustifiedDefensePower.java
+/src - 手机版/main/java/thePenance/powers/JustifiedDefenseTriggeredPower.java
+/src - 手机版/main/java/thePenance/powers/LawIsCanonPower.java
+/src - 手机版/main/java/thePenance/powers/PlayerFacingPower.java
+/src - 手机版/main/java/thePenance/powers/ProceduralJusticePower.java
+/src - 手机版/main/java/thePenance/powers/PunishmentForTransgressionPower.java
+/src - 手机版/main/java/thePenance/powers/SceneInvestigationPower.java
+/src - 手机版/main/java/thePenance/powers/SilenceWrathPower.java
+/src - 手机版/main/java/thePenance/powers/TemporaryConfusionPower.java
+/src - 手机版/main/java/thePenance/powers/ThornAuraPower.java
+/src - 手机版/main/java/thePenance/powers/ThornyPathPower.java
+/src - 手机版/main/java/thePenance/powers/UnwaveringPower.java
+/src - 手机版/main/java/thePenance/powers/UnwrittenLawPower.java
+/src - 手机版/main/java/thePenance/relics/BaseRelic.java
+/src - 手机版/main/java/thePenance/relics/BlackUmbrella.java
+/src - 手机版/main/java/thePenance/relics/BloodstainedCloth.java
+/src - 手机版/main/java/thePenance/relics/CarnivalMoment.java
+/src - 手机版/main/java/thePenance/relics/GoldenScales.java
+/src - 手机版/main/java/thePenance/relics/Innocent.java
+/src - 手机版/main/java/thePenance/relics/LetterOfGratitude.java
+/src - 手机版/main/java/thePenance/relics/LittleGavel.java
+/src - 手机版/main/java/thePenance/relics/PenanceBasicRelic.java
+/src - 手机版/main/java/thePenance/relics/PlasticMole.java
+/src - 手机版/main/java/thePenance/relics/ShopVoucher.java
+/src - 手机版/main/java/thePenance/relics/SiracusanWine.java
+/src - 手机版/main/java/thePenance/relics/ThornboundCodex.java
+/src - 手机版/main/java/thePenance/util/CardStats.java
+/src - 手机版/main/java/thePenance/util/GeneralUtils.java
+/src - 手机版/main/java/thePenance/util/KeywordInfo.java
+/src - 手机版/main/java/thePenance/util/Sounds.java
+/src - 手机版/main/java/thePenance/util/TextureLoader.java
+/src - 手机版/main/java/thePenance/util/TriFunction.java
+/src - 手机版/main/resources/ModTheSpire.json
+/src - 手机版/main/resources/thePenance/audio/ding.wav
+/src - 手机版/main/resources/thePenance/audio/select.wav
+/src - 手机版/main/resources/thePenance/audio/test.wav
+/src - 手机版/main/resources/thePenance/char/penance.png
+/src - 手机版/main/resources/thePenance/char/penance/animation/char_4065_judge - 副本.json
+/src - 手机版/main/resources/thePenance/char/penance/animation/char_4065_judge.atlas
+/src - 手机版/main/resources/thePenance/char/penance/animation/char_4065_judge.json
+/src - 手机版/main/resources/thePenance/char/penance/animation/char_4065_judge.png
+/src - 手机版/main/resources/thePenance/char/select.png
+/src - 手机版/main/resources/thePenance/images/badge.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/BarbedRebuke.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/BarbedRebuke_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/BloodForBlood.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/BloodForBlood_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Castigation.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Castigation_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ClearTheScene.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ClearTheScene_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/CodeSmash.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/CodeSmash_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FamilyArbitration.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FamilyArbitration_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FinalVerdict.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FinalVerdict_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FlailSmash.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/FlailSmash_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ForcedSummons.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ForcedSummons_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GavelBarrage.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GavelBarrage_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GavelStrike.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GavelStrike_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GuiltyAsCharged.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/GuiltyAsCharged_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/HourOfReckoning.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/HourOfReckoning_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ImmediateExecution.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ImmediateExecution_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/JointLiability.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/JointLiability_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/JudgementBacklash.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/JudgementBacklash_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/LawEnforcement.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/LawEnforcement_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/MaliciousCompetition.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/MaliciousCompetition_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/NoSentenceNeeded.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/NoSentenceNeeded_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Objection.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Objection_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Overrule.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Overrule_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/PenaltyRegression.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/PenaltyRegression_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Purge.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Purge_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Quell.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Quell_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Strike.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Strike_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/TheTrial.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/TheTrial_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ToothForTooth.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/ToothForTooth_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Verdict.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/Verdict_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/WallBreakerSmash.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/WallBreakerSmash_p.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/default.png
+/src - 手机版/main/resources/thePenance/images/cards/attack/default_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/AmbushShadow.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/AmbushShadow_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/ArtOfTheHidingFox.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/ArtOfTheHidingFox_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/ContinuousRain.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/ContinuousRain_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/DeadlyEnemy.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/DeadlyEnemy_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/DignityOfTheLeader.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/DignityOfTheLeader_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FameOfTheCrownSlayer.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FameOfTheCrownSlayer_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FinaleCatastrophe.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FinaleCatastrophe_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FoxFireFading.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/FoxFireFading_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/TangledThreads.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/TangledThreads_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/WandAntiGravity.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/WandAntiGravity_p.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/default.png
+/src - 手机版/main/resources/thePenance/images/cards/curse/default_p.png
+/src - 手机版/main/resources/thePenance/images/cards/default.png
+/src - 手机版/main/resources/thePenance/images/cards/power/Asceticism.png
+/src - 手机版/main/resources/thePenance/images/cards/power/Asceticism_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CodeOfRevenge.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CodeOfRevenge_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CrownOfThorns.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CrownOfThorns_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CumulativePrecedent.png
+/src - 手机版/main/resources/thePenance/images/cards/power/CumulativePrecedent_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/GlowOfSuffering.png
+/src - 手机版/main/resources/thePenance/images/cards/power/GlowOfSuffering_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/GuardianOfTheLaw.png
+/src - 手机版/main/resources/thePenance/images/cards/power/GuardianOfTheLaw_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/InTheNameOfTheLaw.png
+/src - 手机版/main/resources/thePenance/images/cards/power/InTheNameOfTheLaw_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/IroncladDoctrine.png
+/src - 手机版/main/resources/thePenance/images/cards/power/IroncladDoctrine_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/LawIsCanon.png
+/src - 手机版/main/resources/thePenance/images/cards/power/LawIsCanon_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/ProceduralJustice.png
+/src - 手机版/main/resources/thePenance/images/cards/power/ProceduralJustice_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/PunishmentForTransgression.png
+/src - 手机版/main/resources/thePenance/images/cards/power/PunishmentForTransgression_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/SceneInvestigation.png
+/src - 手机版/main/resources/thePenance/images/cards/power/SceneInvestigation_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/SilenceWrath.png
+/src - 手机版/main/resources/thePenance/images/cards/power/SilenceWrath_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/ThornyPath.png
+/src - 手机版/main/resources/thePenance/images/cards/power/ThornyPath_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/Unwavering.png
+/src - 手机版/main/resources/thePenance/images/cards/power/Unwavering_p.png
+/src - 手机版/main/resources/thePenance/images/cards/power/default.png
+/src - 手机版/main/resources/thePenance/images/cards/power/default_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ASip.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ASip_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Adjourn.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Adjourn_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BadOpera.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BadOpera_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BloodDebtClause.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BloodDebtClause_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BreakTheShackles.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BreakTheShackles_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BurdenedJourney.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/BurdenedJourney_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CaseReconstruction.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CaseReconstruction_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CitationOfLaw.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CitationOfLaw_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ConsultTheDossier.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ConsultTheDossier_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CourtRehearsal.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/CourtRehearsal_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Defend.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Defend_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/EmergencyRepair.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/EmergencyRepair_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ExhibitA.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ExhibitA_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/InescapableNet.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/InescapableNet_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JudgmentHasBegun.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JudgmentHasBegun_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JudicialDiscretion.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JudicialDiscretion_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JustifiedRetaliation.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/JustifiedRetaliation_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/LastStand.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/LastStand_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/LawModification.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/LawModification_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/PendingJudgment.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/PendingJudgment_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Perjury.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Perjury_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/PreExecutionPrep.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/PreExecutionPrep_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ReadCharges.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/ReadCharges_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Resolute.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Resolute_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SelfIncrimination.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SelfIncrimination_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Silence.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Silence_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SolidDefense.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SolidDefense_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Sting.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Sting_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SyracusanWolves.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/SyracusanWolves_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Tempering.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Tempering_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/TippingScales.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/TippingScales_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/UnwrittenLaw.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/UnwrittenLaw_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Upright.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/Upright_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/WeightOfLaw.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/WeightOfLaw_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/default.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/default_p.png
+/src - 手机版/main/resources/thePenance/images/cards/skill/{.png
+/src - 手机版/main/resources/thePenance/images/character/animation/default.scml
+/src - 手机版/main/resources/thePenance/images/character/animation/object1.png
+/src - 手机版/main/resources/thePenance/images/character/animation/object2.png
+/src - 手机版/main/resources/thePenance/images/character/animation/object3.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_attack.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_attack_p.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_power.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_power_p.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_skill.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/bg_skill_p.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/energy_orb.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/energy_orb_p.png
+/src - 手机版/main/resources/thePenance/images/character/cardback/small_orb.png
+/src - 手机版/main/resources/thePenance/images/character/corpse.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/cover.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer1.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer1d.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer2.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer2d.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer3.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer3d.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer4.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer4d.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer5.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/layer5d.png
+/src - 手机版/main/resources/thePenance/images/character/energyorb/vfx.png
+/src - 手机版/main/resources/thePenance/images/character/penance.png
+/src - 手机版/main/resources/thePenance/images/character/select/button.png
+/src - 手机版/main/resources/thePenance/images/character/select/portrait.png
+/src - 手机版/main/resources/thePenance/images/character/shoulder.png
+/src - 手机版/main/resources/thePenance/images/character/shoulder2.png
+/src - 手机版/main/resources/thePenance/images/events/case_file.jpg
+/src - 手机版/main/resources/thePenance/images/events/court.jpg
+/src - 手机版/main/resources/thePenance/images/events/grey_deal.jpg
+/src - 手机版/main/resources/thePenance/images/events/opening_moment.jpg
+/src - 手机版/main/resources/thePenance/images/events/rainy_night.jpg
+/src - 手机版/main/resources/thePenance/images/missing.png
+/src - 手机版/main/resources/thePenance/images/powers/AsceticismPower.png
+/src - 手机版/main/resources/thePenance/images/powers/BarrierPower.png
+/src - 手机版/main/resources/thePenance/images/powers/CeasefirePower.png
+/src - 手机版/main/resources/thePenance/images/powers/CodeOfRevengePower.png
+/src - 手机版/main/resources/thePenance/images/powers/CrownOfThornsPower.png
+/src - 手机版/main/resources/thePenance/images/powers/CumulativePrecedentPower.png
+/src - 手机版/main/resources/thePenance/images/powers/GlowOfSufferingPower.png
+/src - 手机版/main/resources/thePenance/images/powers/GuardianOfTheLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/InTheNameOfTheLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/InescapableNetPower.png
+/src - 手机版/main/resources/thePenance/images/powers/IroncladDoctrinePower.png
+/src - 手机版/main/resources/thePenance/images/powers/JudgementPower.png
+/src - 手机版/main/resources/thePenance/images/powers/JudgmentHasBegunPower.png
+/src - 手机版/main/resources/thePenance/images/powers/JustifiedDefensePower.png
+/src - 手机版/main/resources/thePenance/images/powers/JustifiedDefenseTriggeredPower.png
+/src - 手机版/main/resources/thePenance/images/powers/LawIsCanonPower.png
+/src - 手机版/main/resources/thePenance/images/powers/ProceduralJusticePower.png
+/src - 手机版/main/resources/thePenance/images/powers/PunishmentForTransgressionPower.png
+/src - 手机版/main/resources/thePenance/images/powers/SceneInvestigationPower.png
+/src - 手机版/main/resources/thePenance/images/powers/ThornAuraPower.png
+/src - 手机版/main/resources/thePenance/images/powers/ThornyPathPower.png
+/src - 手机版/main/resources/thePenance/images/powers/UnwaveringPower.png
+/src - 手机版/main/resources/thePenance/images/powers/UnwrittenLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/example.png
+/src - 手机版/main/resources/thePenance/images/powers/large/AsceticismPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/BarrierPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/CeasefirePower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/CodeOfRevengePower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/CrownOfThornsPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/CumulativePrecedentPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/GlowOfSufferingPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/GuardianOfTheLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/InTheNameOfTheLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/InescapableNetPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/IroncladDoctrinePower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/JudgementPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/JudgmentHasBegunPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/JustifiedDefensePower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/JustifiedDefenseTriggeredPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/LawIsCanonPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/ProceduralJusticePower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/PunishmentForTransgressionPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/SceneInvestigationPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/ThornAuraPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/ThornyPathPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/UnwaveringPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/UnwrittenLawPower.png
+/src - 手机版/main/resources/thePenance/images/powers/large/example.png
+/src - 手机版/main/resources/thePenance/images/relics/BlackUmbrella.png
+/src - 手机版/main/resources/thePenance/images/relics/BloodstainedCloth.png
+/src - 手机版/main/resources/thePenance/images/relics/CarnivalMoment.png
+/src - 手机版/main/resources/thePenance/images/relics/GoldenScales.png
+/src - 手机版/main/resources/thePenance/images/relics/Innocent.png
+/src - 手机版/main/resources/thePenance/images/relics/LetterOfGratitude.png
+/src - 手机版/main/resources/thePenance/images/relics/LittleGavel.png
+/src - 手机版/main/resources/thePenance/images/relics/PenanceBasicRelic.png
+/src - 手机版/main/resources/thePenance/images/relics/PlasticMole.png
+/src - 手机版/main/resources/thePenance/images/relics/ShopVoucher.png
+/src - 手机版/main/resources/thePenance/images/relics/SiracusanWine.png
+/src - 手机版/main/resources/thePenance/images/relics/ThornboundCodex.png
+/src - 手机版/main/resources/thePenance/images/relics/example.png
+/src - 手机版/main/resources/thePenance/images/relics/large/BlackUmbrella.png
+/src - 手机版/main/resources/thePenance/images/relics/large/BloodstainedCloth.png
+/src - 手机版/main/resources/thePenance/images/relics/large/CarnivalMoment.png
+/src - 手机版/main/resources/thePenance/images/relics/large/GoldenScales.png
+/src - 手机版/main/resources/thePenance/images/relics/large/Innocent.png
+/src - 手机版/main/resources/thePenance/images/relics/large/LetterOfGratitude.png
+/src - 手机版/main/resources/thePenance/images/relics/large/LittleGavel.png
+/src - 手机版/main/resources/thePenance/images/relics/large/PenanceBasicRelic.png
+/src - 手机版/main/resources/thePenance/images/relics/large/PlasticMole.png
+/src - 手机版/main/resources/thePenance/images/relics/large/ShopVoucher.png
+/src - 手机版/main/resources/thePenance/images/relics/large/SiracusanWine.png
+/src - 手机版/main/resources/thePenance/images/relics/large/ThornboundCodex.png
+/src - 手机版/main/resources/thePenance/images/relics/large/example.png
+/src - 手机版/main/resources/thePenance/localization/eng/CardStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/CharacterStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/EventStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/Keywords.json
+/src - 手机版/main/resources/thePenance/localization/eng/MonstersStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/OrbStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/PotionStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/PowerStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/RelicStrings.json
+/src - 手机版/main/resources/thePenance/localization/eng/UIStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/CardStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/CharacterStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/EventStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/Keywords.json
+/src - 手机版/main/resources/thePenance/localization/zhs/MonstersStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/PotionStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/PowerStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/RelicStrings.json
+/src - 手机版/main/resources/thePenance/localization/zhs/UIStrings.json
+/src - 手机版/main/resources/thePenance/卡牌分布.txt
+/src - 手机版/main/resources/能力图标.txt

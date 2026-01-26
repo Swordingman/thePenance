@@ -24,12 +24,10 @@ public class MafiaGodfather extends AbstractMonster {
     private static final int STR_AMT = 2;
     private static final int BLOCK_AMT = 15;
 
-    private boolean summoned = false;
-
     public MafiaGodfather(float x, float y) {
         super(monsterStrings.NAME, ID, HP, 0.0F, 0.0F, 220.0F, 300.0F, null, x, y);
         this.loadAnimation("images/monsters/theBottom/fatGremlin/skeleton.atlas", "images/monsters/theBottom/fatGremlin/skeleton.json", 1.0F);
-        this.state.setAnimation(0, "idle", true);
+        this.state.setAnimation(0, "animation", true);
         this.type = EnemyType.ELITE;
     }
 
@@ -53,8 +51,6 @@ public class MafiaGodfather extends AbstractMonster {
                 addToBot(new SpawnMonsterAction(minion2, true));
                 // 【核心修复】同上
                 addToBot(new ApplyPowerAction(minion2, this, new MinionPower(minion2)));
-
-                this.summoned = true;
 
                 // 重新排序怪物位置，防止遮挡
                 addToBot(new AbstractGameAction() {
@@ -92,15 +88,21 @@ public class MafiaGodfather extends AbstractMonster {
 
     @Override
     protected void getMove(int num) {
-        if (!summoned) {
-            this.setMove((byte)1, Intent.UNKNOWN);
-            return;
+        int livingMinions = 0;
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (!m.id.equals(this.id) && !m.isDeadOrEscaped()) {
+                livingMinions++;
+            }
         }
 
-        if (this.lastMove((byte)2)) {
-            this.setMove((byte)3, Intent.DEFEND_BUFF);
+        if (livingMinions == 0) {
+            this.setMove((byte)1, Intent.UNKNOWN);
         } else {
-            this.setMove((byte)2, Intent.BUFF);
+            if (this.lastMove((byte)2)) {
+                this.setMove((byte)3, Intent.DEFEND_BUFF);
+            } else {
+                this.setMove((byte)2, Intent.BUFF);
+            }
         }
     }
 

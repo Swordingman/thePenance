@@ -11,8 +11,8 @@ import thePenance.util.CardStats;
 public class ClearTheScene extends BaseCard {
     public static final String ID = makeID("ClearTheScene");
     private static final int COST = 1;
-    private static final int DAMAGE = 11;
-    private static final int UPG_DAMAGE = 4; // 11->15
+    private static final int DAMAGE = 13;
+    private static final int UPG_DAMAGE = 3; // 11->15
     private static final int HP_COST = 3;
 
     public ClearTheScene() {

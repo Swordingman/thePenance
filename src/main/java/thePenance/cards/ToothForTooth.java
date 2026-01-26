@@ -1,16 +1,20 @@
 package thePenance.cards;
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.actions.WolfCurseHelper;
 import thePenance.character.Penance;
 import thePenance.util.CardStats;
+
+import java.util.ArrayList;
 
 public class ToothForTooth extends BaseCard {
     public static final String ID = makeID("ToothForTooth");
@@ -31,6 +35,7 @@ public class ToothForTooth extends BaseCard {
         ));
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(DRAW, UPG_DRAW);
+        setCarousel(WolfCurseHelper.getAllWolfCurses());
     }
 
     @Override

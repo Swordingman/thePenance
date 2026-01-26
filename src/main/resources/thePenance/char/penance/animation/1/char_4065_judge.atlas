@@ -118,7 +118,7 @@ F_Rw_Finger_bclose
   index: -1
 F_Rw_Finger_aclose
   rotate: false
-  xy: 105, 434
+  xy: 122, 434
   size: 15, 15
   orig: 15, 15
   offset: 0, 0
@@ -167,7 +167,7 @@ F_R_Calf
   index: -1
 F_R_Foot
   rotate: false
-  xy: 64, 373
+  xy: 100, 373
   size: 34, 24
   orig: 34, 24
   offset: 0, 0
@@ -188,7 +188,7 @@ F_L_Calf
   index: -1
 F_L_Foot
   rotate: false
-  xy: 100, 373
+  xy: 64, 373
   size: 34, 24
   orig: 34, 24
   offset: 0, 0
@@ -258,7 +258,7 @@ F_L_Finger_e
   index: -1
 F_L_Finger_d
   rotate: false
-  xy: 202, 487
+  xy: 202, 473
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -272,7 +272,7 @@ F_L_Finger_c
   index: -1
 F_L_Finger_b
   rotate: false
-  xy: 202, 473
+  xy: 202, 487
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
@@ -580,7 +580,7 @@ F_Skill2_Finger_e
   index: -1
 F_Skill2_Finger_a
   rotate: false
-  xy: 122, 434
+  xy: 105, 434
   size: 15, 15
   orig: 15, 15
   offset: 0, 0

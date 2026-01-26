@@ -5,8 +5,10 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
@@ -52,7 +54,9 @@ public class PenanceMod implements
         AddAudioSubscriber,       // 订阅音频添加事件
         PostInitializeSubscriber, // 订阅初始化后处理事件（用于添加徽章等）
         EditCardsSubscriber,      // 订阅卡牌编辑事件
-        EditRelicsSubscriber {    // 订阅遗物编辑事件
+        EditRelicsSubscriber,
+        PostUpdateSubscriber,
+        PostRenderSubscriber{    // 订阅遗物编辑事件
 
     public static ModInfo info;
     public static String modID; // 修改你的 pom.xml 文件来改变这个ID
@@ -122,6 +126,24 @@ public class PenanceMod implements
                 .cards();
     }
 
+    // 2. 添加 Update 调用
+    @Override
+    public void receivePostUpdate() {
+        // 只有在主菜单的角色选择界面才更新按钮
+        if (CardCrawlGame.mode == CardCrawlGame.GameMode.CHAR_SELECT) {
+            Penance.updateSkin();
+        }
+    }
+
+    // 3. 添加 Render 调用
+    @Override
+    public void receivePostRender(SpriteBatch sb) {
+        // 只有在主菜单的角色选择界面才渲染按钮
+        if (CardCrawlGame.mode == CardCrawlGame.GameMode.CHAR_SELECT) {
+            Penance.renderSkin(sb);
+        }
+    }
+
     @Override
     public void receiveEditRelics() {
         // 注册到你的角色专属池子中
@@ -136,6 +158,7 @@ public class PenanceMod implements
         BaseMod.addRelicToCustomPool(new PlasticMole(), Penance.Meta.CARD_COLOR);
         BaseMod.addRelicToCustomPool(new SiracusanWine(), Penance.Meta.CARD_COLOR);
         BaseMod.addRelicToCustomPool(new CarnivalMoment(), Penance.Meta.CARD_COLOR);
+        BaseMod.addRelicToCustomPool(new MedalOfPerseverance(), Penance.Meta.CARD_COLOR);
         BaseMod.addRelic(new LittleGavel(), RelicType.SHARED);
         BaseMod.addRelic(new BlackUmbrella(), RelicType.SHARED);
         BaseMod.addRelic(new GoldenScales(), RelicType.SHARED);

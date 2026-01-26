@@ -3,6 +3,7 @@ package thePenance.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import com.badlogic.gdx.Gdx;
 import thePenance.PenanceMod;
 import thePenance.util.CardStats;
 import thePenance.util.TriFunction;
@@ -774,5 +775,56 @@ public abstract class BaseCard extends CustomCard {
         // 这里的 false (不忽略费用) 沿用了你之前的逻辑，意味着如果没费可能打不出(看你设计)，
         // 或者像 TangledThreads 那样是 X 费消耗。
         addToBot(new com.megacrit.cardcrawl.actions.utility.NewQueueCardAction(this, true, false, true));
+    }
+
+    // 轮播功能
+    private ArrayList<AbstractCard> carouselList = null;
+    private float carouselTimer = 0f;
+    private int carouselIndex = 0;
+    private static final float CAROUSEL_INTERVAL = 3.0f;
+
+    protected void setCarousel(ArrayList<AbstractCard> cards) {
+        this.carouselList = cards;
+        if (cards != null && !cards.isEmpty()) {
+            this.cardsToPreview = cards.get(0);
+        }
+    }
+
+    protected void upgradeCarousel() {
+        if (carouselList != null) {
+            for (AbstractCard c : carouselList) {
+                c.upgrade();
+            }
+
+            if (!carouselList.isEmpty()) {
+                this.cardsToPreview = carouselList.get(carouselIndex);
+            }
+        }
+    }
+
+    public void updateCarouselLogic() {
+        if (carouselList != null && !carouselList.isEmpty()) {
+            carouselTimer -= Gdx.graphics.getDeltaTime();
+            if (carouselTimer <= 0f) {
+                carouselTimer = CAROUSEL_INTERVAL;
+                carouselIndex = (carouselIndex + 1) % carouselList.size();
+                this.cardsToPreview = carouselList.get(carouselIndex);
+            }
+        }
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (carouselList != null && !carouselList.isEmpty() && hb.hovered) {
+            updateCarouselLogic();
+            carouselTimer -= Gdx.graphics.getDeltaTime();
+            if (carouselTimer <= 0f) {
+                carouselTimer = CAROUSEL_INTERVAL;
+                carouselIndex = (carouselIndex + 1) % carouselList.size();
+                this.cardsToPreview = carouselList.get(carouselIndex);
+            }
+        }
+
     }
 }

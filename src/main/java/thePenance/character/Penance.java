@@ -1,6 +1,7 @@
 package thePenance.character;
 
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -23,15 +24,18 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import thePenance.PenanceMod;
 import thePenance.cards.Defend;
 import thePenance.cards.Resolute;
 import thePenance.cards.Strike;
 import thePenance.relics.PenanceBasicRelic;
 import thePenance.util.Sounds;
-
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import java.util.ArrayList;
-
+import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import static thePenance.PenanceMod.characterPath;
 import static thePenance.PenanceMod.makeID;
 
@@ -60,6 +64,39 @@ public class Penance extends CustomPlayer {
         @SpireEnum(name = "PENANCE_COLOR") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
+        // 1. 定义一个简单的类来保存皮肤信息
+        public static class SkinInfo {
+            public String name;     // 皮肤名称（显示在按钮上）
+            public String atlas;    // atlas 文件路径
+            public String json;     // json 文件路径
+            public float scale;     // 缩放比例
+
+            public SkinInfo(String name, String atlas, String json, float scale) {
+                this.name = name;
+                this.atlas = atlas;
+                this.json = json;
+                this.scale = scale;
+            }
+        }
+
+        public static final SkinInfo[] SKINS = new SkinInfo[] {
+                new SkinInfo(
+                        "默认",
+                        "thePenance/char/penance/animation/1/char_4065_judge.atlas",
+                        "thePenance/char/penance/animation/1/char_4065_judge.json",
+                        1.5f
+                ),
+                new SkinInfo(
+                        "偶尔醉陶",
+                        "thePenance/char/penance/animation/2/char_4065_judge_snow_6.atlas",
+                        "thePenance/char/penance/animation/2/char_4065_judge_snow_6.json",
+                        1.5f
+                )
+        };
+
+        // 3. 当前选中的皮肤索引 (默认为0)
+        public static int currentSkinIndex = 0;
+
         // 角色选择界面图片
         private static final String CHAR_SELECT_BUTTON = "thePenance/char/select.png";
         private static final String CHAR_SELECT_PORTRAIT = "thePenance/char/penance.png";
@@ -87,7 +124,11 @@ public class Penance extends CustomPlayer {
         }
 
         public static void registerCharacter() {
-            BaseMod.addCharacter(new Penance(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
+            BaseMod.addCharacter(new Penance(),
+                    CHAR_SELECT_BUTTON,
+                    CHAR_SELECT_PORTRAIT,
+                    Meta.PENANCE
+            );
         }
     }
 
@@ -136,20 +177,102 @@ public class Penance extends CustomPlayer {
                 20.0F, -30.0F, 220.0F, 290.0F, // 角色碰撞箱。x y 坐标，然后是宽度和高度。
                 new EnergyManager(ENERGY_PER_TURN));
 
-        loadAnimation(
-                "thePenance/char/penance/animation/char_4065_judge.atlas",
-                "thePenance/char/penance/animation/char_4065_judge.json",
-                1.5f
-        );
+        Meta.SkinInfo activeSkin = Meta.SKINS[Meta.currentSkinIndex];
 
+        loadAnimation(
+                activeSkin.atlas,
+                activeSkin.json,
+                activeSkin.scale
+        );
         // 设置初始动作 "Idle"
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-
         this.stateData.setMix("Idle", "Attack", 0.1f);
 
         // 对话气泡的位置。你可以稍后根据需要进行调整。对于大多数角色来说，这些值就可以。
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
+    }
+
+    // 皮肤切换按钮的碰撞箱
+    private static Hitbox skinHitbox = new Hitbox(200f * Settings.scale, 50f * Settings.scale);
+
+    // 更新皮肤切换逻辑
+    public static void updateSkin() {
+        // 1. 安全检查：如果不在主菜单，或者没选中我们的角色，就不执行逻辑
+        // 注意：CardCrawlGame.chosenCharacter 存储的是当前选中的角色枚举(Enum)
+        if (CardCrawlGame.mainMenuScreen == null ||
+                CardCrawlGame.mainMenuScreen.charSelectScreen == null ||
+                CardCrawlGame.chosenCharacter != Meta.PENANCE) {
+            return;
+        }
+
+        // 设置按钮位置
+        float btnX = Settings.WIDTH / 2.0f + 200f * Settings.scale;
+        float btnY = Settings.HEIGHT / 2.0f - 100f * Settings.scale;
+        skinHitbox.move(btnX, btnY);
+        skinHitbox.update();
+
+        // 点击检测
+        if (skinHitbox.hovered && InputHelper.justClickedLeft) {
+            CardCrawlGame.sound.play("UI_CLICK_1");
+            skinHitbox.clickStarted = true;
+        }
+
+        if (skinHitbox.clicked) {
+            skinHitbox.clicked = false;
+
+            // --- 切换皮肤索引 ---
+            Meta.currentSkinIndex++;
+            if (Meta.currentSkinIndex >= Meta.SKINS.length) {
+                Meta.currentSkinIndex = 0;
+            }
+
+            // --- 关键修改：使用反射获取当前的角色实例 ---
+
+            // 1. 获取 CharacterSelectScreen 中的 options 列表 (这是一个私有变量)
+            ArrayList<CharacterOption> options = ReflectionHacks.getPrivate(
+                    CardCrawlGame.mainMenuScreen.charSelectScreen,
+                    CharacterSelectScreen.class,
+                    "options"
+            );
+
+            // 2. 遍历列表，找到属于“斥罪”的那个选项
+            for (CharacterOption o : options) {
+                // 3. 获取选项中的 'c' (Character) 变量 (这也是一个私有变量，代表角色实例)
+                AbstractPlayer p = ReflectionHacks.getPrivate(o, CharacterOption.class, "c");
+
+                // 4. 如果这个实例是 Penance，我们就修改它的动画
+                if (p instanceof Penance) {
+                    Penance penanceChar = (Penance) p;
+                    Meta.SkinInfo nextSkin = Meta.SKINS[Meta.currentSkinIndex];
+
+                    // 重新加载动画
+                    penanceChar.loadAnimation(nextSkin.atlas, nextSkin.json, nextSkin.scale);
+                    penanceChar.state.setAnimation(0, "Idle", true);
+                    break; // 找到后就退出循环
+                }
+            }
+        }
+    }
+
+    public static void renderSkin(com.badlogic.gdx.graphics.g2d.SpriteBatch sb) {
+        // 1. 安全检查 + 判定是否选中了斥罪
+        if (CardCrawlGame.mainMenuScreen == null ||
+                CardCrawlGame.mainMenuScreen.charSelectScreen == null ||
+                CardCrawlGame.chosenCharacter != Meta.PENANCE) {
+            return;
+        }
+
+        float btnX = skinHitbox.cX - skinHitbox.width / 2.0f;
+        float btnY = skinHitbox.cY - skinHitbox.height / 2.0f;
+
+        // 绘制按钮背景
+        sb.setColor(Color.WHITE);
+        sb.draw(ImageMaster.REWARD_SCREEN_ITEM, btnX, btnY, skinHitbox.width, skinHitbox.height);
+
+        // 绘制文字
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont,
+                Meta.SKINS[Meta.currentSkinIndex].name, skinHitbox.cX, skinHitbox.cY, Color.WHITE);
     }
 
     @Override
@@ -168,6 +291,8 @@ public class Penance extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         // 初始牌组的卡牌ID列表。
         // 如果你想要多张相同的卡牌，必须多次添加它。
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
