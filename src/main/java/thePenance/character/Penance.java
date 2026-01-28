@@ -45,7 +45,6 @@ public class Penance extends CustomPlayer {
     private static String[] getText() { return CardCrawlGame.languagePack.getCharacterString(ID).TEXT; }
 
     // 图片资源
-    private static final String CHAR_IMAGE = characterPath("penance.png");
     private static final String SHOULDER_1 = characterPath("shoulder.png");
     private static final String SHOULDER_2 = characterPath("shoulder2.png");
 

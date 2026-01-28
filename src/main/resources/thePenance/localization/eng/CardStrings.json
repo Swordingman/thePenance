@@ -1,362 +1,362 @@
 {
   "thePenance:Strike": {
-    "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。"
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
   },
   "thePenance:Defend": {
-    "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点 格挡 。"
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
   },
   "thePenance:Resolute": {
-    "NAME": "坚决",
-    "DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
-    "UPGRADE_DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
+    "NAME": "Resolute",
+    "DESCRIPTION": "Gain 4 Barrier. NL Gain !M! Barrier X times. Gain X Judgment.",
+    "UPGRADE_DESCRIPTION": "Gain 4 Barrier. NL Gain !M! Barrier X times. Gain X+1 Judgment."
   },
   "thePenance:LawModification": {
-    "NAME": "法则修正",
-    "DESCRIPTION": "消耗。 NL 保留。 NL 将你的 格挡 转换为 屏障 。"
+    "NAME": "Law Modification",
+    "DESCRIPTION": "Exhaust. NL Retain. NL Convert your Block into Barrier."
   },
   "thePenance:ImmediateExecution": {
-    "NAME": "即刻行刑",
-    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 造成等同于 裁决 的伤害。"
+    "NAME": "Immediate Execution",
+    "DESCRIPTION": "Gain !M! Judgment. NL Deal damage equal to your Judgment."
   },
   "thePenance:CodeOfRevenge": {
-    "NAME": "复仇法典",
-    "DESCRIPTION": "每当你触发 裁决 造成伤害时，获得 !M! 点 屏障 。"
+    "NAME": "Code of Revenge",
+    "DESCRIPTION": "Whenever your Judgment deals damage, gain !M! Barrier."
   },
   "thePenance:Castigation": {
-    "NAME": "责罚",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !thePenance:Barrier! 点 屏障 （屏障量受力量加成）。"
+    "NAME": "Castigation",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !thePenance:Barrier! Barrier (affected by Strength)."
   },
   "thePenance:ReadCharges": {
-    "NAME": "宣读罪状",
-    "DESCRIPTION": "获得 2 点 裁决 。 NL 抽 !M! 张牌"
+    "NAME": "Read Charges",
+    "DESCRIPTION": "Gain 2 Judgment. NL Draw !M! cards."
   },
   "thePenance:Purge": {
-    "NAME": "肃清",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得等同于未被格挡伤害量的 屏障 。"
+    "NAME": "Purge",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain Barrier equal to unblocked damage dealt."
   },
   "thePenance:Silence": {
-    "NAME": "缄默",
-    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 如果当前生命值低于 50% ，额外获得 3 点 裁决 。"
+    "NAME": "Silence",
+    "DESCRIPTION": "Gain !M! Barrier. NL If your HP is below 50%, gain 3 additional Judgment."
   },
   "thePenance:ThornyPath": {
-    "NAME": "披荆斩棘",
-    "DESCRIPTION": "回合结束时，获得等同于 裁决 !M!% 的 荆棘环身 。"
+    "NAME": "Trial of Thorns",
+    "DESCRIPTION": "At the end of your turn, gain Thorns equal to !M!% of your Judgment."
   },
   "thePenance:Sting": {
-    "NAME": "刺痛",
-    "DESCRIPTION": "失去 3 点生命值。 NL 获得 !M! 层 荆棘环身 和 !thePenance:Judge! 点 裁决 。"
+    "NAME": "Sting",
+    "DESCRIPTION": "Lose 3 HP. NL Gain !M! Thorns and !thePenance:Judge! Judgment."
   },
   "thePenance:SilenceWrath": {
-    "NAME": "沉默之怒",
-    "DESCRIPTION": "每当 屏障 被击碎时，获得 !M! 点 力量 ，并给予所有敌人 !M! 层 虚弱 。"
+    "NAME": "Silent Wrath",
+    "DESCRIPTION": "Whenever your Barrier is broken, gain !M! Strength and apply !M! Weak to ALL enemies."
   },
   "thePenance:GuardianOfTheLaw": {
-    "NAME": "律法卫士",
-    "DESCRIPTION": "每当你的 屏障 受到伤害时，获得 !M! 点 裁决 。"
+    "NAME": "Guardian of Law",
+    "DESCRIPTION": "Whenever your Barrier takes damage, gain !M! Judgment."
   },
   "thePenance:TheTrial": {
-    "NAME": "审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果改为 *乘算 。"
+    "NAME": "The Trial",
+    "DESCRIPTION": "Deal !D! damage. NL Strength affects this card *multiplicatively."
   },
   "thePenance:TippingScales": {
-    "NAME": "倾斜天平",
-    "DESCRIPTION": "消耗所有 裁决 。 NL 每消耗 !M! 层 裁决 ，便获得 !thePenance:Str! 点 力量 。"
+    "NAME": "Tipping Scales",
+    "DESCRIPTION": "Remove all Judgment. NL For every !M! Judgment removed, gain !thePenance:Str! Strength."
   },
   "thePenance:ConsultTheDossier": {
-    "NAME": "查阅卷宗",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 如果抽到了 能力牌 ，则获得 !thePenance:Judge! 点 裁决 。"
+    "NAME": "Consult Dossier",
+    "DESCRIPTION": "Draw !M! cards. NL If you draw a Power card, gain !thePenance:Judge! Judgment."
   },
   "thePenance:GavelStrike": {
-    "NAME": "落下法槌",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若 屏障 高于目标生命值且非精英或首领，则直接将其击杀 。"
+    "NAME": "Gavel Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If your Barrier is greater than the target's HP and they are not an Elite or Boss, kill them instantly."
   },
   "thePenance:BreakTheShackles": {
-    "NAME": "挣脱枷锁",
-    "DESCRIPTION": "消耗。 NL 消耗所有 屏障 。每消耗 !M! 点 ，获得 1 点 力量 和 1 点 [E] 。"
+    "NAME": "Break Shackles",
+    "DESCRIPTION": "Exhaust. NL Remove all Barrier. For every !M! Barrier removed, gain 1 Strength and 1 [E] ."
   },
   "thePenance:LawIsCanon": {
-    "NAME": "法为正典",
-    "DESCRIPTION": "回合结束时，如果你拥有 屏障 ，获得等同于 力量 值的 裁决 。"
+    "NAME": "Law is Canon",
+    "DESCRIPTION": "At the end of your turn, if you have Barrier, gain Judgment equal to your Strength."
   },
   "thePenance:InTheNameOfTheLaw": {
-    "NAME": "法律之名",
-    "DESCRIPTION": "你的 裁决 伤害现在会受到 力量 加成。"
+    "NAME": "In the Name of Law",
+    "DESCRIPTION": "Your Judgment damage is now affected by Strength."
   },
   "thePenance:Unwavering": {
-    "NAME": "坚定不移",
-    "DESCRIPTION": "使你的所有 攻击牌 获得 消耗 。 NL 使你受到的伤害减少 30% 。 NL 在你的回合结束时，获得 !M! 层 荆棘环身 。"
+    "NAME": "Stoic Atonement",
+    "DESCRIPTION": "All your Attacks Exhaust. NL You take 30% less damage. NL At the end of your turn, gain !M! Thorns."
   },
   "thePenance:SolidDefense": {
-    "NAME": "坚固防守",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 屏障 。"
+    "NAME": "Solid Defense",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Barrier."
   },
   "thePenance:FlailSmash": {
-    "NAME": "链锤猛击",
-    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害，并给予目标一层 止戈 。"
+    "NAME": "Last Word",
+    "DESCRIPTION": "Exhaust. NL Deal !D! damage and apply 1 Armistice."
   },
   "thePenance:SyracusanWolves": {
-    "NAME": "叙拉古的狼群",
-    "DESCRIPTION": "将随机5张 狼群诅咒 洗入你的抽牌堆 。",
-    "UPGRADE_DESCRIPTION": "将随机5张升级后的 狼群诅咒 洗入你的抽牌堆 。"
+    "NAME": "Syracusan Wolves",
+    "DESCRIPTION": "Shuffle 5 random Wolfpack Curses into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Shuffle 5 random Upgraded Wolfpack Curses into your draw pile."
   },
   "thePenance:ContinuousRain": {
-    "NAME": "阵雨连绵",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 对场上所有单位造成 !D! 点伤害。 NL 给予所有单位 2 层 易伤 和 脆弱 。",
-    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 对场上所有单位造成 !D! 点伤害。 NL 给予所有敌人 2 层 易伤 和 脆弱 ，给予自己 1 层。"
+    "NAME": "Unrelenting Downpour",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL characters.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL enemies, and 1 to yourself."
   },
   "thePenance:FinaleCatastrophe": {
-    "NAME": "终幕·浩劫",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 造成 !M! 点伤害，随机分配给场上的所有单位（包括你自己）。"
+    "NAME": "Finale: Catastrofe",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !M! damage randomly distributed among ALL characters (including you)."
   },
   "thePenance:DignityOfTheLeader": {
-    "NAME": "领袖的尊严",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 给予场上所有单位 1 层 止戈 。获得 !M! 点 [E] 。"
+    "NAME": "Packleader's Dignity",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Apply 1 Armistice to ALL characters. Gain !M! [E] ."
   },
   "thePenance:ArtOfTheHidingFox": {
-    "NAME": "隐狐之艺",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 跳过你的回合 。获得 !M! 点 力量 、 !M! 点 裁决 、 !M! 点 荆棘环身 和 !thePenance:Barrier! 点 屏障 。",
-    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 跳过你的回合 。获得 !M! 点 力量 、 !M! 点 裁决 、 !M! 点 荆棘环身 和 !thePenance:Barrier! 点 屏障 。 NL 本回合 保留 手牌。"
+    "NAME": "La Volpe Nascosta",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier. NL Retain your hand this turn."
   },
   "thePenance:FameOfTheCrownSlayer": {
-    "NAME": "弑君者威名",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 使所有意图为攻击的敌人获得 3 点 临时力量 。 NL 抽 !M! 张牌。 "
+    "NAME": "Crownslayer's Glory",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Give all enemies intending to attack 3 Temporary Strength. NL Draw !M! cards."
   },
   "thePenance:AmbushShadow": {
-    "NAME": "伏击之影",
-    "DESCRIPTION": "抽到时施放。 NL 消耗。 NL 随机丢弃 !M! 张手牌。 NL 获得 1 层 无实体 。"
+    "NAME": "Umbral Ambush",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly discard !M! cards. NL Gain 1 Intangible."
   },
   "thePenance:FoxFireFading": {
-    "NAME": "狐火渺然",
-    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 使你获得 2 层 缓慢 。 NL 使所有敌人获得 !M! 层 缓慢 。"
+    "NAME": "Foxfire Haze",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Apply 2 Slow to yourself. NL Apply !M! Slow to ALL enemies."
   },
   "thePenance:TangledThreads": {
-    "NAME": "缝线缠身",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中 X 张牌。 NL 随机造成 X 次伤害（伤害值等于被消耗牌的总耗能）。",
-    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中 X 张牌。 NL 随机造成 X+X 次伤害（伤害值等于被消耗牌的总耗能）。"
+    "NAME": "Lockstitch",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X times to random enemies (damage is equal to the total cost of exhausted cards).",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X+X times to random enemies (damage is equal to the total cost of exhausted cards)."
   },
   "thePenance:WandAntiGravity": {
-    "NAME": "秘杖·反重力模式",
-    "DESCRIPTION": "抽到时释放。 NL 消耗。 NL 本回合给予你 混乱 。 NL 抽 !M! 张卡。"
+    "NAME": "Arcane Staff - Anti-Gravity Mode",
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Gain Confused this turn. NL Draw !M! cards."
   },
   "thePenance:Upright": {
-    "NAME": "刚正不阿",
-    "DESCRIPTION": "获得 !thePenance:StrGain! 点 力量 。 NL （数值基于所有区域中的 诅咒 牌总数）"
+    "NAME": "Upright",
+    "DESCRIPTION": "Gain !thePenance:StrGain! Strength. NL (Based on total Curses in all zones)."
   },
   "thePenance:Asceticism": {
-    "NAME": "苦行",
-    "DESCRIPTION": "每当你的 屏障 受到伤害时，获得 !M! 层 荆棘环身 。"
+    "NAME": "Asceticism",
+    "DESCRIPTION": "Whenever your Barrier takes damage, gain !M! Thorns."
   },
   "thePenance:LastStand": {
-    "NAME": "最后防线",
-    "DESCRIPTION": "消耗 。 NL 获得 !thePenance:Barrier! 点 屏障 。 NL 获得 !M! 层 止戈 。"
+    "NAME": "Last Stand",
+    "DESCRIPTION": "Exhaust. NL Gain !thePenance:Barrier! Barrier. NL Gain !M! Armistice."
   },
   "thePenance:BadOpera": {
-    "NAME": "烂歌剧",
-    "DESCRIPTION": "消耗 。 NL 随机将 2 张 攻击牌 加入手牌。",
-    "UPGRADE_DESCRIPTION": "消耗 。 NL 随机将 2 张 升级后的 攻击牌 加入手牌。"
+    "NAME": "Bad Opera",
+    "DESCRIPTION": "Exhaust. NL Add 2 random Attacks into your hand.",
+    "UPGRADE_DESCRIPTION": "Exhaust. NL Add 2 random Upgraded Attacks into your hand."
   },
   "thePenance:ASip": {
-    "NAME": "小酌一杯",
-    "DESCRIPTION": "消耗 。 NL 获得 !M! 点 临时力量 和 2 层 易伤 。 NL 将此牌的一张拥有虚无的复制品加入手牌。"
+    "NAME": "A Sip",
+    "DESCRIPTION": "Exhaust. NL Gain !M! Temporary Strength and 2 Vulnerable. NL Add an Ethereal copy of this card into your hand."
   },
   "thePenance:CodeSmash": {
-    "NAME": "法典猛砸",
-    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害。 NL 每造成 7 点未被格挡的伤害，便获得 1 点 [E] 。"
+    "NAME": "Code Smash",
+    "DESCRIPTION": "Exhaust. NL Deal !D! damage. NL Gain 1 [E] for every 7 unblocked damage dealt."
   },
   "thePenance:CourtRehearsal": {
-    "NAME": "庭审预演",
-    "DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。",
-    "UPGRADE_DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。 NL 打出后获得 1 点 [E] 。"
+    "NAME": "Court Rehearsal",
+    "DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random Upgraded card each turn.",
+    "UPGRADE_DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random Upgraded card each turn. NL Gain 1 [E] when played."
   },
   "thePenance:CrownOfThorns": {
-    "NAME": "荆棘冠冕",
-    "DESCRIPTION": "你的回合开始时，失去 2 点生命值，获得 !M! 层 荆棘环身 。"
+    "NAME": "Crown of Thorns",
+    "DESCRIPTION": "At the start of your turn, lose 2 HP and gain !M! Thorns."
   },
   "thePenance:BurdenedJourney": {
-    "NAME": "负荆前行",
-    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 如果你的生命值低于 50% ，获得等量的 荆棘环身 。"
+    "NAME": "Burdened Journey",
+    "DESCRIPTION": "Gain !M! Judgment. NL If your HP is below 50%, gain an equal amount of Thorns."
   },
   "thePenance:MaliciousCompetition": {
-    "NAME": "恶意竞争",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标生命值高于你，获得 !thePenance:Barrier! 点 屏障 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标生命值高于你的一半，获得 !thePenance:Barrier! 点 屏障 。"
+    "NAME": "Malicious Competition",
+    "DESCRIPTION": "Deal !D! damage. NL If the target has more HP than you, gain !thePenance:Barrier! Barrier.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If the target has more HP than half your HP, gain !thePenance:Barrier! Barrier."
   },
   "thePenance:Adjourn": {
-    "NAME": "休庭",
-    "DESCRIPTION": "消耗 。 结束你的回合。 NL 本回合每打出一张牌，获得 1 点 屏障 。 NL （若生命值低于 50% ，改为恢复 1 点生命）"
+    "NAME": "Adjourn",
+    "DESCRIPTION": "Exhaust. End your turn. NL Gain 1 Barrier for each card played this turn. NL (If HP is below 50%, heal 1 HP instead.)"
   },
   "thePenance:Objection": {
-    "NAME": "我反对！",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 目标意图为攻击时，获得 !M! 点 裁决 。 NL 意图为格挡时，获得 !M! 层 荆棘环身 。 NL 否则，获得 !thePenance:LargeAmt! 点 屏障 。"
+    "NAME": "Objection!",
+    "DESCRIPTION": "Deal !D! damage. NL If the target intends to Attack, gain !M! Judgment. NL If they intend to Block, gain !M! Thorns. NL Otherwise, gain !thePenance:LargeAmt! Barrier."
   },
   "thePenance:BarbedRebuke": {
-    "NAME": "你荆然敢!",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 触发一次 荆棘环身 伤害。 NL 如果目标意图为攻击，额外再造成一半数值的 荆棘环身 伤害。"
+    "NAME": "Barbed Rebuke",
+    "DESCRIPTION": "Deal !D! damage. NL Deal your Thorns damage to the target. NL If the target intends to Attack, deal half your Thorns damage again."
   },
   "thePenance:Tempering": {
-    "NAME": "淬炼",
-    "DESCRIPTION": "失去 3 点生命值。 NL 获得 !M! 点 屏障 。"
+    "NAME": "Tempering",
+    "DESCRIPTION": "Lose 3 HP. NL Gain !M! Barrier."
   },
   "thePenance:EmergencyRepair": {
-    "NAME": "紧急修补",
-    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 抽 1 张牌。"
+    "NAME": "Emergency Repair",
+    "DESCRIPTION": "Gain !M! Barrier. NL Draw 1 card."
   },
   "thePenance:ForcedSummons": {
-    "NAME": "强制传唤",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 1 张牌。如果目标意图是攻击，改为抽 2 张。"
+    "NAME": "Forced Summons",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. If the target intends to Attack, draw 2 cards instead."
   },
   "thePenance:LawEnforcement": {
-    "NAME": "执法",
-    "DESCRIPTION": "造成等同于你当前 屏障 值 !M!% 的伤害。 NL 如果造成的伤害不足 10 点，获得该伤害值两倍的 屏障 。",
-    "EXTENDED_DESCRIPTION": ["（当前造成 !D! 点伤害）"]
+    "NAME": "Law Enforcement",
+    "DESCRIPTION": "Deal damage equal to !M!% of your current Barrier. NL If this deals less than 10 damage, gain Barrier equal to twice the damage dealt.",
+    "EXTENDED_DESCRIPTION": ["(Current damage: !D!)"]
   },
   "thePenance:WallBreakerSmash": {
-    "NAME": "破壁重击",
-    "DESCRIPTION": "消耗 !M! 点 屏障 。 NL 造成 !D! 点伤害。"
+    "NAME": "Wallbreaker Smash",
+    "DESCRIPTION": "Remove !M! Barrier. NL Deal !D! damage."
   },
   "thePenance:JointLiability": {
-    "NAME": "连带责任",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 你每有一层 裁决 ，伤害增加 1 点。"
+    "NAME": "Joint Liability",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Damage is increased by 1 for each Judgment you have."
   },
   "thePenance:FinalVerdict": {
-    "NAME": "终审判决",
-    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害（受 裁决 加成）。 NL 如果此牌击杀了非爪牙敌人，获得 !M! 点最大生命值。"
+    "NAME": "Final Verdict",
+    "DESCRIPTION": "Exhaust. NL Deal !D! damage (affected by Judgment). NL If this kills a non-Minion enemy, gain !M! Max HP."
   },
   "thePenance:WeightOfLaw": {
-    "NAME": "律法之重",
-    "DESCRIPTION": "消耗 。 NL 失去 6 点生命值。 NL 获得 !M! 点最大生命值。"
+    "NAME": "Weight of Law",
+    "DESCRIPTION": "Exhaust. NL Lose 6 HP. NL Gain !M! Max HP."
   },
   "thePenance:SceneInvestigation": {
-    "NAME": "调查现场",
-    "DESCRIPTION": "连续打出 2 张同类牌时获得奖励： NL 攻击牌 -> 随机 技能牌 ； NL 技能牌 -> 随机 攻击牌 ； NL 能力牌 -> !M! 点 [E] 。 NL （生成的牌 消耗 且 虚无 ）",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 连续打出 2 张同类牌时获得奖励： NL 攻击牌 -> 随机 升级后的 技能牌 ； NL 技能牌 -> 随机 升级后的 攻击牌 ； NL 能力牌 -> !M! 点 [E] 。 NL （生成的牌 消耗 且 虚无 ）"
+    "NAME": "Scene Investigation",
+    "DESCRIPTION": "When you play 2 cards of the same type in a row, gain a reward: NL Attack -> Random Skill; NL Skill -> Random Attack; NL Power -> !M! [E] . NL (Created cards are Exhaust and Ethereal.)",
+    "UPGRADE_DESCRIPTION": "Innate. NL When you play 2 cards of the same type in a row, gain a reward: NL Attack -> Random Upgraded Skill; NL Skill -> Random Upgraded Attack; NL Power -> !M! [E] . NL (Created cards are Exhaust and Ethereal.)"
   },
   "thePenance:DeadlyEnemy": {
-    "NAME": "死敌",
-    "DESCRIPTION": "消耗 。 保留 。 NL 只要此牌在你手中，你受到的所有伤害增加 1 点。"
+    "NAME": "Deadly Enemy",
+    "DESCRIPTION": "Exhaust. Retain. NL While this is in your hand, you take 1 additional damage from all sources."
   },
   "thePenance:CumulativePrecedent": {
-    "NAME": "判例累积",
-    "DESCRIPTION": "每当你打出一张 技能牌 ，获得 !M! 点 屏障 。"
+    "NAME": "Cumulative Precedent",
+    "DESCRIPTION": "Whenever you play a Skill, gain !M! Barrier."
   },
   "thePenance:CitationOfLaw": {
-    "NAME": "法条援引",
-    "DESCRIPTION": "消耗。 NL 获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 !M!% 的 屏障 。"
+    "NAME": "Citation of Law",
+    "DESCRIPTION": "Exhaust. NL Gain !thePenance:BaseBarrier! Barrier. NL Then, gain Barrier equal to !M!% of your current Barrier."
   },
   "thePenance:Overrule": {
-    "NAME": "驳回",
-    "DESCRIPTION": "造成 !D! 点伤害。给予 1 层 虚弱 。 NL 如果目标已经拥有 虚弱 ，获得 !thePenance:Barrier! 点 屏障 。"
+    "NAME": "Overrule",
+    "DESCRIPTION": "Deal !D! damage. Apply 1 Weak. NL If the target already has Weak, gain !thePenance:Barrier! Barrier."
   },
   "thePenance:InescapableNet": {
-    "NAME": "法网恢恢",
-    "DESCRIPTION": "下回合开始时，获得 !M! 点 屏障 ，并抽 1 张牌。"
+    "NAME": "Inescapable Net",
+    "DESCRIPTION": "At the start of your next turn, gain !M! Barrier and draw 1 card."
   },
   "thePenance:JudicialDiscretion": {
-    "NAME": "司法斟酌",
-    "DESCRIPTION": "失去 !thePenance:BarrierCost! 点 屏障 。 NL 获得 1 点 [E] 。抽 !M! 张牌。"
+    "NAME": "Judicial Discretion",
+    "DESCRIPTION": "Lose !thePenance:BarrierCost! Barrier. NL Gain 1 [E] . Draw !M! cards."
   },
   "thePenance:ProceduralJustice": {
-    "NAME": "程序正义",
-    "DESCRIPTION": "每当你获得 格挡 时，获得等量的 屏障 。"
+    "NAME": "Procedural Justice",
+    "DESCRIPTION": "Whenever you gain Block, gain an equal amount of Barrier."
   },
   "thePenance:IroncladDoctrine": {
-    "NAME": "铁律护体",
-    "DESCRIPTION": "在你的回合开始时，消耗 !M! 点 屏障 ，恢复 3 点生命值。"
+    "NAME": "Ironclad Doctrine",
+    "DESCRIPTION": "At the start of your turn, remove !M! Barrier to heal 3 HP."
   },
   "thePenance:GuiltyAsCharged": {
-    "NAME": "有罪！",
-    "DESCRIPTION": "移除 格挡 。造成 !D! 点伤害。 NL 基于层数是否大于等于10追加效果： NL 裁决 ：造成等量伤害。 NL 荆棘 ：给予 1 层 止戈 。 NL 力量 ：上述效果触发两次。"
+    "NAME": "Guilty as Charged!",
+    "DESCRIPTION": "Remove Block. Deal !D! damage. NL Trigger additional effects if you have 10+ stacks: NL Judgment: Deal damage equal to Judgment. NL Thorns: Apply 1 Armistice. NL Strength: Trigger the above effects twice."
   },
   "thePenance:SelfIncrimination": {
-    "NAME": "自证其罪",
-    "DESCRIPTION": "消耗 。 NL 必须消耗手牌中一张 诅咒 牌才能打出。 NL 将一张 证据 和 伪证 置入你的手牌。"
+    "NAME": "Self-Incrimination",
+    "DESCRIPTION": "Exhaust. NL You must Exhaust a Curse from your hand to play this card. NL Add an Evidence and a Perjury into your hand."
   },
   "thePenance:ExhibitA": {
-    "NAME": "证据",
-    "DESCRIPTION": "消耗 。 NL 将一张 疑惑 置入你的手牌。抽 2 张牌。"
+    "NAME": "Evidence",
+    "DESCRIPTION": "Exhaust. NL Add a Doubt into your hand. Draw 2 cards."
   },
   "thePenance:Perjury": {
-    "NAME": "伪证",
-    "DESCRIPTION": "消耗 。 NL 将一张 悔恨 置入你的手牌。获得 2 点 [E] 。"
+    "NAME": "Perjury",
+    "DESCRIPTION": "Exhaust. NL Add a Regret into your hand. Gain 2 [E] ."
   },
   "thePenance:JustifiedRetaliation": {
-    "NAME": "你先动手的",
-    "DESCRIPTION": "获得 !M! 点 屏障 。 NL 获得 1 层 正当防卫 。"
+    "NAME": "Justified Retaliation",
+    "DESCRIPTION": "Gain !M! Barrier. NL Gain 1 Self-Defense."
   },
   "thePenance:HourOfReckoning": {
-    "NAME": "清算时刻",
-    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。 NL 本场战斗你每失去 1 点生命值，伤害增加 1 点。"
+    "NAME": "Hour of Reckoning",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Damage is increased by 1 for each HP you have lost this combat."
   },
   "thePenance:BloodForBlood": {
-    "NAME": "以伤换伤",
-    "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害。 NL 获得 1 层 正当防卫 。"
+    "NAME": "Blood for Blood",
+    "DESCRIPTION": "Exhaust. NL Deal !D! damage. NL Gain 1 Self-Defense."
   },
   "thePenance:CaseReconstruction": {
-    "NAME": "案情梳理",
-    "DESCRIPTION": "预见 !thePenance:Scry! 。 NL 抽 !M! 张牌。"
+    "NAME": "Case Reconstruction",
+    "DESCRIPTION": "Scry !thePenance:Scry! . NL Draw !M! cards."
   },
   "thePenance:PunishmentForTransgression": {
-    "NAME": "越界必罚",
-    "DESCRIPTION": "如果你本回合没有使用过攻击牌，回合结束时，获得 !M! 层 正当防卫 。"
+    "NAME": "Punishment for Transgression",
+    "DESCRIPTION": "If you haven't played any Attacks this turn, gain !M! Self-Defense at the end of your turn."
   },
   "thePenance:PendingJudgment": {
-    "NAME": "待命裁定",
-    "DESCRIPTION": "每有一个意图为 攻击 的敌人，便获得 !M! 点 屏障 。"
+    "NAME": "Pending Judgment",
+    "DESCRIPTION": "Gain !M! Barrier for each enemy intending to Attack."
   },
   "thePenance:JudgmentHasBegun": {
-    "NAME": "裁决早已开始",
-    "DESCRIPTION": "消耗 。 NL 本回合每使用 1 张 攻击牌 ，获得 5 点 屏障 、 1 点 力量 和 1 点 裁决 。 NL 累积使用 3 张后，获得 2 点 [E] 。",
-    "UPGRADE_DESCRIPTION": "保留 。 消耗。 NL 本回合每使用 1 张 攻击牌 ，获得 5 点 屏障 、 1 点 力量 和 1 点 裁决 。 NL 累积使用 3 张后，获得 2 点 [E] 。"
+    "NAME": "Judgment Has Begun",
+    "DESCRIPTION": "Exhaust. NL Whenever you play an Attack this turn, gain 5 Barrier, 1 Strength, and 1 Judgment. NL After playing 3 Attacks, gain 2 [E] .",
+    "UPGRADE_DESCRIPTION": "Retain. Exhaust. NL Whenever you play an Attack this turn, gain 5 Barrier, 1 Strength, and 1 Judgment. NL After playing 3 Attacks, gain 2 [E] ."
   },
   "thePenance:UnwrittenLaw": {
-    "NAME": "不成文的法律",
-    "DESCRIPTION": "从抽牌堆随机抽一张 能力牌 。 NL 如果你在本回合打出了它，额外打出一次。"
+    "NAME": "Unwritten Law",
+    "DESCRIPTION": "Put a random Power from your draw pile into your hand. NL If you play it this turn, play it twice."
   },
   "thePenance:JudgementBacklash": {
-    "NAME": "裁决反冲",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每拥有 3 层 裁决 ，额外触发一次。"
+    "NAME": "Judgment Backlash",
+    "DESCRIPTION": "Deal !D! damage. NL Trigger this effect again for every 3 Judgment you have."
   },
   "thePenance:PenaltyRegression": {
-    "NAME": "刑责回溯",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 使你身上的所有减益效果层数减少 1 。"
+    "NAME": "Penalty Regression",
+    "DESCRIPTION": "Deal !D! damage. NL Reduce all your Debuff stacks by 1."
   },
   "thePenance:FamilyArbitration": {
-    "NAME": "家族仲裁",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 狼群诅咒 置入你的弃牌堆。"
+    "NAME": "Family Arbitration",
+    "DESCRIPTION": "Deal !D! damage. NL Place a Wolfpack Curse into your discard pile."
   },
   "thePenance:PreExecutionPrep": {
-    "NAME": "执行前准备",
-    "DESCRIPTION": "消耗 。 NL 抽牌直到手牌上限。根据抽到的类型获得： NL 攻击牌 -> 获得 1 点 裁决 ； NL 技能牌 -> 获得 1 层 荆棘环身 ； NL 能力牌 -> 获得 1 点 力量 ； NL 诅咒牌 -> 获得 1 点 [E] 。"
+    "NAME": "Pre-Execution Prep",
+    "DESCRIPTION": "Exhaust. NL Draw cards until your hand is full. Gain effects based on card type: NL Attack -> 1 Judgment; NL Skill -> 1 Thorns; NL Power -> 1 Strength; NL Curse -> 1 [E] ."
   },
   "thePenance:NoSentenceNeeded": {
-    "NAME": "无需宣判",
-    "DESCRIPTION": "消耗 。 无法打出 。 NL 如果你的 屏障 为 0 ，此牌可以打出。 NL 造成 !D! 点伤害。"
+    "NAME": "No Sentence Needed",
+    "DESCRIPTION": "Exhaust. Unplayable. NL Can only be played if your Barrier is 0. NL Deal !D! damage."
   },
   "thePenance:GavelBarrage": {
-    "NAME": "法槌连击",
-    "DESCRIPTION": "对敌人造成 !D! 点伤害 X 次。 NL 每次造成伤害，获得 1 点 裁决 和 1 层 荆棘环身 。",
-    "UPGRADE_DESCRIPTION": "对敌人造成 !D! 点伤害 X+1 次。 NL 每次造成伤害，获得 1 点 裁决 和 1 层 荆棘环身 。"
+    "NAME": "Gavel Barrage",
+    "DESCRIPTION": "Deal !D! damage X times to random enemies. NL Whenever you deal damage, gain 1 Judgment and 1 Thorns.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage X+1 times to random enemies. NL Whenever you deal damage, gain 1 Judgment and 1 Thorns."
   },
   "thePenance:Quell": {
-    "NAME": "镇暴",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你拥有 屏障 ，给予 !M! 层 虚弱 。"
+    "NAME": "Quell",
+    "DESCRIPTION": "Deal !D! damage. NL If you have Barrier, apply !M! Weak."
   },
   "thePenance:ClearTheScene": {
-    "NAME": "肃清现场",
-    "DESCRIPTION": "失去 3 点生命值。 NL 对所有敌人造成 !D! 点伤害。"
+    "NAME": "Clear the Scene",
+    "DESCRIPTION": "Lose 3 HP. NL Deal !D! damage to ALL enemies."
   },
   "thePenance:GlowOfSuffering": {
-    "NAME": "苦难辉光",
-    "DESCRIPTION": "每当你通过卡牌效果失去生命值时，获得失去值 !thePenance:Multiplier! 倍的 屏障 ，和 !M! 层 荆棘环身 。"
+    "NAME": "Glow of Suffering",
+    "DESCRIPTION": "Whenever you lose HP from a card effect, gain Barrier equal to !thePenance:Multiplier! times the amount lost, and !M! Thorns."
   },
   "thePenance:ToothForTooth": {
-    "NAME": "以牙还牙",
-    "DESCRIPTION": "失去 2 点生命值。 NL 造成 !D! 点伤害。 NL 向你的弃牌堆中洗入一张 狼群诅咒 。 NL 如果你的生命值低于 50% ，抽 !M! 张牌。"
+    "NAME": "Tooth for Tooth",
+    "DESCRIPTION": "Lose 2 HP. NL Deal !D! damage. NL Shuffle a Wolfpack Curse into your discard pile. NL If your HP is below 50%, draw !M! cards."
   },
   "thePenance:BloodDebtClause": {
-    "NAME": "血债条款",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 每有一个敌人受到伤害，将一张随机的 狼群诅咒 放入弃牌堆。"
+    "NAME": "Blood Debt Clause",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Whenever an enemy takes damage, put a random Wolfpack Curse into your discard pile."
   }
 }

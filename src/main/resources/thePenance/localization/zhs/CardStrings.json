@@ -85,7 +85,7 @@
     "DESCRIPTION": "你的 裁决 伤害现在会受到 力量 加成。"
   },
   "thePenance:Unwavering": {
-    "NAME": "坚定不移",
+    "NAME": "坚心苦修",
     "DESCRIPTION": "使你的所有 攻击牌 获得 消耗 。 NL 使你受到的伤害减少 30% 。 NL 在你的回合结束时，获得 !M! 层 荆棘环身 。"
   },
   "thePenance:SolidDefense": {
@@ -93,7 +93,7 @@
     "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M! 点 屏障 。"
   },
   "thePenance:FlailSmash": {
-    "NAME": "链锤猛击",
+    "NAME": "一锤定音",
     "DESCRIPTION": "消耗 。 NL 造成 !D! 点伤害，并给予目标一层 止戈 。"
   },
   "thePenance:SyracusanWolves": {

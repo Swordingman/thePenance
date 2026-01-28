@@ -36,7 +36,7 @@
     "DESCRIPTIONS": ["你的 #y裁决 伤害现在会受到 #y力量 加成。"]
   },
   "thePenance:UnwaveringPower": {
-    "NAME": "坚定不移",
+    "NAME": "坚心苦修",
     "DESCRIPTIONS": ["你的 #y攻击牌 被打出时会 #y消耗 。 NL 你受到的伤害减少 #b30% 。 NL 回合结束时，获得 #b", " 层 #y荆棘环身 。"]
   },
   "thePenance:StunMonsterPower": {

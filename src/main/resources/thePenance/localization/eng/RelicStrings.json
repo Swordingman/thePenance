@@ -1,96 +1,96 @@
 {
   "thePenance:PenanceBasicRelic": {
-    "NAME": "通往未来的荆棘之路",
-    "FLAVOR": "它时刻刺痛着你，提醒着你正义的重量。",
+    "NAME": "The Thorny Road That Continues",
+    "FLAVOR": "It pricks you constantly, reminding you of the weight of justice.",
     "DESCRIPTIONS": [
-      "战斗开始时，获得 #b10% 最大生命值的 #y屏障 和 #b1 点 #y裁决 。 NL 来自 药物 ， 大部分 事件 ， 非斥罪卡牌 与 休息 的治疗效果将转化为等量的 屏障 （非战斗时会储存）。 NL 目前已储存： #b",
-      " 点屏障。 NL 战斗结束时，将剩余 #y屏障 的 #b10% 转化为 生命回复。"
+      "At the start of combat, gain **Barrier** equal to #b10% of your Max HP and #b1 #yJudgment . NL Healing from Potions, most Events, non-Penance cards, and Rest Sites is converted into an equal amount of **Barrier** (stored out of combat). NL Currently stored: #b",
+      " Barrier. NL At the end of combat, convert #b10% of remaining #yBarrier into HP healing."
     ]
   },
   "thePenance:Innocent": {
-    "NAME": "“无罪”",
-    "FLAVOR": "在黎明前，与黑夜相处的方式有两种，或是任由它浸透自己，直至感觉不到它的存在；或是在黑夜中寻找一切本不该被其吞噬的事物，然后小心珍藏。",
+    "NAME": "\"Innocent\"",
+    "FLAVOR": "Before dawn, there are two ways to coexist with the night: either let it soak through you until you can no longer feel it; or search the night for everything that shouldn't have been swallowed by it, and cherish it carefully.",
     "DESCRIPTIONS": [
-      "你的 #y裁决 造成的伤害提升 #b20% 。"
+      "Your #yJudgment deals #b20% more damage."
     ]
   },
   "thePenance:LetterOfGratitude": {
-    "NAME": "感谢信",
-    "FLAVOR": "......但至少你所做的一切，都是值得的。",
+    "NAME": "Letter of Thanks",
+    "FLAVOR": "...But at least everything you did was worth it.",
     "DESCRIPTIONS": [
-      "每当你获得 #y屏障 时，额外获得 #b20% （至少为 #b1 点）。"
+      "Whenever you gain #yBarrier , gain an additional #b20% (minimum of #b1 )."
     ]
   },
   "thePenance:BloodstainedCloth": {
-    "NAME": "染血的布料",
-    "FLAVOR": "你无法保护所有人......",
+    "NAME": "Bloodstained Fabric",
+    "FLAVOR": "You cannot protect everyone...",
     "DESCRIPTIONS": [
-      "在战斗开始时，获得 #b-2 点 #y力量 ，和 #b8 层 #y荆棘环身 。"
+      "At the start of combat, gain #b-2 #yStrength and #b8 #yThorn #yAura ."
     ]
   },
   "thePenance:LittleGavel": {
-    "NAME": "小木槌",
-    "FLAVOR": "再大的公义，也要从小处着手。",
+    "NAME": "Small Gavel",
+    "FLAVOR": "Even the greatest justice must start from somewhere small.",
     "DESCRIPTIONS": [
-      "每当你的 #y格挡 被击碎时，获得等同于被击碎时格挡受到伤害量的 #y屏障 。"
+      "Whenever your #yBlock is broken, gain #yBarrier equal to the damage absorbed by that Block."
     ]
   },
   "thePenance:BlackUmbrella": {
-    "NAME": "黑雨伞",
-    "FLAVOR": "真不赶巧，你选择在这时候来叙拉古？",
+    "NAME": "Black Umbrella",
+    "FLAVOR": "What bad timing, you chose to come to Syracusa now?",
     "DESCRIPTIONS": [
-      "每次战斗中，你的 #y格挡 首次被击碎时，给予攻击者 1 层 #y易伤 ，给予自己 1 点 #y力量 。"
+      "Once per combat, when your #yBlock is broken, apply 1 #yVulnerable to the attacker and gain 1 #yStrength ."
     ]
   },
   "thePenance:GoldenScales": {
-    "NAME": "金天平",
-    "FLAVOR": "法典之外的罪恶，是否可以用法典之外的方式惩戒呢？",
+    "NAME": "Golden Scales",
+    "FLAVOR": "Can crimes be punished through methods outside of the law?",
     "DESCRIPTIONS": [
-      "回合结束时，如果你本回合丢弃了 #y攻击牌 ，获得 1 层 #y正当防卫 。"
+      "At the end of your turn, if you discarded an #yAttack this turn, gain 1 #ySelf-Defense ."
     ]
   },
   "thePenance:ThornboundCodex": {
-    "NAME": "荆棘法典",
-    "FLAVOR": "法典中未曾详述的，我会以实践来探明。",
+    "NAME": "Thornbound Codex",
+    "FLAVOR": "What the law does not specify, I will reveal through practice.",
     "DESCRIPTIONS": [
-      "每回合开始时获得 [E] 。 NL 每回合结束时，向你的抽牌堆顶部置入一张 #r狼群诅咒 。"
+      "Gain [E] at the start of your turn. NL At the end of your turn, put a #rWolfpack #rCurse on top of your draw pile."
     ]
   },
   "thePenance:ShopVoucher": {
-    "NAME": "某个小店的消费券",
-    "FLAVOR": "如果你在叙拉古的雨季来到了这里，不妨找家街边的小店坐会吧。",
+    "NAME": "Shop Voucher",
+    "FLAVOR": "If you come here during the rainy season of Syracusa, why not find a small shop by the street and sit for a while.",
     "DESCRIPTIONS": [
-      "在你触发 #y裁决 伤害时，额外造成 #b2 点伤害。"
+      "Whenever your #yJudgment deals damage, deal an additional #b2 damage."
     ]
   },
   "thePenance:PlasticMole": {
-    "NAME": "塑料鼹兽",
-    "FLAVOR": "至少在游戏中，那把槌子会实在地落在这些塑料鼹兽头上。",
+    "NAME": "Plastic Mole",
+    "FLAVOR": "At least in the game, the gavel will land solidly on the heads of these plastic moles.",
     "DESCRIPTIONS": [
-      "每当敌人做出 #b3 次攻击意图，获得 #b1 点能量。",
-      " NL (当前计数： #b",
+      "Gain #b1 Energy for every #b3 times an enemy intends to attack.",
+      " NL (Current count: #b",
       " )"
     ]
   },
   "thePenance:SiracusanWine": {
-    "NAME": "叙拉古红酒",
-    "FLAVOR": "叙拉古的昂贵货。它所生成的功效不管是纾解疲乏，还是缓解痛苦，在看到价格的那一刻，都会变为压力。",
+    "NAME": "Syracusan Wine",
+    "FLAVOR": "Expensive goods from Syracusa. Whether its effect is to relieve fatigue or alleviate pain, the moment you see the price, it all turns into stress.",
     "DESCRIPTIONS": [
-      "每场战斗中，当你首次失去 #b8 点或以上生命值时，获得 #b3 点最大生命值并回复 #b4 点生命值。"
+      "Each combat, the first time you lose #b8 or more HP, gain #b3 Max HP and heal #b4 HP."
     ]
   },
   "thePenance:CarnivalMoment": {
-    "NAME": "狂欢时刻",
-    "FLAVOR": "看吧，这就是叙拉古——狂欢之主邀你共赏！",
+    "NAME": "Time of Revelry",
+    "FLAVOR": "Behold, this is Syracusa—The Lord of Revelry invites you to enjoy the show!",
     "DESCRIPTIONS": [
-      "你目前及以后获得的 #r狼群诅咒 全部 #y升级 。"
+      "All #rWolfpack #rCurses you obtain are #yUpgraded ."
     ]
   },
   "thePenance:MedalOfPerseverance": {
-    "NAME": "毅力勋章",
-    "FLAVOR": "有些人认为这是设计失误，有些人认为这是数值崩坏。而你，我的朋友，你证明了只要愿意花上一段时间叠屏障，没有什么东西是杀不死的。这是给你的奖励，别嫌弃，毕竟你把那个可怜的家伙折磨得够呛。别担心，这段文本溢出也是计算之内。",
+    "NAME": "Medal of Perseverance",
+    "FLAVOR": "Some think this is a design error, others think the numbers are broken. But you, my friend, you proved that as long as you are willing to spend time stacking Barrier, nothing is unkillable. This is your reward, don't despise it, after all, you tortured that poor guy enough. Don't worry, this text overflow is also calculated.",
     "DESCRIPTIONS": [
-      "恭喜你，你通过叠取屏障证明了你的毅力！"
+      "Congratulations, you proved your perseverance by stacking Barrier!"
     ]
   }
 }
