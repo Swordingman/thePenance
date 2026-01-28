@@ -1,5 +1,7 @@
 package thePenance.monsters;
 
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
@@ -39,28 +41,57 @@ public class VolsiniiMob extends AbstractMonster {
     private static final byte B_BUFF_STR = 24;
 
     public VolsiniiMob(float x, float y, int type) {
+        // imgUrl 设为 null，碰撞箱尺寸保持原样 (如果你发现点击判定不对，调整 150.0F 和 220.0F)
         super(monsterStrings.NAME, ID, 60, 0.0F, 0.0F, 150.0F, 220.0F, null, x, y);
         this.mobType = type;
 
         if (this.mobType == TYPE_AGILE) {
+            // === 敏捷型 (Sarkaz Guerilla Bowman?) ===
             this.setHp(42);
             // 伤害索引 0: Multi-Attack (4x3)
             this.damage.add(new DamageInfo(this, 4));
             // 伤害索引 1: Normal Attack (10)
             this.damage.add(new DamageInfo(this, 10));
-            this.loadAnimation("images/monsters/theBottom/angryGremlin/skeleton.atlas", "images/monsters/theBottom/angryGremlin/skeleton.json", 1.0F);
-            this.state.setAnimation(0, "idle", true);
+
+            // 加载 Agile 动画
+            this.loadAnimation(
+                    "thePenance/images/enemies/VolsiniiMob/enemy_1278_sgbow.atlas",
+                    "thePenance/images/enemies/VolsiniiMob/enemy_1278_sgbow.json",
+                    1.5F // 比例 Scale：如果觉得太小，可以改成 1.5F
+            );
+
+            // 设置初始动画 (请确保 Json 中有 "Idle" 这个动作名，否则会崩溃)
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+            e.setTime(e.getEndTime() * MathUtils.random()); // 随机偏移，防止整齐划一
+
             this.name = monsterStrings.DIALOG[0];
+
+            this.flipHorizontal = true;
         } else {
+            // === 重装型 (Sarkaz Guerilla Shieldguard?) ===
             this.setHp(65);
             // 伤害索引 0: Normal Attack (12)
             this.damage.add(new DamageInfo(this, 12));
             // 伤害索引 1: Heavy Attack (30)
             this.damage.add(new DamageInfo(this, 30));
-            this.loadAnimation("images/monsters/theBottom/fatGremlin/skeleton.atlas", "images/monsters/theBottom/fatGremlin/skeleton.json", 1.0F);
-            this.state.setAnimation(0, "idle", true);
+
+            // 加载 Heavy 动画
+            this.loadAnimation(
+                    "thePenance/images/enemies/VolsiniiMob/enemy_1279_sgbdg.atlas",
+                    "thePenance/images/enemies/VolsiniiMob/enemy_1279_sgbdg.json",
+                    1.2F // 比例 Scale：通常重装单位可以稍微大一点，试试 1.2F 或 1.3F
+            );
+
+            // 设置初始动画
+            AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+            e.setTime(e.getEndTime() * MathUtils.random());
+
             this.name = monsterStrings.DIALOG[1];
         }
+
+        // 如果素材默认是面朝右的（大多数明日方舟SD小人默认朝左，不需要这行），
+        // 发现朝向反了就把下面这一行取消注释：
+        // this.flipHorizontal = true;
     }
 
     @Override

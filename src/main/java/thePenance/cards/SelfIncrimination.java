@@ -1,6 +1,6 @@
 package thePenance.cards;
 
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
 import thePenance.util.CardStats;
+
+import java.util.ArrayList;
 
 public class SelfIncrimination extends BaseCard {
     public static final String ID = makeID("SelfIncrimination");
@@ -24,6 +26,7 @@ public class SelfIncrimination extends BaseCard {
         setExhaust(true);
         // 预览衍生卡
         this.cardsToPreview = new ExhibitA();
+        this.cardsToPreview = new Perjury();
     }
 
     @Override
@@ -31,7 +34,6 @@ public class SelfIncrimination extends BaseCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) return false;
 
-        // 检查手牌是否有诅咒
         boolean hasCurse = false;
         for (AbstractCard c : p.hand.group) {
             if (c.type == CardType.CURSE || c.color == CardColor.CURSE) {
@@ -49,58 +51,70 @@ public class SelfIncrimination extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 打开选择界面
-        addToBot(new com.megacrit.cardcrawl.actions.AbstractGameAction() {
+        // 添加一个自定义动作来处理筛选和选择
+        addToBot(new AbstractGameAction() {
             @Override
             public void update() {
+                AbstractPlayer p = AbstractDungeon.player;
+                // 1. 创建一个列表来暂存非诅咒牌
+                ArrayList<AbstractCard> nonCurses = new ArrayList<>();
+
+                // 2. 遍历手牌，把非诅咒牌找出来
+                for (AbstractCard c : p.hand.group) {
+                    if (c.type != CardType.CURSE && c.color != CardColor.CURSE) {
+                        nonCurses.add(c);
+                    }
+                }
+
+                // 3. 暂时从手牌中移除这些非诅咒牌
+                // 注意：这里只是从 group 列表中移除，不要直接调用 p.hand.removeCard，因为可能会触发不需要的钩子
+                p.hand.group.removeAll(nonCurses);
+
+                // 4. 打开选择界面 (此时手牌里只有诅咒牌)
+                if (p.hand.group.isEmpty()) {
+                    // 理论上进不去这里（因为canUse检查过了），但为了安全防止空指针
+                    p.hand.group.addAll(nonCurses);
+                    this.isDone = true;
+                    return;
+                }
+
                 AbstractDungeon.handCardSelectScreen.open("选择一张诅咒牌消耗", 1, false, false, false, false);
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.AbstractGameAction() {
+
+                // 5. 添加后续动作来处理结果并归还手牌
+                addToBot(new AbstractGameAction() {
                     @Override
                     public void update() {
+                        // 处理选中的牌
                         if (!AbstractDungeon.handCardSelectScreen.selectedCards.isEmpty()) {
                             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                                 // 消耗选中的牌
-                                AbstractDungeon.player.hand.moveToExhaustPile(c);
+                                p.hand.moveToExhaustPile(c);
                             }
                             AbstractDungeon.handCardSelectScreen.selectedCards.clear();
 
                             // 给予衍生卡
-                            addToBot(new MakeTempCardInHandAction(new ExhibitA()));
-                            addToBot(new MakeTempCardInHandAction(new Perjury()));
+                            addToTop(new MakeTempCardInHandAction(new Perjury()));
+                            addToTop(new MakeTempCardInHandAction(new ExhibitA()));
                         }
+
+                        // 6. 核心步骤：把暂存的非诅咒牌放回手牌
+                        returnCards(p, nonCurses);
+
+                        // 刷新手牌位置布局
+                        p.hand.refreshHandLayout();
                         this.isDone = true;
                     }
                 });
+
                 this.isDone = true;
             }
         });
     }
 
-    // 覆盖这个方法来过滤可选卡牌，只允许选诅咒
-    // 注意：AbstractDungeon.handCardSelectScreen 默认没有简单的 Filter 接口。
-    // 通常我们用 SelectCardAction 配合 Filter。
-    // 修正：上面的 use 方法用 handCardSelectScreen 可能会让玩家选到非诅咒牌然后报错。
-    // 更好的做法是使用自定义的 SelectAction。
-    // 为了代码简洁，这里简化为：
-    // 如果玩家很老实，选了诅咒就行。如果不够老实...
-    // 我们改用一个循环遍历手牌，自动消耗第一张诅咒，或者使用 SelectSpecificCardAction 逻辑。
-    // 下面是更严谨的 Filter 写法：
-    /*
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SelectCardAction(1, "消耗一张诅咒", (c) -> (c.type == CardType.CURSE || c.color == CardColor.CURSE), (cards) -> {
-            for (AbstractCard c : cards) {
-                addToTop(new ExhaustSpecificCardAction(c, p.hand));
-            }
-            addToBot(new MakeTempCardInHandAction(new ExhibitA()));
-            addToBot(new MakeTempCardInHandAction(new Perjury()));
-        }));
+    // 辅助方法：归还卡牌
+    private void returnCards(AbstractPlayer p, ArrayList<AbstractCard> cardsToReturn) {
+        for (AbstractCard c : cardsToReturn) {
+            p.hand.addToTop(c);
+        }
     }
-    */
-    // 由于 SelectCardAction 是 BaseMod 或原版没有直接暴露这种 Lambda 的 Action (原版只有 HandCardSelectScreen)，
-    // 我们手写一个简单的过滤逻辑放到 Action 里：
-    // （此处省略几百字 Action 代码，采用上面的简化版逻辑，但在筛选器里做限制）
-    // 实际上，最简单的做法是：遍历手牌，把所有 非诅咒 牌暂时设为 unhoverable/unclickable，选完再恢复。
-    // 或者直接：自动消耗随机一张诅咒。
-    // "消耗手牌中一张诅咒牌" -> 玩家选择体验更好。
 }

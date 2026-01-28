@@ -77,11 +77,5 @@ public class TheTrial extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 1. 造成伤害
         addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
-
-        // 2. 洗入抽牌堆逻辑
-        this.purgeOnUse = true; // 本卡消耗（但不触发消耗相关的遗物，只是从战斗移除）
-
-        // 创建副本洗入抽牌堆
-        addToBot(new MakeTempCardInDrawPileAction(this.makeStatEquivalentCopy(), 1, true, true));
     }
 }

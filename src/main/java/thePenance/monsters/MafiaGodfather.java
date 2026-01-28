@@ -1,5 +1,6 @@
 package thePenance.monsters;
 
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -20,15 +21,28 @@ public class MafiaGodfather extends AbstractMonster {
     public static final String ID = PenanceMod.makeID("MafiaGodfather");
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
 
+    private static final String ATLAS_PATH = "thePenance/images/enemies/MafiaGodfather/enemy_1282_sgelder_2.atlas";
+    private static final String JSON_PATH = "thePenance/images/enemies/MafiaGodfather/enemy_1282_sgelder_2.json";
+    private static final float SCALE = 1.5F; // 根据需要调整大小，通常是 1.0F 到 1.5F
+
     private static final int HP = 120;
     private static final int STR_AMT = 2;
     private static final int BLOCK_AMT = 15;
 
     public MafiaGodfather(float x, float y) {
         super(monsterStrings.NAME, ID, HP, 0.0F, 0.0F, 220.0F, 300.0F, null, x, y);
-        this.loadAnimation("images/monsters/theBottom/fatGremlin/skeleton.atlas", "images/monsters/theBottom/fatGremlin/skeleton.json", 1.0F);
-        this.state.setAnimation(0, "animation", true);
-        this.type = EnemyType.ELITE;
+
+        this.type = EnemyType.NORMAL;
+
+        // 2. 加载 Spine 动画
+        this.loadAnimation(ATLAS_PATH, JSON_PATH, SCALE);
+
+        // 3. 设置初始动画
+        // 注意："Idle" 是动画名称，必须与你的 .json 文件内的名称完全一致！
+        // 如果游戏崩溃，请检查 json 文件中 "animations" 下的键名（可能是 "idle", "animation", "stand" 等）
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+
+        this.flipHorizontal = true;
     }
 
     @Override

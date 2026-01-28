@@ -1,5 +1,6 @@
 package thePenance.monsters;
 
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -15,6 +16,10 @@ public class FamilyCleaner extends AbstractMonster {
     public static final String ID = PenanceMod.makeID("FamilyCleaner");
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
 
+    private static final String ATLAS_PATH = "thePenance/images/enemies/FamilyCleaner/enemy_1283_sgkill37.atlas";
+    private static final String JSON_PATH = "thePenance/images/enemies/FamilyCleaner/enemy_1283_sgkill37.json";
+    private static final float SCALE = 1.3F; // 根据需要调整大小，通常是 1.0F 到 1.5F
+
     private static final int HP = 32;
     private static final int DMG_A = 12;
     private static final int DMG_B = 8;
@@ -24,8 +29,15 @@ public class FamilyCleaner extends AbstractMonster {
         super(monsterStrings.NAME, ID, HP, 0.0F, 0.0F, 150.0F, 220.0F, null, x, y);
         // 这里设置为 NORMAL 即可，MinionPower 由老大赋予，或者由 usePreBattleAction 赋予
         this.type = EnemyType.NORMAL;
-        this.loadAnimation("images/monsters/theBottom/angryGremlin/skeleton.atlas", "images/monsters/theBottom/angryGremlin/skeleton.json", 1.0F);
-        this.state.setAnimation(0, "idle", true);
+        this.loadAnimation(ATLAS_PATH, JSON_PATH, SCALE);
+
+        // 3. 设置初始动画
+        // 注意："Idle" 是动画名称，必须与你的 .json 文件内的名称完全一致！
+        // 如果游戏崩溃，请检查 json 文件中 "animations" 下的键名（可能是 "idle", "animation", "stand" 等）
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+
+        this.flipHorizontal = true;
+
         this.damage.add(new DamageInfo(this, DMG_A));
         this.damage.add(new DamageInfo(this, DMG_B));
     }

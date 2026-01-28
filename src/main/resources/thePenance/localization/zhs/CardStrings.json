@@ -14,11 +14,11 @@
   },
   "thePenance:LawModification": {
     "NAME": "法则修正",
-    "DESCRIPTION": "消耗。 NL 保留。 NL 将你当前的 格挡 转换为 屏障 。"
+    "DESCRIPTION": "消耗。 NL 保留。 NL 将你的 格挡 转换为 屏障 。"
   },
   "thePenance:ImmediateExecution": {
     "NAME": "即刻行刑",
-    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 对一名敌人造成等同于 裁决 层数的伤害。"
+    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 造成等同于 裁决 的伤害。"
   },
   "thePenance:CodeOfRevenge": {
     "NAME": "复仇法典",
@@ -42,7 +42,7 @@
   },
   "thePenance:ThornyPath": {
     "NAME": "披荆斩棘",
-    "DESCRIPTION": "回合结束时，获得等同于当前 裁决 层数 !M!% 的 荆棘环身 。"
+    "DESCRIPTION": "回合结束时，获得等同于 裁决 !M!% 的 荆棘环身 。"
   },
   "thePenance:Sting": {
     "NAME": "刺痛",
@@ -58,7 +58,7 @@
   },
   "thePenance:TheTrial": {
     "NAME": "审判",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果为 *乘算 。 NL 此牌被打出后将从战斗中移除，然后将一张复制品洗入你的抽牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 对此牌的加成效果改为 *乘算 。"
   },
   "thePenance:TippingScales": {
     "NAME": "倾斜天平",
@@ -70,11 +70,11 @@
   },
   "thePenance:GavelStrike": {
     "NAME": "落下法槌",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你的 屏障 高于目标生命值，且目标非精英或首领，则直接将其 处决 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若 屏障 高于目标生命值且非精英或首领，则直接将其击杀 。"
   },
   "thePenance:BreakTheShackles": {
     "NAME": "挣脱枷锁",
-    "DESCRIPTION": "消耗。 NL 消耗所有 屏障 。每消耗 !M! 点 屏障 ，便获得 1 点 力量 和 1 点 [E] 。"
+    "DESCRIPTION": "消耗。 NL 消耗所有 屏障 。每消耗 !M! 点 ，获得 1 点 力量 和 1 点 [E] 。"
   },
   "thePenance:LawIsCanon": {
     "NAME": "法为正典",
@@ -133,8 +133,8 @@
   },
   "thePenance:TangledThreads": {
     "NAME": "缝线缠身",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中的 X 张牌。 NL 随机对敌人造成等同于被消耗牌总耗能数值的伤害 X 次。",
-    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中的 X 张牌。 NL 随机对敌人造成等同于被消耗牌总耗能数值的伤害 X+X 次。"
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中 X 张牌。 NL 随机造成 X 次伤害（伤害值等于被消耗牌的总耗能）。",
+    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 随机 消耗 手牌中 X 张牌。 NL 随机造成 X+X 次伤害（伤害值等于被消耗牌的总耗能）。"
   },
   "thePenance:WandAntiGravity": {
     "NAME": "秘杖·反重力模式",
@@ -142,7 +142,7 @@
   },
   "thePenance:Upright": {
     "NAME": "刚正不阿",
-    "DESCRIPTION": "获得 !thePenance:StrGain! 点 力量 。 NL （会随着抽牌堆、弃牌堆、手牌与消耗堆中的诅咒牌数量而增加）"
+    "DESCRIPTION": "获得 !thePenance:StrGain! 点 力量 。 NL （数值基于所有区域中的 诅咒 牌总数）"
   },
   "thePenance:Asceticism": {
     "NAME": "苦行",
@@ -180,8 +180,8 @@
   },
   "thePenance:MaliciousCompetition": {
     "NAME": "恶意竞争",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标的生命值高于你的生命值，获得 !thePenance:Barrier! 点 屏障 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标的生命值高于你的生命值的一半，获得 !thePenance:Barrier! 点 屏障 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 若目标生命值高于你，获得 !thePenance:Barrier! 点 屏障 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 若目标生命值高于你的一半，获得 !thePenance:Barrier! 点 屏障 。"
   },
   "thePenance:Adjourn": {
     "NAME": "休庭",
@@ -230,8 +230,8 @@
   },
   "thePenance:SceneInvestigation": {
     "NAME": "调查现场",
-    "DESCRIPTION": "连续打出 2 张 攻击牌 时，获得 1 张随机 技能牌 。 NL 连续打出 2 张 技能牌 时，获得 1 张随机 攻击牌 。 NL 连续打出 2 张 能力牌 时，获得 !M! 点 [E] 。 NL （生成的卡牌具有 消耗 和 虚无 ）",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 连续打出 2 张 攻击牌 时，获得 1 张随机 升级后的 技能牌 。 NL 连续打出 2 张 技能牌 时，获得 1 张随机 升级后的 攻击牌 。 NL 连续打出 2 张 能力牌 时，获得 !M! 点 [E] 。 NL （生成的卡牌具有 消耗 和 虚无 ）"
+    "DESCRIPTION": "连续打出 2 张同类牌时获得奖励： NL 攻击牌 -> 随机 技能牌 ； NL 技能牌 -> 随机 攻击牌 ； NL 能力牌 -> !M! 点 [E] 。 NL （生成的牌 消耗 且 虚无 ）",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 连续打出 2 张同类牌时获得奖励： NL 攻击牌 -> 随机 升级后的 技能牌 ； NL 技能牌 -> 随机 升级后的 攻击牌 ； NL 能力牌 -> !M! 点 [E] 。 NL （生成的牌 消耗 且 虚无 ）"
   },
   "thePenance:DeadlyEnemy": {
     "NAME": "死敌",
@@ -243,7 +243,7 @@
   },
   "thePenance:CitationOfLaw": {
     "NAME": "法条援引",
-    "DESCRIPTION": "消耗。 NL 获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 层数 !M!% 的 屏障 。"
+    "DESCRIPTION": "消耗。 NL 获得 !thePenance:BaseBarrier! 点 屏障 。 NL 然后，获得等同于当前 屏障 !M!% 的 屏障 。"
   },
   "thePenance:Overrule": {
     "NAME": "驳回",
@@ -267,7 +267,7 @@
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "有罪！",
-    "DESCRIPTION": "移除目标所有 格挡 。造成 !D! 点伤害。 NL 若 裁决 ≥ 10 ，额外造成 裁决 伤害。 NL 若 荆棘环身 ≥ 10 ，给予 1 层 止戈 。 NL 若 力量 ≥ 10 ，以上效果触发两次。"
+    "DESCRIPTION": "移除 格挡 。造成 !D! 点伤害。 NL 基于层数是否大于等于10追加效果： NL 裁决 ：造成等量伤害。 NL 荆棘 ：给予 1 层 止戈 。 NL 力量 ：上述效果触发两次。"
   },
   "thePenance:SelfIncrimination": {
     "NAME": "自证其罪",
@@ -328,7 +328,7 @@
   },
   "thePenance:PreExecutionPrep": {
     "NAME": "执行前准备",
-    "DESCRIPTION": "消耗 。 NL 抽牌直到手牌上限。每抽出一张： NL 攻击牌 -> 获得 1 点 裁决 ； NL 技能牌 -> 获得 1 层 荆棘环身 ； NL 能力牌 -> 获得 1 点 力量 ； NL 诅咒牌 -> 获得 1 点 [E] 。"
+    "DESCRIPTION": "消耗 。 NL 抽牌直到手牌上限。根据抽到的类型获得： NL 攻击牌 -> 获得 1 点 裁决 ； NL 技能牌 -> 获得 1 层 荆棘环身 ； NL 能力牌 -> 获得 1 点 力量 ； NL 诅咒牌 -> 获得 1 点 [E] 。"
   },
   "thePenance:NoSentenceNeeded": {
     "NAME": "无需宣判",
@@ -357,6 +357,6 @@
   },
   "thePenance:BloodDebtClause": {
     "NAME": "血债条款",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 每有一个敌人受到伤害，将一张随机的 狼群诅咒 加入你的弃牌堆。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 每有一个敌人受到伤害，将一张随机的 狼群诅咒 放入弃牌堆。"
   }
 }

@@ -1,6 +1,8 @@
 package thePenance.monsters;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.common.EscapeAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,11 +17,28 @@ public class VolsiniiCivilian extends AbstractMonster {
     public static final String ID = PenanceMod.makeID("VolsiniiCivilian");
     private static final MonsterStrings monsterStrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
 
-    private boolean escaped = false; // 防止重复触发逃跑
+    // 资源路径常量（使用正斜杠 /）
+    private static final String ATLAS_PATH = "thePenance/images/enemies/VolsiniiCivilian/enemy_3004_speople.atlas";
+    private static final String JSON_PATH = "thePenance/images/enemies/VolsiniiCivilian/enemy_3004_speople.json";
+    private static final float SCALE = 1.5F; // 根据需要调整大小，通常是 1.0F 到 1.5F
+
+    private boolean escaped = false;
 
     public VolsiniiCivilian(float x, float y) {
-        super(monsterStrings.NAME, ID, 30, 0.0F, 0.0F, 100.0F, 200.0F, "thePenance/images/character/animation/object1.png", x, y);
+        // 1. 修改 super 调用：将 imgUrl 参数设为 null
+        super(monsterStrings.NAME, ID, 30, 0.0F, 0.0F, 100.0F, 200.0F, null, x, y);
+
         this.type = EnemyType.NORMAL;
+
+        // 2. 加载 Spine 动画
+        this.loadAnimation(ATLAS_PATH, JSON_PATH, SCALE);
+
+        // 3. 设置初始动画
+        // 注意："Idle" 是动画名称，必须与你的 .json 文件内的名称完全一致！
+        // 如果游戏崩溃，请检查 json 文件中 "animations" 下的键名（可能是 "idle", "animation", "stand" 等）
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+
+        this.flipHorizontal = true;
     }
 
     @Override
