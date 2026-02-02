@@ -3,10 +3,12 @@ package thePenance.character;
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.PolygonSpriteBatch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.esotericsoftware.spine.AnimationState;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,16 +17,33 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+
+// 引入你的卡牌和遗物
 import thePenance.cards.Defend;
 import thePenance.cards.Resolute;
 import thePenance.cards.Strike;
+import thePenance.powers.BarrierPower;
 import thePenance.relics.PenanceBasicRelic;
 import thePenance.util.Sounds;
+
+// --- 关键：引用 Shade 后的 Spine 3.8 包 ---
+import com.esotericsoftware.spine38.AnimationState;
+import com.esotericsoftware.spine38.AnimationStateData;
+import com.esotericsoftware.spine38.Skeleton;
+import com.esotericsoftware.spine38.SkeletonData;
+import com.esotericsoftware.spine38.SkeletonJson;
+import com.esotericsoftware.spine38.SkeletonRenderer; // 3.8版本不再叫 SkeletonMeshRenderer
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,17 +78,30 @@ public class Penance extends CustomPlayer {
     };
     private static final float[] layerSpeeds = new float[] { -20.0F, 20.0F, -40.0F, 40.0F, 360.0F };
 
-    // --- 静态 Meta 类 (保留用于 BaseMod 注册) ---
+    // Spine 3.8
+    protected TextureAtlas atlas38;
+    protected Skeleton skeleton38;
+    protected AnimationState state38;
+    protected AnimationStateData stateData38;
+
+    // 独立 Renderer（不要用 CardCrawlGame.psb）
+    protected static final PolygonSpriteBatch psb = new PolygonSpriteBatch();
+    protected static final SkeletonRenderer sr = new SkeletonRenderer();
+    static {
+        sr.setPremultipliedAlpha(true);
+    }
+
+    private PenanceAnimHelper animHelper;
+
+    // --- Meta ---
     public static class Meta {
         @SpireEnum public static PlayerClass PENANCE;
         @SpireEnum(name = "PENANCE_COLOR") public static AbstractCard.CardColor CARD_COLOR;
         @SpireEnum(name = "PENANCE_COLOR") @SuppressWarnings("unused") public static CardLibrary.LibraryType LIBRARY_COLOR;
 
-        // 注册相关路径
         private static final String CHAR_SELECT_BUTTON = "thePenance/char/select.png";
         private static final String CHAR_SELECT_PORTRAIT = "thePenance/char/penance.png";
 
-        // 卡牌背景
         private static final String BG_ATTACK = characterPath("cardback/bg_attack.png");
         private static final String BG_ATTACK_P = characterPath("cardback/bg_attack_p.png");
         private static final String BG_SKILL = characterPath("cardback/bg_skill.png");
@@ -98,32 +130,152 @@ public class Penance extends CustomPlayer {
     public Penance() {
         super(getNames()[0], Meta.PENANCE,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds),
-                null, null);
+                null, null); // 传 null 给父类动画
 
+        // 基础初始化
         initializeClass(null, SHOULDER_2, SHOULDER_1, null, getLoadout(),
                 20.0F, -30.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 
-        // 核心修改：从 PenanceSkinHelper 获取当前皮肤配置
-        PenanceSkinHelper.SkinInfo activeSkin = PenanceSkinHelper.getCurrentSkin();
-
-        // 加载实际的游戏内动画
-        loadAnimation(activeSkin.atlas, activeSkin.json, activeSkin.scale);
-
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-        this.stateData.setMix("Idle", "Attack", 0.1f);
-
-        dialogX = (drawX + 0.0F * Settings.scale);
-        dialogY = (drawY + 220.0F * Settings.scale);
+        loadSpine();
     }
 
-    // --- 角色核心逻辑 (Override Methods) ---
+    // --- 核心绘制与更新逻辑 (Override) ---
+
+    private void loadSpine() {
+        PenanceSkinHelper.SkinInfo skin = PenanceSkinHelper.getCurrentSkin();
+
+        atlas38 = new TextureAtlas(Gdx.files.internal(skin.atlas));
+        SkeletonJson json = new SkeletonJson(atlas38);
+        json.setScale(Settings.renderScale / skin.scale);
+
+        SkeletonData data = json.readSkeletonData(Gdx.files.internal(skin.json));
+
+        skeleton38 = new Skeleton(data);
+        skeleton38.setColor(Color.WHITE);
+
+        stateData38 = new AnimationStateData(data);
+        state38 = new AnimationState(stateData38);
+
+        stateData38.setDefaultMix(0.2f);
+
+        stateData38.setMix("Idle", "Attack", 0.1f);
+        stateData38.setMix("Attack", "Idle", 0.1f);
+
+        stateData38.setMix("Skill_1_Idle", "Skill_1_Attack", 0.1f);
+        stateData38.setMix("Skill_1_Attack", "Skill_1_Idle", 0.1f);
+
+        stateData38.setMix("Skill_3_Idle", "Skill_3_Attack", 0.1f);
+        stateData38.setMix("Skill_3_Attack", "Skill_3_Idle", 0.1f);
+
+        stateData38.setMix("Idle", "Die", 0.1f);
+
+        // 初始化初始动作
+        state38.setAnimation(0, "Idle", true);
+
+        this.animHelper = new PenanceAnimHelper(state38, skeleton38.getData());
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        // 姿态（必画）
+        this.stance.render(sb);
+
+        // 战斗中：血条 + orb
+        if ((AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT
+                || AbstractDungeon.getCurrRoom() instanceof MonsterRoom)
+                && !this.isDead) {
+
+            renderHealth(sb);
+
+            if (!this.orbs.isEmpty()) {
+                for (AbstractOrb o : this.orbs) {
+                    o.render(sb);
+                }
+            }
+        }
+
+        // 非休息房
+        if (!(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            renderPlayerImage(sb);
+            this.hb.render(sb);
+            this.healthHb.render(sb);
+        } else {
+            sb.setColor(Color.WHITE);
+            renderShoulderImg(sb);
+        }
+    }
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        if (state38 == null || skeleton38 == null) return;
+
+        if (animHelper != null) {
+            animHelper.update();
+        }
+
+        // 更新 Spine
+        state38.update(Gdx.graphics.getDeltaTime());
+        state38.apply(skeleton38);
+        skeleton38.updateWorldTransform();
+
+        skeleton38.setPosition(
+                this.drawX + this.animX,
+                this.drawY + this.animY
+        );
+        skeleton38.setColor(this.tint.color);
+
+        float absX = Math.abs(skeleton38.getScaleX());
+        float absY = Math.abs(skeleton38.getScaleY());
+        skeleton38.setScaleX(this.flipHorizontal ? -absX : absX);
+        skeleton38.setScaleY(this.flipVertical ? -absY : absY);
+
+        sb.end();
+        psb.begin();
+        sr.draw(psb, skeleton38);
+        psb.end();
+        sb.begin();
+    }
+
+    // --- 动画控制 ---
+
+    @Override
+    public void useFastAttackAnimation() {
+        if (animHelper != null) {
+            animHelper.playAttack();
+        } else {
+            if (state38 != null) state38.setAnimation(0, "Attack", false);
+        }
+    }
+
+    @Override
+    public void playDeathAnimation() {
+        if (state38 == null) return;
+        state38.setAnimation(0, "Die", false);
+    }
+
+    @Override
+    public void onVictory() {
+        super.onVictory();
+
+        if (this.animHelper != null) {
+            this.animHelper.reset();
+        }
+    }
+
+    // --- 常规配置 ---
 
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike.ID); retVal.add(Strike.ID); retVal.add(Strike.ID); retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(Defend.ID); retVal.add(Defend.ID); retVal.add(Defend.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(Resolute.ID);
         return retVal;
     }
@@ -153,19 +305,6 @@ public class Penance extends CustomPlayer {
     }
 
     @Override
-    public void useFastAttackAnimation() {
-        this.state.setAnimation(0, "Attack", false);
-        this.state.setAnimation(0, "Idle", true);
-    }
-
-    @Override
-    public void playDeathAnimation() {
-        this.state.setAnimation(0, "Die", false);
-    }
-
-    // --- 视觉效果与文本配置 ---
-
-    @Override
     public int getAscensionMaxHPLoss() { return 4; }
 
     @Override
@@ -181,17 +320,9 @@ public class Penance extends CustomPlayer {
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList<>();
         panels.add(new CutscenePanel("thePenance/images/scenes/penance.jpg", "ATTACK_HEAVY"));
-        // 添加第一张图
-        // 参数1：图片路径
-        // 参数2：播放该图时的音效 ID (可选，比如 "ATTACK_HEAVY", "DOOR_OPEN" 等)
         panels.add(new CutscenePanel("thePenance/images/scenes/vic1.png", "ATTACK_HEAVY"));
-
-        // 添加第二张图
         panels.add(new CutscenePanel("thePenance/images/scenes/vic2.png"));
-
-        // 添加第三张图
         panels.add(new CutscenePanel("thePenance/images/scenes/vic3.png"));
-
         return panels;
     }
 

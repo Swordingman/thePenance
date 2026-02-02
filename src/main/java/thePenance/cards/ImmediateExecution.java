@@ -13,8 +13,8 @@ public class ImmediateExecution extends BaseCard {
     public static final String ID = makeID("ImmediateExecution");
 
     private static final int COST = 1;
-    private static final int MAGIC = 2; // 获得裁决数
-    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MAGIC = 3; // 获得裁决数
+    private static final int UPGRADE_PLUS_MAGIC = 3;
 
     public ImmediateExecution() {
         super(ID, new CardStats(

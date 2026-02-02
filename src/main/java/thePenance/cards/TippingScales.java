@@ -14,7 +14,7 @@ public class TippingScales extends BaseCard {
     public static final String ID = makeID("TippingScales");
 
     private static final int COST = 1;
-    private static final int JUDGEMENT_COST = 3;
+    private static final int JUDGEMENT_COST = 2;
     private static final int STR_GAIN = 1;
     private static final int UPGRADE_STR_GAIN = 1;
 

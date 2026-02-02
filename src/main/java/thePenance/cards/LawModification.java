@@ -10,8 +10,8 @@ public class LawModification extends BaseCard {
 
     public static final String ID = makeID("LawModification");
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 1;
+    private static final int UPGRADED_COST = 0;
 
     public LawModification() {
         super(ID, new CardStats(

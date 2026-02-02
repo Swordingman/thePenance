@@ -30,7 +30,7 @@ public class Resolute extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, 4), 4));
+        addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, 3), 3));
         // 这里的 magicNumber 会自动包含升级后的数值
         addToBot(new ResoluteAction(p, magicNumber, upgraded, freeToPlayOnce, energyOnUse));
     }

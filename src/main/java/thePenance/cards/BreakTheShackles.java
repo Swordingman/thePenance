@@ -1,13 +1,12 @@
 package thePenance.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import thePenance.character.Penance;
-import thePenance.powers.BarrierPower;
+import thePenance.powers.JudgementPower;
+import thePenance.powers.ThornAuraPower;
 import thePenance.util.CardStats;
 
 public class BreakTheShackles extends BaseCard {
@@ -15,11 +14,9 @@ public class BreakTheShackles extends BaseCard {
     public static final String ID = makeID("BreakTheShackles");
 
     private static final int COST = 1;
-    private static final int UPG_COST = 0; // 升级后变 0 费
-
-    // 我们用 MagicNumber 来表示“每消耗多少点屏障”
-    // 这样描述里可以写：每消耗 !M! 点...
-    private static final int THRESHOLD = 5;
+    private static final int BASE_VAL = 3;
+    private static final int PERCENT = 20;
+    private static final int UPG_PERCENT = 10;
 
     public BreakTheShackles() {
         super(ID, new CardStats(
@@ -29,33 +26,42 @@ public class BreakTheShackles extends BaseCard {
                 CardTarget.SELF,
                 COST
         ));
+        setMagic(PERCENT, UPG_PERCENT);
+    }
 
-        this.exhaust = true;
+    private int calculateTotalAmount() {
+        int total = BASE_VAL;
+        AbstractPlayer p = AbstractDungeon.player;
 
-        setCostUpgrade(UPG_COST);
-        setMagic(THRESHOLD);
+        if (p != null && p.hasPower(JudgementPower.POWER_ID)) {
+            int judgeAmt = p.getPower(JudgementPower.POWER_ID).amount;
+            total += (int) (judgeAmt * (this.magicNumber / 100.0f));
+        }
+        return total;
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+
+        int total = calculateTotalAmount();
+
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + total + cardStrings.EXTENDED_DESCRIPTION[1];
+
+        this.initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 检查是否有屏障
-        if (p.hasPower(BarrierPower.POWER_ID)) {
-            // 1. 获取当前屏障总量
-            int currentBarrier = p.getPower(BarrierPower.POWER_ID).amount;
-
-            // 2. 计算倍率 (向下取整，例如 14点屏障 / 5 = 2倍)
-            int multiplier = currentBarrier / this.magicNumber;
-
-            // 3. 消耗所有屏障 (移除Buff)
-            addToBot(new RemoveSpecificPowerAction(p, p, BarrierPower.POWER_ID));
-
-            // 4. 发放奖励
-            if (multiplier > 0) {
-                // 获得力量
-                addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, multiplier), multiplier));
-                // 获得能量
-                addToBot(new GainEnergyAction(multiplier));
-            }
+        int total = calculateTotalAmount();
+        if (total > 0) {
+            addToBot(new ApplyPowerAction(p, p, new ThornAuraPower(p, total), total));
         }
     }
 }

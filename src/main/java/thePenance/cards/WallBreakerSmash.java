@@ -15,8 +15,8 @@ public class WallBreakerSmash extends BaseCard {
     public static final String ID = makeID("WallBreakerSmash");
 
     private static final int COST = 1;
-    private static final int DAMAGE = 18;
-    private static final int UPG_DAMAGE = 6; // 18 -> 24
+    private static final int DAMAGE = 25;
+    private static final int UPG_DAMAGE = 7;
     private static final int BARRIER_COST = 10;
 
     public WallBreakerSmash() {

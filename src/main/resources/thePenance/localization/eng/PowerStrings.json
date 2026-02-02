@@ -5,7 +5,7 @@
   },
   "thePenance:BarrierPower": {
     "NAME": "Barrier",
-    "DESCRIPTIONS": ["Absorbs #b", " damage. Triggers Judgment when attacked."]
+    "DESCRIPTIONS": ["Absorbs #b", " damage."]
   },
   "thePenance:ThornAuraPower": {
     "NAME": "Thorn Aura",

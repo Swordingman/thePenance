@@ -33,7 +33,7 @@ public class Adjourn extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int cardsPlayed = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() * 2;
 
         if (p.currentHealth < (p.maxHealth / 2.0F)) {
             // 半血以下：【强制回血】

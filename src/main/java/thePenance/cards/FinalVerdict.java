@@ -16,8 +16,8 @@ public class FinalVerdict extends BaseCard {
 
     public static final String ID = makeID("FinalVerdict");
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 10;
+    private static final int COST = 1;
+    private static final int DAMAGE = 18;
 
     // 斩杀收益
     private static final int MAX_HP_GAIN = 3;

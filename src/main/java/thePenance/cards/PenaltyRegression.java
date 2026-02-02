@@ -13,8 +13,8 @@ import thePenance.util.CardStats;
 public class PenaltyRegression extends BaseCard {
     public static final String ID = makeID("PenaltyRegression");
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPG_DAMAGE = 3; // 6->9
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 3;
 
     public PenaltyRegression() {
         super(ID, new CardStats(

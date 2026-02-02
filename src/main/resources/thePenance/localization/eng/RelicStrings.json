@@ -3,7 +3,7 @@
     "NAME": "The Thorny Road That Continues",
     "FLAVOR": "It pricks you constantly, reminding you of the weight of justice.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain **Barrier** equal to #b10% of your Max HP and #b1 #yJudgment . NL Healing from Potions, most Events, non-Penance cards, and Rest Sites is converted into an equal amount of **Barrier** (stored out of combat). NL Currently stored: #b",
+      "At the start of combat, gain Barrier equal to #b10% of your Max HP and #b1 #yJudgment . NL Healing from Potions, most Events, non-Penance cards, and Rest Sites is converted into an equal amount of Barrier (stored out of combat). NL Currently stored: #b",
       " Barrier. NL At the end of combat, convert #b10% of remaining #yBarrier into HP healing."
     ]
   },

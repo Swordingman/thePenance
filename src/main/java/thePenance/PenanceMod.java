@@ -6,13 +6,16 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 import thePenance.character.Penance;
+import thePenance.character.PenanceSkinHelper;
 import thePenance.events.*;
 import thePenance.potions.BarrierPotion;
 import thePenance.potions.BottleOfWolfBlood;
@@ -61,6 +64,7 @@ public class PenanceMod implements
     static { loadModInfo(); }
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); // 用于向控制台输出日志
+    public static SpireConfig penanceConfig;
 
     // 这用于给卡牌、遗物等对象的ID添加前缀，
     // 以避免不同模组使用相同名称时发生冲突。
@@ -101,6 +105,27 @@ public class PenanceMod implements
         // 如果你想设置一个配置面板，就在这里进行。
         // 你可以在 BaseMod wiki 页面 "Mod Config and Panel" 找到相关信息。
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+
+        // --- 读取皮肤配置 ---
+        try {
+            Properties defaults = new Properties();
+            defaults.setProperty("skinIndex", "0"); // 默认是 0
+
+            // "ThePenance" 是你的模组ID (不要带前缀如果不需要)，"PenanceConfig" 是文件名
+            penanceConfig = new SpireConfig("ThePenance", "PenanceConfig", defaults);
+            penanceConfig.load();
+
+            // 将读取到的值赋给 SkinHelper
+            PenanceSkinHelper.currentSkinIndex = penanceConfig.getInt("skinIndex");
+
+            // 安全检查：如果读取的索引超过了当前皮肤数量，重置为0
+            if (PenanceSkinHelper.currentSkinIndex >= PenanceSkinHelper.SKINS.length || PenanceSkinHelper.currentSkinIndex < 0) {
+                PenanceSkinHelper.currentSkinIndex = 0;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /*---------- 本地化 (Localization) ----------*/
@@ -110,7 +135,7 @@ public class PenanceMod implements
     {
         return language.name().toLowerCase();
     }
-    private static final String defaultLanguage = "eng"; // 默认语言为英语
+    private static final String defaultLanguage = "zhs"; // 默认语言为英语
 
     public static final Map<String, KeywordInfo> keywords = new HashMap<>();
 
@@ -359,4 +384,12 @@ public class PenanceMod implements
     // 加入狼群诅咒标识
     @SpireEnum
     public static AbstractCard.CardTags CURSE_OF_WOLVES;
+
+    // 用于接收 JSON 数据的简单类 (手机/电脑通用)
+    private static class LocalKeyword {
+        public String PROPER_NAME; // 增加这个字段以匹配 BaseMod 标准
+        public String[] NAMES;
+        public String DESCRIPTION;
+    }
 }
+

@@ -4,12 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.esotericsoftware.spine.AnimationState;
-import com.esotericsoftware.spine.AnimationStateData;
-import com.esotericsoftware.spine.Skeleton;
-import com.esotericsoftware.spine.SkeletonData;
-import com.esotericsoftware.spine.SkeletonJson;
-import com.esotericsoftware.spine.SkeletonMeshRenderer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -20,6 +14,14 @@ import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import java.util.ArrayList;
+import thePenance.PenanceMod;
+
+import com.esotericsoftware.spine38.AnimationState;
+import com.esotericsoftware.spine38.AnimationStateData;
+import com.esotericsoftware.spine38.Skeleton;
+import com.esotericsoftware.spine38.SkeletonData;
+import com.esotericsoftware.spine38.SkeletonJson;
+import com.esotericsoftware.spine38.SkeletonRenderer;
 
 public class PenanceSkinHelper {
 
@@ -38,7 +40,7 @@ public class PenanceSkinHelper {
         }
     }
 
-    // --- 皮肤列表与状态 ---
+    // --- 皮肤列表 ---
     public static final SkinInfo[] SKINS = new SkinInfo[] {
             new SkinInfo(
                     "默认",
@@ -51,27 +53,32 @@ public class PenanceSkinHelper {
                     "thePenance/char/penance/animation/2/char_4065_judge_snow_6.atlas",
                     "thePenance/char/penance/animation/2/char_4065_judge_snow_6.json",
                     1.5f
+            ),
+            new SkinInfo(
+                    "记叙",
+                    "thePenance/char/penance/animation/3/char_4065_judge_epoque_33.atlas",
+                    "thePenance/char/penance/animation/3/char_4065_judge_epoque_33.json",
+                    1.5f
             )
     };
 
     public static int currentSkinIndex = 0;
 
-    // --- 预览渲染资源 ---
+    // --- 资源字段 ---
+    private static TextureAtlas currentAtlas; // 持有引用以便释放
     private static Skeleton previewSkeleton;
     private static AnimationState previewState;
     private static AnimationStateData previewStateData;
-    private static SkeletonMeshRenderer skeletonRenderer;
+    private static SkeletonRenderer skeletonRenderer; // 修正类型
 
     // --- UI 控件 ---
     private static Hitbox skinLeftHb = new Hitbox(70f * Settings.scale, 70f * Settings.scale);
     private static Hitbox skinRightHb = new Hitbox(70f * Settings.scale, 70f * Settings.scale);
 
-    /** 获取当前选中的皮肤信息 */
     public static SkinInfo getCurrentSkin() {
         return SKINS[currentSkinIndex];
     }
 
-    /** 检查是否在选人界面且选中了斥罪 */
     public static boolean isPenanceSelected() {
         if (CardCrawlGame.mainMenuScreen == null || CardCrawlGame.mainMenuScreen.charSelectScreen == null) {
             return false;
@@ -81,37 +88,54 @@ public class PenanceSkinHelper {
 
         for (CharacterOption o : options) {
             Object p = ReflectionHacks.getPrivate(o, CharacterOption.class, "c");
-            if (p instanceof Penance && o.selected) { // 注意这里要引用 Penance 类
+            // 确保 Penance 类被正确引用
+            if (p instanceof Penance && o.selected) {
                 return true;
             }
         }
         return false;
     }
 
-    /** 加载预览用的 Spine 资源 */
     public static void loadPreviewAnimation() {
         SkinInfo skin = getCurrentSkin();
 
-        // 资源加载
-        TextureAtlas atlas = new TextureAtlas(Gdx.files.internal(skin.atlas));
-        SkeletonJson json = new SkeletonJson(atlas);
-        json.setScale(Settings.renderScale / skin.scale);
+        // 释放旧资源，防止显存泄漏
+        if (currentAtlas != null) {
+            currentAtlas.dispose();
+        }
+
+        currentAtlas = new TextureAtlas(Gdx.files.internal(skin.atlas));
+        SkeletonJson json = new SkeletonJson(currentAtlas); // 使用 3.8 的 Loader
+        json.setScale(Settings.renderScale / skin.scale); // 计算缩放
+
         SkeletonData data = json.readSkeletonData(Gdx.files.internal(skin.json));
 
-        // 状态初始化
         previewSkeleton = new Skeleton(data);
         previewSkeleton.setColor(Color.WHITE);
         previewStateData = new AnimationStateData(data);
         previewState = new AnimationState(previewStateData);
         previewState.setAnimation(0, "Idle", true);
 
+        // 设置预览位置
+        previewSkeleton.setPosition(Settings.WIDTH * 0.85f, Settings.HEIGHT * 0.65f);
+
         if (skeletonRenderer == null) {
-            skeletonRenderer = new SkeletonMeshRenderer();
+            skeletonRenderer = new SkeletonRenderer(); // 修正实例化
             skeletonRenderer.setPremultipliedAlpha(true);
         }
     }
 
-    /** 处理点击和更新逻辑 */
+    public static void saveSkin() {
+        try {
+            if (PenanceMod.penanceConfig != null) {
+                PenanceMod.penanceConfig.setInt("skinIndex", currentSkinIndex);
+                PenanceMod.penanceConfig.save();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void update() {
         if (!isPenanceSelected()) return;
 
@@ -142,11 +166,12 @@ public class PenanceSkinHelper {
             skinLeftHb.clicked = false;
             skinRightHb.clicked = false;
 
-            loadPreviewAnimation(); // 重新加载预览
+            saveSkin();
+
+            loadPreviewAnimation();
         }
     }
 
-    /** 渲染逻辑 */
     public static void render(SpriteBatch sb) {
         if (!isPenanceSelected()) return;
         if (previewSkeleton == null) loadPreviewAnimation();
@@ -165,12 +190,14 @@ public class PenanceSkinHelper {
         FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, getCurrentSkin().name, centerX, centerY, Settings.GOLD_COLOR);
 
         // 3. 绘制 Spine 预览
+        // 更新逻辑
         float deltaTime = Gdx.graphics.getDeltaTime();
         previewState.update(deltaTime);
         previewState.apply(previewSkeleton);
         previewSkeleton.updateWorldTransform();
         previewSkeleton.setPosition(centerX, centerY);
 
+        // 绘制逻辑 (切换 Batch)
         sb.end();
         CardCrawlGame.psb.begin();
         skeletonRenderer.draw(CardCrawlGame.psb, previewSkeleton);

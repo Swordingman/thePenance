@@ -15,8 +15,8 @@ public class BurdenedJourney extends BaseCard {
     public static final String ID = makeID("BurdenedJourney");
 
     private static final int COST = 1;
-    private static final int JUDGE_AMT = 3;
-    private static final int UPG_JUDGE_AMT = 2; // 3->5
+    private static final int AMT = 3;
+    private static final int UPG_AMT = 2;
 
     public BurdenedJourney() {
         super(ID, new CardStats(
@@ -28,29 +28,12 @@ public class BurdenedJourney extends BaseCard {
         ));
 
         // 设置魔法数字（裁决）
-        setMagic(JUDGE_AMT, UPG_JUDGE_AMT);
+        setMagic(AMT, UPG_AMT);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 1. 获得裁决
         addToBot(new ApplyPowerAction(p, p, new JudgementPower(p, magicNumber), magicNumber));
-
-        // 2. 判定生命值 < 50%
-        if (p.currentHealth < (p.maxHealth / 2.0F)) {
-            // 获得等量的荆棘
-            addToBot(new ApplyPowerAction(p, p, new ThornAuraPower(p, magicNumber), magicNumber));
-        }
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        AbstractPlayer p = AbstractDungeon.player;
-        if (this.current_x != -1 && this.current_y != -1) {
-            if (p.currentHealth < p.maxHealth/2f) {
-                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-            }
-        }
+        addToBot(new ApplyPowerAction(p, p, new ThornAuraPower(p, magicNumber), magicNumber));
     }
 }

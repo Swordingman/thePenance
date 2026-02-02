@@ -13,7 +13,7 @@ public class ReadCharges extends BaseCard {
     public static final String ID = makeID("ReadCharges");
 
     private static final int COST = 1;
-    private static final int JUDGE_AMT = 2; // 固定的裁决数
+    private static final int JUDGE_AMT = 3; // 固定的裁决数
     private static final int DRAW = 1;      // 抽牌数 (Magic)
     private static final int UPGRADE_PLUS_DRAW = 1;
 

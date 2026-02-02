@@ -13,7 +13,7 @@ public class Sting extends BaseCard {
 
     public static final String ID = makeID("Sting");
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int HP_COST = 3;
     private static final int THORNS_AMT = 3;
     private static final int UPGRADE_THORNS_AMT = 3;

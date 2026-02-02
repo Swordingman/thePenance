@@ -13,7 +13,7 @@ public class BarbedRebuke extends BaseCard {
 
     public static final String ID = makeID("BarbedRebuke");
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3; // 6->9
 

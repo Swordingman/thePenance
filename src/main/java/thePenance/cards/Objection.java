@@ -17,13 +17,13 @@ public class Objection extends BaseCard {
     public static final String ID = makeID("Objection");
 
     private static final int COST = 1;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 9;
 
     // 效果数值
-    private static final int EFFECT_SMALL = 2; // 裁决、荆棘
+    private static final int EFFECT_SMALL = 4; // 裁决、荆棘
     private static final int UPG_EFFECT_SMALL = 1; // 2->3
 
-    private static final int EFFECT_LARGE = 6; // 屏障
+    private static final int EFFECT_LARGE = 8; // 屏障
     private static final int UPG_EFFECT_LARGE = 2; // 6->8
 
     public Objection() {

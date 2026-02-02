@@ -9,7 +9,7 @@ public class LittleGavel extends BaseRelic {
     public static final String ID = PenanceMod.makeID("LittleGavel");
 
     public LittleGavel() {
-        super(ID, "LittleGavel", RelicTier.RARE, LandingSound.SOLID);
+        super(ID, "LittleGavel", RelicTier.UNCOMMON, LandingSound.SOLID);
     }
 
     // 由 Patch 调用

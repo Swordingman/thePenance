@@ -19,9 +19,9 @@ public class GavelStrike extends BaseCard {
 
     public static final String ID = makeID("GavelStrike");
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 5; // 升级后 15 伤害
+    private static final int UPG_DAMAGE = 3; // 升级后 15 伤害
 
     public GavelStrike() {
         super(ID, new CardStats(

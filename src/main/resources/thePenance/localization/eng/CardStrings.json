@@ -9,8 +9,8 @@
   },
   "thePenance:Resolute": {
     "NAME": "Resolute",
-    "DESCRIPTION": "Gain 4 Barrier. NL Gain !M! Barrier X times. Gain X Judgment.",
-    "UPGRADE_DESCRIPTION": "Gain 4 Barrier. NL Gain !M! Barrier X times. Gain X+1 Judgment."
+    "DESCRIPTION": "Gain 3 Barrier. NL Gain !M! Barrier X times. Gain X Judgment.",
+    "UPGRADE_DESCRIPTION": "Gain 3 Barrier. NL Gain !M! Barrier X times. Gain X+1 Judgment."
   },
   "thePenance:LawModification": {
     "NAME": "Law Modification",
@@ -30,7 +30,7 @@
   },
   "thePenance:ReadCharges": {
     "NAME": "Read Charges",
-    "DESCRIPTION": "Gain 2 Judgment. NL Draw !M! cards."
+    "DESCRIPTION": "Gain 3 Judgment. NL Draw !M! cards."
   },
   "thePenance:Purge": {
     "NAME": "Purge",
@@ -73,8 +73,9 @@
     "DESCRIPTION": "Deal !D! damage. NL If your Barrier is greater than the target's HP and they are not an Elite or Boss, kill them instantly."
   },
   "thePenance:BreakTheShackles": {
-    "NAME": "Break Shackles",
-    "DESCRIPTION": "Exhaust. NL Remove all Barrier. For every !M! Barrier removed, gain 1 Strength and 1 [E] ."
+    "NAME": "Break the Shackles",
+    "DESCRIPTION": "Gain 3 Thorn Aura . NL Gain additional Thorn Aura equal to !M!% of your Judgement .",
+    "EXTENDED_DESCRIPTION": [" NL (Total: ", " )"]
   },
   "thePenance:LawIsCanon": {
     "NAME": "Law is Canon",
@@ -159,7 +160,7 @@
   },
   "thePenance:ASip": {
     "NAME": "A Sip",
-    "DESCRIPTION": "Exhaust. NL Gain !M! Temporary Strength and 2 Vulnerable. NL Add an Ethereal copy of this card into your hand."
+    "DESCRIPTION": "Exhaust . NL Lose !M! Barrier . If insufficient, lose HP instead. NL Gain 2 Strength . NL Add a copy of this card to your hand. It is Ethereal and the loss amount is increased by 2."
   },
   "thePenance:CodeSmash": {
     "NAME": "Code Smash",
@@ -167,8 +168,8 @@
   },
   "thePenance:CourtRehearsal": {
     "NAME": "Court Rehearsal",
-    "DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random Upgraded card each turn.",
-    "UPGRADE_DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random Upgraded card each turn. NL Gain 1 [E] when played."
+    "DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random card each turn.",
+    "UPGRADE_DESCRIPTION": "Retain. Exhaust. NL While in your hand, transforms into a random *Upgraded card each turn."
   },
   "thePenance:CrownOfThorns": {
     "NAME": "Crown of Thorns",
@@ -176,7 +177,7 @@
   },
   "thePenance:BurdenedJourney": {
     "NAME": "Burdened Journey",
-    "DESCRIPTION": "Gain !M! Judgment. NL If your HP is below 50%, gain an equal amount of Thorns."
+    "DESCRIPTION": "Gain !M! Judgment. NL Gain !M! Thorn Aura."
   },
   "thePenance:MaliciousCompetition": {
     "NAME": "Malicious Competition",
@@ -185,7 +186,7 @@
   },
   "thePenance:Adjourn": {
     "NAME": "Adjourn",
-    "DESCRIPTION": "Exhaust. End your turn. NL Gain 1 Barrier for each card played this turn. NL (If HP is below 50%, heal 1 HP instead.)"
+    "DESCRIPTION": "Exhaust. End your turn. NL Gain 2 Barrier for each card played this turn. NL (If HP is below 50%, heal 2 HP instead.)"
   },
   "thePenance:Objection": {
     "NAME": "Objection!",
@@ -214,7 +215,7 @@
   },
   "thePenance:WallBreakerSmash": {
     "NAME": "Wallbreaker Smash",
-    "DESCRIPTION": "Remove !M! Barrier. NL Deal !D! damage."
+    "DESCRIPTION": "Lose !M! Barrier. NL Deal !D! damage."
   },
   "thePenance:JointLiability": {
     "NAME": "Joint Liability",
@@ -267,7 +268,7 @@
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "Guilty as Charged!",
-    "DESCRIPTION": "Remove Block. Deal !D! damage. NL Trigger additional effects if you have 10+ stacks: NL Judgment: Deal damage equal to Judgment. NL Thorns: Apply 1 Armistice. NL Strength: Trigger the above effects twice."
+    "DESCRIPTION": "Remove Block. Deal !D! damage. NL Trigger additional effects if you have 10+ stacks: NL Judgment: Deal damage equal to Judgment. NL Thorn Aura: Apply 1 Armistice. NL Strength: Trigger the above effects twice."
   },
   "thePenance:SelfIncrimination": {
     "NAME": "Self-Incrimination",

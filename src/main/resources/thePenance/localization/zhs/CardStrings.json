@@ -9,8 +9,8 @@
   },
   "thePenance:Resolute": {
     "NAME": "坚决",
-    "DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
-    "UPGRADE_DESCRIPTION": "获得 4 点 屏障 。 NL 获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
+    "DESCRIPTION": "获得 3 点 屏障 。 NL 获得 !M! 点 屏障 X 次，获得 X 点 裁决 。",
+    "UPGRADE_DESCRIPTION": "获得 3 点 屏障 。 NL 获得 !M! 点 屏障 X 次 ，获得 X+1 点 裁决 。"
   },
   "thePenance:LawModification": {
     "NAME": "法则修正",
@@ -30,7 +30,7 @@
   },
   "thePenance:ReadCharges": {
     "NAME": "宣读罪状",
-    "DESCRIPTION": "获得 2 点 裁决 。 NL 抽 !M! 张牌"
+    "DESCRIPTION": "获得 3 点 裁决 。 NL 抽 !M! 张牌"
   },
   "thePenance:Purge": {
     "NAME": "肃清",
@@ -74,7 +74,8 @@
   },
   "thePenance:BreakTheShackles": {
     "NAME": "挣脱枷锁",
-    "DESCRIPTION": "消耗。 NL 消耗所有 屏障 。每消耗 !M! 点 ，获得 1 点 力量 和 1 点 [E] 。"
+    "DESCRIPTION": "获得 3 点 荆棘环身 。 NL 额外获得相当于你当前 裁决 层数 !M!% 的荆棘环身。",
+    "EXTENDED_DESCRIPTION": [" NL （当前总计获得 ", " 点。）"]
   },
   "thePenance:LawIsCanon": {
     "NAME": "法为正典",
@@ -159,7 +160,7 @@
   },
   "thePenance:ASip": {
     "NAME": "小酌一杯",
-    "DESCRIPTION": "消耗 。 NL 获得 !M! 点 临时力量 和 2 层 易伤 。 NL 将此牌的一张拥有虚无的复制品加入手牌。"
+    "DESCRIPTION": "消耗 。 NL 失去 !M! 点 屏障 。如果不足，则失去等量生命值。 NL 获得 2 点 力量 。 NL 在手牌中加入一张此牌的复制品。该复制品拥有 虚无 ，且失去的数值增加 2 点。"
   },
   "thePenance:CodeSmash": {
     "NAME": "法典猛砸",
@@ -167,8 +168,8 @@
   },
   "thePenance:CourtRehearsal": {
     "NAME": "庭审预演",
-    "DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。",
-    "UPGRADE_DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 升级后 的牌。 NL 打出后获得 1 点 [E] 。"
+    "DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 消耗 。 NL 在你的手牌中时，每回合变为随机一张其他 *升级后 的牌。"
   },
   "thePenance:CrownOfThorns": {
     "NAME": "荆棘冠冕",
@@ -176,7 +177,7 @@
   },
   "thePenance:BurdenedJourney": {
     "NAME": "负荆前行",
-    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 如果你的生命值低于 50% ，获得等量的 荆棘环身 。"
+    "DESCRIPTION": "获得 !M! 点 裁决 。 NL 获得 !M! 点 荆棘环身 。"
   },
   "thePenance:MaliciousCompetition": {
     "NAME": "恶意竞争",
@@ -185,11 +186,11 @@
   },
   "thePenance:Adjourn": {
     "NAME": "休庭",
-    "DESCRIPTION": "消耗 。 结束你的回合。 NL 本回合每打出一张牌，获得 1 点 屏障 。 NL （若生命值低于 50% ，改为恢复 1 点生命）"
+    "DESCRIPTION": "消耗 。 结束你的回合。 NL 本回合每打出一张牌，获得 2 点 屏障 。 NL （若生命值低于 50% ，改为恢复 2 点生命）"
   },
   "thePenance:Objection": {
-    "NAME": "我反对！",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 目标意图为攻击时，获得 !M! 点 裁决 。 NL 意图为格挡时，获得 !M! 层 荆棘环身 。 NL 否则，获得 !thePenance:LargeAmt! 点 屏障 。"
+    "NAME": "异议！",
+    "DESCRIPTION": "造成 !D! 点伤害。目标意图为： NL 攻击时，获得 !M! 点 裁决 ； NL 格挡时，获得 !M! 层 荆棘环身 ； NL 否则，获得 !thePenance:LargeAmt! 点 屏障 。"
   },
   "thePenance:BarbedRebuke": {
     "NAME": "你荆然敢!",
@@ -214,7 +215,7 @@
   },
   "thePenance:WallBreakerSmash": {
     "NAME": "破壁重击",
-    "DESCRIPTION": "消耗 !M! 点 屏障 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "失去 !M! 点 屏障 。 NL 造成 !D! 点伤害。"
   },
   "thePenance:JointLiability": {
     "NAME": "连带责任",
@@ -267,7 +268,7 @@
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "有罪！",
-    "DESCRIPTION": "移除 格挡 。造成 !D! 点伤害。 NL 基于层数是否大于等于10追加效果： NL 裁决 ：造成等量伤害。 NL 荆棘 ：给予 1 层 止戈 。 NL 力量 ：上述效果触发两次。"
+    "DESCRIPTION": "移除 格挡 。造成 !D! 点伤害。 NL 基于层数是否大于等于10追加效果： NL 裁决 ：造成等量伤害。 NL 荆棘环身 ：给予 1 层 止戈 。 NL 力量 ：上述效果触发两次。"
   },
   "thePenance:SelfIncrimination": {
     "NAME": "自证其罪",

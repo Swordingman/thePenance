@@ -10,8 +10,8 @@ public class Purge extends BaseCard {
 
     public static final String ID = makeID("Purge");
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 5;
+    private static final int COST = 1;
+    private static final int DAMAGE = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
 
     public Purge() {

@@ -57,9 +57,6 @@ public class LawEnforcement extends BaseCard {
         this.baseDamage = (int)(barrier * (this.magicNumber / 100.0f));
     }
 
-    // 为了让描述不显示 baseDamage (因为是动态的)，我们通常在描述里只写百分比
-    // 这里不需要特别做什么，只要 calculateBaseDamage 正确，!D! 就会显示计算后的值
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         // 先计算一次最终伤害，用于判断

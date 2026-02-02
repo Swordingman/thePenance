@@ -5,7 +5,7 @@
   },
   "thePenance:BarrierPower": {
     "NAME": "屏障",
-    "DESCRIPTIONS": ["抵挡 #b", " 点伤害。屏障受击时触发裁决。"]
+    "DESCRIPTIONS": ["抵挡 #b", " 点伤害。"]
   },
   "thePenance:ThornAuraPower": {
     "NAME": "荆棘环身",

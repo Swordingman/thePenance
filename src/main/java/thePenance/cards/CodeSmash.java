@@ -13,9 +13,9 @@ public class CodeSmash extends BaseCard {
 
     public static final String ID = makeID("CodeSmash");
 
-    private static final int COST = 1;
-    private static final int UPG_COST = 0; // 1 -> 0
+    private static final int COST = 0;
     private static final int DAMAGE = 6;
+    private static final int UPG_DAMAGE = 3;
     private static final int THRESHOLD = 7; // 每7点
 
     public CodeSmash() {
@@ -27,9 +27,8 @@ public class CodeSmash extends BaseCard {
                 COST
         ));
 
-        setDamage(DAMAGE);
+        setDamage(DAMAGE, UPG_DAMAGE);
         setExhaust(true);
-        setCostUpgrade(UPG_COST);
     }
 
     @Override

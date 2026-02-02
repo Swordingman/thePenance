@@ -10,14 +10,14 @@ import thePenance.util.CardStats;
 public class InescapableNet extends BaseCard {
     public static final String ID = makeID("InescapableNet");
     private static final int COST = 1;
-    private static final int BARRIER = 10;
-    private static final int UPG_BARRIER = 4; // 10->14
+    private static final int BARRIER = 12;
+    private static final int UPG_BARRIER = 3;
 
     public InescapableNet() {
         super(ID, new CardStats(
                 Penance.Meta.CARD_COLOR,
                 CardType.SKILL,
-                CardRarity.UNCOMMON, // 罕见
+                CardRarity.UNCOMMON,
                 CardTarget.SELF,
                 COST
         ));

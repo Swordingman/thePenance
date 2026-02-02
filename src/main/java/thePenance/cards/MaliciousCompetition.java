@@ -15,7 +15,7 @@ public class MaliciousCompetition extends BaseCard {
     public static final String ID = makeID("MaliciousCompetition");
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 12;
     private static final int BARRIER = 8;
 
     public MaliciousCompetition() {
