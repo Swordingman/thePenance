@@ -100,7 +100,7 @@
   "thePenance:SyracusanWolves": {
     "NAME": "Syracusan Wolves",
     "DESCRIPTION": "Shuffle 5 random Wolfpack Curses into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Shuffle 5 random Upgraded Wolfpack Curses into your draw pile."
+    "UPGRADE_DESCRIPTION": "Shuffle 5 random *Upgraded Wolfpack Curses into your draw pile."
   },
   "thePenance:ContinuousRain": {
     "NAME": "Unrelenting Downpour",
@@ -130,7 +130,7 @@
   },
   "thePenance:FoxFireFading": {
     "NAME": "Foxfire Haze",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Apply 2 Slow to yourself. NL Apply !M! Slow to ALL enemies."
+    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Until next turn, apply 2 Slow to yourself, NL apply !M! Slow to ALL enemies."
   },
   "thePenance:TangledThreads": {
     "NAME": "Lockstitch",
@@ -156,7 +156,7 @@
   "thePenance:BadOpera": {
     "NAME": "Bad Opera",
     "DESCRIPTION": "Exhaust. NL Add 2 random Attacks into your hand.",
-    "UPGRADE_DESCRIPTION": "Exhaust. NL Add 2 random Upgraded Attacks into your hand."
+    "UPGRADE_DESCRIPTION": "Exhaust. NL Add 2 random *Upgraded Attacks into your hand."
   },
   "thePenance:ASip": {
     "NAME": "A Sip",

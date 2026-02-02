@@ -110,5 +110,11 @@
   "thePenance:GlowOfSufferingPower": {
     "NAME": "苦难辉光",
     "DESCRIPTIONS": ["每当你通过卡牌效果失去生命值时，获得失去值 #b", " 倍的 #y屏障 ，和 #b", " 层 #y荆棘环身 。"]
+  },
+  "thePenance:LoseSlowPower": {
+    "NAME": "临时缓慢",
+    "DESCRIPTIONS": [
+      "回合开始时，移除 #y缓慢 。"
+    ]
   }
 }

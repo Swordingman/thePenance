@@ -176,28 +176,38 @@ public class PenanceSkinHelper {
         if (!isPenanceSelected()) return;
         if (previewSkeleton == null) loadPreviewAnimation();
 
-        float centerX = Settings.WIDTH * 0.85f;
-        float centerY = Settings.HEIGHT * 0.65f;
+        // 1. UI (箭头和文字) 的基准坐标 —— 【保持不动】
+        float uiCenterX = Settings.WIDTH * 0.85f;
+        float uiCenterY = Settings.HEIGHT * 0.65f;
 
-        // 1. 绘制箭头
+        // 2. 皮肤模型的偏移量 —— 【在这里修改数值来移动皮肤】
+        // 正数向右/上，负数向左/下。一定要乘 Settings.scale 以适配分辨率
+        float skinOffsetX = 0f * Settings.scale;    // 例如：向右移 50f 就填 50f
+        float skinOffsetY = 25f * Settings.scale; // 例如：向下移 100f 就填 -100f
+
+        // --- 绘制 UI (使用 uiCenter) ---
+
+        // 绘制箭头 (位置不变)
         sb.setColor(skinLeftHb.hovered ? Color.LIGHT_GRAY : Color.WHITE);
         sb.draw(ImageMaster.CF_LEFT_ARROW, skinLeftHb.cX - 24f, skinLeftHb.cY - 24f, 24f, 24f, 48f, 48f, Settings.scale, Settings.scale, 0f, 0, 0, 48, 48, false, false);
 
         sb.setColor(skinRightHb.hovered ? Color.LIGHT_GRAY : Color.WHITE);
         sb.draw(ImageMaster.CF_RIGHT_ARROW, skinRightHb.cX - 24f, skinRightHb.cY - 24f, 24f, 24f, 48f, 48f, Settings.scale, Settings.scale, 0f, 0, 0, 48, 48, false, false);
 
-        // 2. 绘制文字
-        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, getCurrentSkin().name, centerX, centerY, Settings.GOLD_COLOR);
+        // 绘制文字 (位置不变)
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, getCurrentSkin().name, uiCenterX, uiCenterY, Settings.GOLD_COLOR);
 
-        // 3. 绘制 Spine 预览
-        // 更新逻辑
+        // --- 绘制 Spine 预览 (使用 uiCenter + Offset) ---
+
         float deltaTime = Gdx.graphics.getDeltaTime();
         previewState.update(deltaTime);
         previewState.apply(previewSkeleton);
         previewSkeleton.updateWorldTransform();
-        previewSkeleton.setPosition(centerX, centerY);
 
-        // 绘制逻辑 (切换 Batch)
+        // ▼▼▼ 关键修改：在这里应用偏移量 ▼▼▼
+        previewSkeleton.setPosition(uiCenterX + skinOffsetX, uiCenterY + skinOffsetY);
+
+        // 绘制逻辑
         sb.end();
         CardCrawlGame.psb.begin();
         skeletonRenderer.draw(CardCrawlGame.psb, previewSkeleton);

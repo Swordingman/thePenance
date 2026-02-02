@@ -2,9 +2,10 @@ package thePenance.cards;
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame; // 引入这个
+import com.megacrit.cardcrawl.localization.CardStrings; // 引入这个
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.actions.WolfCurseHelper;
 import thePenance.character.Penance;
@@ -47,7 +48,8 @@ public class SyracusanWolves extends BaseCard {
     @Override
     public void upgrade() {
         if (!upgraded) {
-           upgradeName();
+            super.upgrade();
+
             upgradeCarousel();
         }
     }

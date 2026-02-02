@@ -110,5 +110,11 @@
   "thePenance:GlowOfSufferingPower": {
     "NAME": "Glow of Suffering",
     "DESCRIPTIONS": ["Whenever you lose HP from card effects, gain #yBarrier equal to #b", " times the amount lost, and #b", " #yThorn #yAura."]
+  },
+  "thePenance:LoseSlowPower": {
+    "NAME": "Temporary Slow",
+    "DESCRIPTIONS": [
+      "Remove #ySlow at the start of turn."
+    ]
   }
 }
