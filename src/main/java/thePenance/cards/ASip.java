@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings; // 必须导入，用于判断语言
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import thePenance.character.Penance;
+import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
 public class ASip extends BaseCard {
@@ -43,14 +45,24 @@ public class ASip extends BaseCard {
             @Override
             public void update() {
                 int costToPay = magicNumber;
-                int blockToLose = 0;
+                int barrierToLose = 0;
 
-                if (p.currentBlock > 0) {
-                    blockToLose = Math.min(p.currentBlock, costToPay);
-                    p.loseBlock(blockToLose);
+                // 获取屏障 Power
+                if (p.hasPower(BarrierPower.POWER_ID)) {
+                    AbstractPower barrier = p.getPower(BarrierPower.POWER_ID);
+                    if (barrier.amount > 0) {
+                        // 计算需要扣除多少屏障
+                        barrierToLose = Math.min(barrier.amount, costToPay);
+
+                        // 直接扣除屏障层数
+                        barrier.amount -= barrierToLose;
+                        barrier.updateDescription(); // 刷新描述
+                        barrier.flash(); // 闪烁一下提示玩家
+                    }
                 }
 
-                int hpToLose = costToPay - blockToLose;
+                // 剩下的伤害由 HP 承担
+                int hpToLose = costToPay - barrierToLose;
 
                 if (hpToLose > 0) {
                     addToTop(new LoseHPAction(p, p, hpToLose));
