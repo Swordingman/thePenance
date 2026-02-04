@@ -32,17 +32,16 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import thePenance.cards.Defend;
 import thePenance.cards.Resolute;
 import thePenance.cards.Strike;
-import thePenance.powers.BarrierPower;
 import thePenance.relics.PenanceBasicRelic;
 import thePenance.util.Sounds;
 
 // --- 关键：引用 Shade 后的 Spine 3.8 包 ---
-import com.esotericsoftware.spine38.AnimationState;
-import com.esotericsoftware.spine38.AnimationStateData;
-import com.esotericsoftware.spine38.Skeleton;
-import com.esotericsoftware.spine38.SkeletonData;
-import com.esotericsoftware.spine38.SkeletonJson;
-import com.esotericsoftware.spine38.SkeletonRenderer; // 3.8版本不再叫 SkeletonMeshRenderer
+import com.thePenance.spine38.AnimationState;
+import com.thePenance.spine38.AnimationStateData;
+import com.thePenance.spine38.Skeleton;
+import com.thePenance.spine38.SkeletonData;
+import com.thePenance.spine38.SkeletonJson;
+import com.thePenance.spine38.SkeletonRenderer;
 
 import java.util.ArrayList;
 import java.util.List;

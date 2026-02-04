@@ -16,12 +16,12 @@ import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import java.util.ArrayList;
 import thePenance.PenanceMod;
 
-import com.esotericsoftware.spine38.AnimationState;
-import com.esotericsoftware.spine38.AnimationStateData;
-import com.esotericsoftware.spine38.Skeleton;
-import com.esotericsoftware.spine38.SkeletonData;
-import com.esotericsoftware.spine38.SkeletonJson;
-import com.esotericsoftware.spine38.SkeletonRenderer;
+import com.thePenance.spine38.AnimationState;
+import com.thePenance.spine38.AnimationStateData;
+import com.thePenance.spine38.Skeleton;
+import com.thePenance.spine38.SkeletonData;
+import com.thePenance.spine38.SkeletonJson;
+import com.thePenance.spine38.SkeletonRenderer;
 
 public class PenanceSkinHelper {
 

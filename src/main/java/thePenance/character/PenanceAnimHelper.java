@@ -1,9 +1,9 @@
 package thePenance.character;
 
 import com.badlogic.gdx.Gdx;
-import com.esotericsoftware.spine38.Animation;
-import com.esotericsoftware.spine38.AnimationState;
-import com.esotericsoftware.spine38.SkeletonData;
+import com.thePenance.spine38.Animation;
+import com.thePenance.spine38.AnimationState;
+import com.thePenance.spine38.SkeletonData;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
