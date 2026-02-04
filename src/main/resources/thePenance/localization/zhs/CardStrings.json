@@ -14,7 +14,7 @@
   },
   "thePenance:LawModification": {
     "NAME": "法则修正",
-    "DESCRIPTION": "消耗。 NL 保留。 NL 将你的 格挡 转换为 屏障 。"
+    "DESCRIPTION": "消耗 。 NL 保留 。 NL 将你的 格挡 转换为 屏障 。"
   },
   "thePenance:ImmediateExecution": {
     "NAME": "即刻行刑",
