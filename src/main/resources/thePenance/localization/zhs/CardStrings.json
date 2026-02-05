@@ -359,5 +359,9 @@
   "thePenance:BloodDebtClause": {
     "NAME": "血债条款",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 每有一个敌人受到伤害，将一张随机的 狼群诅咒 放入弃牌堆。"
+  },
+  "thePenance:Censure": {
+    "NAME": "斥责",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 裁决 。"
   }
 }

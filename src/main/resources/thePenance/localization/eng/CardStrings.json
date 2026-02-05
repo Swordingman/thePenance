@@ -359,5 +359,9 @@
   "thePenance:BloodDebtClause": {
     "NAME": "Blood Debt Clause",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Whenever an enemy takes damage, put a random Wolfpack Curse into your discard pile."
+  },
+  "thePenance:Censure": {
+    "NAME": "Censure",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Judgement."
   }
 }

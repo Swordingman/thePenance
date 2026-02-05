@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 // 引入你的卡牌和遗物
+import thePenance.cards.Censure;
 import thePenance.cards.Defend;
 import thePenance.cards.Resolute;
 import thePenance.cards.Strike;
@@ -271,10 +272,10 @@ public class Penance extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
+        retVal.add(Censure.ID);
         retVal.add(Resolute.ID);
         return retVal;
     }
