@@ -1,80 +1,156 @@
-# Slay the Spire - The Penance Mod (斥罪)
+# Slay the Spire Mod: The Penance / 【明日方舟】斥罪
 
-> “这次，我会做出公正的判决。”
-> "This time, I will hand down a fair verdict."
+> [!NOTE]
+> **中文 / English**
+> 
+> 下方包含中文介绍与 English Description。
+> Scroll down for the English version.
 
-## 简介 (Introduction)
+---
+
+# ⚖️ 【明日方舟】斥罪角色模组
+
+> **“这一次，我会做出公正的判决。”**
+
 本 Mod 将《明日方舟》中的叙拉古法官 **斥罪 (Penance)** 带入了尖塔。
-不同于传统的防御者，斥罪不依赖脆弱的格挡，而是通过**“屏障”**构筑绝对的防线，并通过**“裁决”**与**“荆棘”**让攻击者付出代价。
 
+不同于传统的防御者，斥罪不依赖脆弱的格挡，而是通过 **屏障** 构筑绝对的防线，并通过 **裁决** 让攻击者付出代价。
 打破常规的“休息回血”逻辑，体验在苦难中前行的律法之路。
 
-## 核心机制 (Keywords)
+<details>
+<summary><strong>🤫 点击查看剧透 (关于平衡性)</strong></summary>
 
-### 🛡️ 屏障 (Barrier)
-斥罪的生存核心。
-*   **独立计算：** 屏障独立于格挡，结算顺序为：格挡 -> **屏障** -> 生命值。
-*   **永不衰减：** 回合结束时，屏障**不会**消失。你可以像存钱一样积累防御。
-*   **作为资源：** 屏障不仅是盾，更是弹药。部分卡牌需要消耗屏障来造成巨额伤害或回复生命。
+本 Mod 属于作者的厨力溢出，如有超模之处请谅解。
+</details>
 
-### ⚖️ 裁决 (Judgement)
-主动的反击机制。
-*   当你的**屏障**受到攻击伤害时，消耗层数对攻击者造成等量伤害。
-*   **蓄势待发：** 裁决层数越高，反击越致命。配合“一锤定音”流派，可将裁决转化为直接的力量爆发。
+## 📊 模组内容统计 (Content Statistics)
 
-### 🌹 荆棘环身 (Thorns Aura)
-被动的法术光环。
-*   回合结束时，对**所有**敌人造成等同于层数的伤害。
-*   不仅是输出，更是威慑。部分卡牌会根据荆棘层数提供额外的控制或防御效果。
+截至目前版本，本模组共包含：
 
-### 🚫 正当防卫 (Just Defense)
-钓鱼执法，后发制人。
-*   当你**受到攻击**时触发。
-*   在你的下个回合提供 **能量** 与 **抽牌** 补偿。让敌人的攻势成为你反击的燃料。
+* **🃏 新增卡牌：** 共 **85** 张全新卡牌
+    * **29** 张攻击牌
+    * **31** 张技能牌
+    * **15** 张能力牌
+    * **10** 张衍生诅咒或其他牌
+* **💍 新增遗物：** 共 **13** 件全新遗物
+    * **10** 件斥罪专属遗物
+    * **3** 件通用遗物
+* **❓ 新增事件：** 共 **5** 场全新事件
+    * **1** 场一层事件
+    * **3** 场二层事件
+    * **1** 场三层事件
+* **🧪 新增药水：** 共 **3** 瓶全新药水
+    * **2** 瓶斥罪专属药水
+    * **1** 瓶通用药水
+
+## 🛡️ 主机制介绍 (Core Mechanics)
+
+* **屏障 (Barrier)：** 一种特殊的防御数值。屏障不会在回合结束时消失。
+* **裁决 (Judgement)：** 当屏障受到来自敌人的伤害时，对攻击者造成等同于裁决层数的伤害。
+* **荆棘环身 (Thorn Aura)：** 回合结束时，对所有敌人造成相当于荆棘环身层数的伤害。
+* **狼群诅咒 (Wolves' Curse)：** 由叙拉古的狼群带来的一种特殊诅咒，它们拥有强大的效果，但同时也会带来混乱。
+
+## 🎨 关于美术素材的特别声明
+
+> [!IMPORTANT]
+> **本模组包含了 85 张卡牌，使用了大量来自于 Pixiv / Twitter / 网络的同人作品。**
+
+由于图片收集时间跨度较长，作者在制作初期未能妥善记录所有画师的 ID/出处。
+**这绝对不是有意冒犯或窃取您的劳动成果！我非常尊重每一位创作者！**
+
+如果您在游玩过程中认出了某个卡面的画师，或者您就是画师本人：
+**请在 Issues 或评论区留言告知我**（例如：打击卡图出自 @画师名）。
+我承诺会在后续更新中，第一时间将画师名字补充进致谢名单！
+
+如果您是画师本人且不希望您的作品被使用，请直接联系我，我会 **无条件立即替换或删除** 该图片，并向您诚挚道歉。
+
+**本模组为粉丝自制，免费且无商业用途。素材版权归 鹰角网络 (Hypergryph) 及原画师所有。**
+
+## 🙏 特别鸣谢 (Credits)
+
+* **角色原型：** 明日方舟 (Arknights)
+* **美术资源：** 各位官方或同人画师
+* **制作：** 花盆上屹立的不明食草兽 (Chirpchump)
+* **永远怀念：** b鼠（我朋友的仓鼠）
+
+## 💬 联系与交流
+
+* **杀戮尖塔 mod 交流 QQ 群：** `387660497`
+* **Spine 导入教程：** 本项目代码中包含 spine38 的导入教程，希望能帮到更多和我一样找方法找了半天的朋友们。
+
+> [!WARNING]
+> **本 mod 没有商业用途且没有商业意向，如果您通过任何付费渠道获得本 mod，请联系作者。**
 
 ---
 
-## 主要流派 (Playstyles)
+# ⚖️ [Arknights] Penance Character Mod
 
-*   **坚心苦修 (The Stoic):**
-    叠最厚的甲，挨最毒的打。利用 **屏障** 吸收伤害，通过 **裁决** 和 **荆棘** 自动反死敌人。
-    *核心卡牌：* `坚心苦修`、`苦行`、`最后防线`
+> **"This time, I will deliver a fair judgment."**
 
-*   **一锤定音 (The Verdict):**
-    防守是为了更好的进攻。将积累的防御属性瞬间转化为 **力量** 和 **爆发伤害**。
-    *核心卡牌：* `有罪！`、`一锤定音`、`清算时刻`
+This mod brings the Siracusan judge, **Penance**, from *Arknights* into the Spire.
 
-*   **披荆斩棘 (The Thorny Path):**
-    以血肉为代价。通过 **自残** 压低血线，触发半血以下的强力特效，在濒死边缘获得极致收益。
-    *核心卡牌：* `负荆前行`、`休庭`、`淬炼`
+Unlike traditional defenders, Penance does not rely on fragile Block. Instead, she constructs absolute defense through **Barrier** and makes attackers pay the price via **Judgement**.
+Break the conventional logic of "healing at Rest Sites" and experience the path of law through suffering.
 
-*   **狼群诅咒 (The Wolf Pack):**
-    与混乱共舞。利用 **诅咒牌** 获取力量与资源，将负面效果转化为胜势。
-    *核心卡牌：* `叙拉古的狼群`、`刚正不阿`、`自证其罪`
+<details>
+<summary><strong>🤫 Click to reveal spoiler</strong></summary>
+
+This mod is a fan-made passion project. Please forgive me if some cards are slightly overpowered.
+</details>
+
+## 📊 Content Statistics
+
+As of the current version, this mod includes:
+
+* **🃏 New Cards:** A total of **85** new cards
+    * **29** Attacks
+    * **31** Skills
+    * **15** Powers
+    * 10 Derivative/Curse cards
+* **💍 New Relics:** A total of **13** new relics
+    * **10** exclusive to Penance
+    * **3** general relics
+* **❓ New Events:** A total of **5** new events
+    * **1** Act 1 event
+    * **3** Act 2 events
+    * **1** Act 3 event
+* **🧪 New Potions:** A total of **3** new potions
+    * **2** exclusive to Penance
+    * **1** general potion
+
+## 🛡️ Core Mechanics
+
+* **Barrier:** A special defensive value. Barrier does not disappear at the end of your turn.
+* **Judgement:** When Barrier takes damage from an enemy, deal damage to the attacker equal to your Judgement stacks.
+* **Thorn Aura:** At the end of your turn, deal damage to all enemies equal to your Thorn Aura stacks.
+* **Wolves' Curse:** A special curse brought by the wolves of Siracusa. They possess powerful effects but also bring chaos.
+
+## 🎨 Special Disclaimer Regarding Art Assets
+
+> [!IMPORTANT]
+> **This mod contains 85 cards and uses a large number of fan arts from Pixiv/Twitter/Internet.**
+
+Due to the long development period, I failed to properly record all artist IDs/sources in the early stages.
+**This is absolutely NOT intended to steal art or offend! I deeply respect every creator!**
+
+If you recognize the artist of a card art while playing, or if you are the artist yourself:
+**Please let me know in the Issues or comments** (e.g., Strike card art is by @ArtistName).
+I promise to update the credits list with the artist's name in the next update immediately!
+
+If you are the artist and do not wish for your work to be used, please contact me directly. I will **replace or remove the image immediately and unconditionally**, and offer my sincere apologies.
+
+**This mod is a fan-made project, free of charge, and for non-commercial use. Copyright of assets belongs to Hypergryph and the original artists.**
+
+## 🙏 Special Thanks
+
+* **Character Prototype:** Arknights
+* **Art Assets:** Official and Fan Artists
+* **Production:** Chirpchump
+* **In Loving Memory of:** B-Rat (My friend’s hamster)
 
 ---
 
-## 特色内容 (Features)
+If you like this mod, please support Penance, thank you meow~
 
-*   **全新的初始体验：**
-    初始遗物 **“通往未来的荆棘之路”** 彻底改变了游戏节奏。你无法通过篝火或药水回血，但能获得巨额的开局屏障。
-    
-*   **叙拉古式剧情事件：**
-    体验 **“雨夜盘查”** 的道德抉择，参与 **“开幕时刻”** 的狂欢，并在 **“第1184号卷宗”** 中决定正义的走向。
-
-*   **独特的敌人：**
-    在第三阶段遭遇 **黑帮教父** 与他的 **家族灭迹人**，挑战叙拉古地下世界的秩序。
-
----
-
-## 安装 (Installation)
-1. 确保已安装 BaseMod 和 ModTheSpire。
-2. 将 `ThePenance.jar` 放入 `SlayTheSpire/mods` 文件夹。
-3. 运行 ModTheSpire 并勾选 The Penance。
-
----
-
-## 鸣谢 (Credits)
-*   角色原型：Arknights (HyperGryph)
-*   代码/设计：[食草兽]
-*   特别感谢：Slay the Spire Modding Community
+> [!WARNING]
+> **This mod is for non-commercial use only. If you purchased this mod through any paid channel, please contact the author.**
