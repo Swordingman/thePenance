@@ -211,41 +211,34 @@ public class PenanceMod implements
                 localizationPath(lang, "UIStrings.json"));
     }
 
+    public static class Keyword {
+        public String[] NAMES;       // 对应 JSON 中的 "NAMES"
+        public String DESCRIPTION;   // 对应 JSON 中的 "DESCRIPTION"
+    }
+
     @Override
-    public void receiveEditKeywords()
-    {
+    public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-        KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
-        for (KeywordInfo keyword : keywords) {
-            keyword.prep();
-            registerKeyword(keyword);
-        }
 
-        if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
-                json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-                keywords = gson.fromJson(json, KeywordInfo[].class);
-                for (KeywordInfo keyword : keywords) {
-                    keyword.prep();
-                    registerKeyword(keyword);
-                }
-            }
-            catch (Exception e)
-            {
-                logger.warn(modID + " does not support " + getLangString() + " keywords.");
+        String lang = Settings.language == Settings.GameLanguage.ZHS ? "zhs" : "eng";
+        String path = PenanceMod.localizationPath(lang, "Keywords.json");
+
+        Keyword[] loaded = gson.fromJson(
+                Gdx.files.internal(path).readString(StandardCharsets.UTF_8.name()),
+                Keyword[].class
+        );
+
+        if (loaded != null) {
+            for (Keyword k : loaded) {
+                BaseMod.addKeyword(
+                        PenanceMod.modID,
+                        k.NAMES,
+                        k.DESCRIPTION
+                );
             }
         }
     }
 
-    private void registerKeyword(KeywordInfo info) {
-        BaseMod.addKeyword(null, info.PROPER_NAME, info.NAMES, info.DESCRIPTION, info.COLOR);
-        if (!info.ID.isEmpty())
-        {
-            keywords.put(info.ID, info);
-        }
-    }
 
     @Override
     public void receiveEditCharacters() {

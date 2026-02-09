@@ -49,6 +49,7 @@ public class CourtRehearsalPatches {
         newCard.upgrade();
         newCard.selfRetain = true;
         newCard.exhaust = true;
+        newCard.isEthereal = false;
 
         // 标记为彩排卡
         CardFields.isRehearsal.set(newCard, true);

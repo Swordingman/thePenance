@@ -40,10 +40,12 @@ public class ASip extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int currentMagicValue = this.magicNumber;
+
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                int costToPay = magicNumber;
+                int costToPay = currentMagicValue;
                 int barrierToLose = 0;
                 if (p.hasPower(BarrierPower.POWER_ID)) {
                     AbstractPower barrier = p.getPower(BarrierPower.POWER_ID);
@@ -72,10 +74,6 @@ public class ASip extends BaseCard {
                 CardModifierManager.addModifier(c, new EtherealMod());
                 c.baseMagicNumber += COST_INCREMENT;
                 c.magicNumber += COST_INCREMENT;
-
-                if(!c.rawDescription.toLowerCase().contains("ethernal")) {
-                }
-
                 c.initializeDescription();
 
                 addToBot(new MakeTempCardInHandAction(c));

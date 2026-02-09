@@ -1,12 +1,12 @@
 [
   {
     "PROPER_NAME": "Barrier",
-    "NAMES": ["Barrier", "Barrier"],
+    "NAMES": ["Barrier", "barrier"],
     "DESCRIPTION": "A special defensive value. When Block is depleted, Barrier absorbs the remaining damage. Barrier does not expire at the end of your turn."
   },
   {
     "PROPER_NAME": "Judgment",
-    "NAMES": ["Judgment", "Judgement"],
+    "NAMES": ["Judgment", "judgement"],
     "DESCRIPTION": "Whenever your Barrier takes damage from an enemy, deal damage equal to your #yJudgment to the attacker."
   },
   {

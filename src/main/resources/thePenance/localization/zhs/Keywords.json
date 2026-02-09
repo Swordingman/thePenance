@@ -1,12 +1,12 @@
 [
   {
     "PROPER_NAME": "屏障",
-    "NAMES": ["屏障", "Barrier"],
+    "NAMES": ["屏障", "barrier"],
     "DESCRIPTION": "一种特殊的防御数值。当格挡耗尽后，屏障会抵挡剩余的伤害。屏障不会在回合结束时消失。"
   },
   {
     "PROPER_NAME": "裁决",
-    "NAMES": ["裁决", "Judgement"],
+    "NAMES": ["裁决", "judgement"],
     "DESCRIPTION": "当屏障受到来自敌人的伤害时，对攻击者造成等同于 #y裁决 层数的伤害。"
   },
   {
