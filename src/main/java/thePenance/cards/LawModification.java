@@ -22,7 +22,7 @@ public class LawModification extends BaseCard {
                 COST
         ));
 
-        this.retain = true;
+        this.selfRetain = true;
         this.exhaust = true;
 
         setCostUpgrade(UPGRADED_COST);

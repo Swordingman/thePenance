@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -27,8 +28,16 @@ public class SolidDefense extends BaseCard {
                 COST
         ));
 
+        int finalBarrier = BARRIER;
+        int finalUPGBarrier = UPGRADE_PLUS_BARRIER;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL){
+            finalBarrier = 2;
+            finalUPGBarrier = 1;
+        }
+
         setBlock(BLOCK, UPGRADE_PLUS_BLOCK);
-        setMagic(BARRIER, UPGRADE_PLUS_BARRIER);
+        setMagic(finalBarrier, finalUPGBarrier);
     }
 
     @Override

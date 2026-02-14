@@ -67,15 +67,15 @@ public class VolsiniiCourtEvent extends AbstractImageEvent {
 
                     leftMob.drawX = centerX - distance;
                     leftMob.hb.move(leftMob.drawX, leftMob.hb.cY);
-                    leftMob.flipHorizontal = true;
+                    leftMob.flipHorizontal = false;
 
                     rightMob.drawX = centerX + distance;
                     rightMob.hb.move(rightMob.drawX, rightMob.hb.cY);
-                    rightMob.flipHorizontal = false;
+                    rightMob.flipHorizontal = true;
 
                     civilian.drawX = centerX - civilianOffset;
                     civilian.hb.move(civilian.drawX, civilian.hb.cY);
-                    civilian.flipHorizontal = true;
+                    civilian.flipHorizontal = false;
 
                     MonsterGroup monsters = new MonsterGroup(new com.megacrit.cardcrawl.monsters.AbstractMonster[]{
                             leftMob, rightMob, civilian

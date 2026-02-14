@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.GuardianOfTheLawPower;
 import thePenance.util.CardStats;
 
@@ -24,7 +25,12 @@ public class GuardianOfTheLaw extends BaseCard {
                 COST
         ));
 
-        setMagic(MAGIC);
+        int finalMagic = MAGIC;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalMagic = 2;
+
+        setMagic(finalMagic);
 
         // 设置升级后的费用
         setCostUpgrade(UPGRADE_COST);

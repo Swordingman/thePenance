@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.powers.JustifiedDefensePower;
 import thePenance.util.CardStats;
@@ -22,7 +23,12 @@ public class JustifiedRetaliation extends BaseCard {
                 CardTarget.SELF,
                 COST
         ));
-        setMagic(BARRIER, UPG_BARRIER);
+
+        int finalBarrier = BARRIER;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrier = 5;
+
+        setMagic(finalBarrier, UPG_BARRIER);
     }
 
     @Override

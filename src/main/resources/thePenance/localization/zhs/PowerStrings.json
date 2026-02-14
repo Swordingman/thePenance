@@ -73,7 +73,12 @@
   },
   "thePenance:CumulativePrecedentPower": {
     "NAME": "判例累积",
-    "DESCRIPTIONS": ["每当你打出一张 技能牌 ，获得 #b", " 点 屏障 。"]
+    "DESCRIPTIONS": [
+      "每当你打出一张 技能牌 ，获得 #b",
+      " 点 #y屏障 。",
+      "并获得 #b",
+      " 点 #y格挡 。"
+    ]
   },
   "thePenance:InescapableNetPower": {
     "NAME": "法网恢恢",
@@ -81,11 +86,21 @@
   },
   "thePenance:ProceduralJusticePower": {
     "NAME": "程序正义",
-    "DESCRIPTIONS": ["每当你获得 #y格挡 时，获得等量的 #y屏障 。"]
+    "DESCRIPTIONS": [
+      "每当你获得 #y格挡 时，获得等量的 #y屏障 。",
+      "每当你获得 #y格挡 时，获得 #b",
+      "点 #y屏障 。"
+    ]
   },
   "thePenance:IroncladDoctrinePower": {
     "NAME": "铁律护体",
-    "DESCRIPTIONS": ["回合开始时，消耗 #b", " 点 #y屏障 ，恢复 #b", " 点生命值。"]
+    "DESCRIPTIONS": [
+      "在你的回合开始时，如果有足够的 #y屏障 ，消耗 #b",
+      " 点 #y屏障 并恢复 #b",
+      " 点生命。",
+      " 点 #y屏障 并获得 #b",
+      " 点 #y最大生命 。"
+    ]
   },
   "thePenance:JustifiedDefensePower": {
     "NAME": "正当防卫",
@@ -109,7 +124,11 @@
   },
   "thePenance:GlowOfSufferingPower": {
     "NAME": "苦难辉光",
-    "DESCRIPTIONS": ["每当你通过卡牌效果失去生命值时，获得失去值 #b", " 倍的 #y屏障 ，和 #b", " 层 #y荆棘环身 。"]
+    "DESCRIPTIONS": [
+      "每当你通过卡牌效果失去生命值时，获得失去值 #b",
+      " 倍的 #y屏障 ，和失去值 #b",
+      " 倍的 #y荆棘环身 。"
+    ]
   },
   "thePenance:LoseSlowPower": {
     "NAME": "临时缓慢",

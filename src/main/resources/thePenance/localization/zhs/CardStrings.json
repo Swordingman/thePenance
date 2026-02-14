@@ -240,7 +240,10 @@
   },
   "thePenance:CumulativePrecedent": {
     "NAME": "判例累积",
-    "DESCRIPTION": "每当你打出一张 技能牌 ，获得 !M! 点 屏障 。"
+    "DESCRIPTION": "每当你打出一张 技能牌 ，获得 !M! 点 屏障 。",
+    "EXTENDED_DESCRIPTION": [
+      "每当你打出一张 技能牌 ，获得 !B! 点 格挡 和 !M! 点 屏障 。"
+    ]
   },
   "thePenance:CitationOfLaw": {
     "NAME": "法条援引",
@@ -260,11 +263,13 @@
   },
   "thePenance:ProceduralJustice": {
     "NAME": "程序正义",
-    "DESCRIPTION": "每当你获得 格挡 时，获得等量的 屏障 。"
+    "DESCRIPTION": "每当你获得 格挡 时，获得等量的 屏障 。",
+    "EXTENDED_DESCRIPTION": ["每当你获得 格挡 时，获得 2 屏障 。"]
   },
   "thePenance:IroncladDoctrine": {
     "NAME": "铁律护体",
-    "DESCRIPTION": "在你的回合开始时，消耗 !M! 点 屏障 ，恢复 3 点生命值。"
+    "DESCRIPTION": "在你的回合开始时，消耗 !M! 点 屏障 ，恢复 3 点生命值。",
+    "EXTENDED_DESCRIPTION": ["在你的回合开始时，消耗 !M! 点 屏障 ，获得 3 点最大生命值。"]
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "有罪！",
@@ -350,7 +355,9 @@
   },
   "thePenance:GlowOfSuffering": {
     "NAME": "苦难辉光",
-    "DESCRIPTION": "每当你通过卡牌效果失去生命值时，获得失去值 !thePenance:Multiplier! 倍的 屏障 ，和 !M! 层 荆棘环身 。"
+    "DESCRIPTION": "每当你通过卡牌效果失去生命值时，获得失去值 1 倍的 屏障 ，和 1 倍的 荆棘环身 。",
+    "UPGRADE_DESCRIPTION": "每当你通过卡牌效果失去生命值时，获得失去值 2 倍的 屏障 ，和 2 倍的 荆棘环身 。",
+    "EXTENDED_DESCRIPTION": ["每当你通过卡牌效果失去生命值时，获得失去值 1.5 倍的 屏障 ，和 1.5 倍的 荆棘环身 。"]
   },
   "thePenance:ToothForTooth": {
     "NAME": "以牙还牙",
@@ -363,5 +370,21 @@
   "thePenance:Censure": {
     "NAME": "斥责",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 裁决 。"
+  },
+  "thePenance:DifficultyOption": {
+    "NAME": "难度选择",
+    "DESCRIPTION": "占位符"
+  },
+  "thePenance:DiffNormal": {
+    "NAME": "扶正祛邪",
+    "DESCRIPTION": "标准的游戏体验。 NL 没有任何特殊的修改。"
+  },
+  "thePenance:DiffHard": {
+    "NAME": "问罪裁罚",
+    "DESCRIPTION": "具备挑战性的体验。 NL 升级初始遗物。 NL 减少最大生命值。"
+  },
+  "thePenance:DiffHell": {
+    "NAME": "披荆斩棘",
+    "DESCRIPTION": "极高难度的挑战。 NL 在 [问罪裁罚] 的基础上， NL 大部分卡牌数值获得调整。"
   }
 }

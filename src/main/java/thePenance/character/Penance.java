@@ -49,6 +49,7 @@ import java.util.List;
 
 import static thePenance.PenanceMod.characterPath;
 import static thePenance.PenanceMod.makeID;
+import thePenance.character.PenanceDifficultyHelper;
 
 public class Penance extends CustomPlayer {
     // 角色基础数值
@@ -294,8 +295,14 @@ public class Penance extends CustomPlayer {
 
     @Override
     public CharSelectInfo getLoadout() {
+        int hp = MAX_HP;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL ||
+                PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HARD
+        ) hp = 40;
+
         return new CharSelectInfo(getNames()[0], getText()[0],
-                MAX_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this,
+                hp, hp, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this,
                 getStartingRelics(), getStartingDeck(), false);
     }
 

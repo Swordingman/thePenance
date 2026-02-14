@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.actions.ResoluteAction;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -25,12 +26,18 @@ public class Resolute extends BaseCard {
                 COST
         ));
 
-        setMagic(BARRIER_MULTIPLIER, UPGRADE_BARRIER_MULTIPLIER);
+        int finalBarrier = BARRIER_MULTIPLIER;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrier = 2;
+
+        setMagic(finalBarrier, UPGRADE_BARRIER_MULTIPLIER);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, 3), 3));
+        int amount = 3;
+        addToBot(new ApplyPowerAction(p, p, new BarrierPower(p, amount), amount));
         // 这里的 magicNumber 会自动包含升级后的数值
         addToBot(new ResoluteAction(p, magicNumber, upgraded, freeToPlayOnce, energyOnUse));
     }

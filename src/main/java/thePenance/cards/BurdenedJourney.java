@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.JudgementPower;
 import thePenance.powers.ThornAuraPower;
 import thePenance.util.CardStats;
@@ -27,8 +28,12 @@ public class BurdenedJourney extends BaseCard {
                 COST
         ));
 
+        int finalAmt = AMT;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalAmt = 2;
+
         // 设置魔法数字（裁决）
-        setMagic(AMT, UPG_AMT);
+        setMagic(finalAmt, UPG_AMT);
     }
 
     @Override

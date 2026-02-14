@@ -5,6 +5,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.powers.ProceduralJusticePower;
 
@@ -19,12 +21,20 @@ public class ProceduralJusticePatch {
         if (__instance.isPlayer && blockAmount > 0) {
             // 检查是否有程序正义能力
             if (__instance.hasPower(ProceduralJusticePower.POWER_ID)) {
-                __instance.getPower(ProceduralJusticePower.POWER_ID).flash();
+                AbstractPower power = __instance.getPower(ProceduralJusticePower.POWER_ID);
+                power.flash();
+
+                int barrierGain = 0;
+                if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL){
+                    barrierGain = 2 * power.amount;
+                } else {
+                    barrierGain = blockAmount;
+                }
 
                 // 获得等量的屏障
                 AbstractDungeon.actionManager.addToBottom(
                         new ApplyPowerAction(__instance, __instance,
-                                new BarrierPower(__instance, blockAmount), blockAmount)
+                                new BarrierPower(__instance, barrierGain), barrierGain)
                 );
             }
         }

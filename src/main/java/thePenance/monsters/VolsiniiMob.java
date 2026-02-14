@@ -66,7 +66,7 @@ public class VolsiniiMob extends AbstractMonster {
 
             this.name = monsterStrings.DIALOG[0];
 
-            this.flipHorizontal = true;
+            this.flipHorizontal = false;
         } else {
             // === 重装型 (Sarkaz Guerilla Shieldguard?) ===
             this.setHp(65);
@@ -91,7 +91,7 @@ public class VolsiniiMob extends AbstractMonster {
 
         // 如果素材默认是面朝右的（大多数明日方舟SD小人默认朝左，不需要这行），
         // 发现朝向反了就把下面这一行取消注释：
-        // this.flipHorizontal = true;
+        this.flipHorizontal = true;
     }
 
     @Override

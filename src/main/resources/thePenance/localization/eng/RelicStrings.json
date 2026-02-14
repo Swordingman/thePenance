@@ -3,8 +3,9 @@
     "NAME": "The Thorny Road That Continues",
     "FLAVOR": "It pricks you constantly, reminding you of the weight of justice.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain Barrier equal to #b10% of your Max HP and #b1 #yJudgment . NL Healing from Potions, most Events, non-Penance cards, and Rest Sites is converted into an equal amount of Barrier (stored out of combat). NL Currently stored: #b",
-      " Barrier. NL At the end of combat, convert #b10% of remaining #yBarrier into HP healing."
+      "At the start of combat, gain #yBarrier equal to #b10% of your Max HP and #b1 #yJudgment. NL Healing from Potions, Events, and Resting is converted into #yBarrier (stored out of combat). NL Currently stored: #b",
+      " Barrier. NL At the end of combat, heal HP equal to #b10% of your remaining #yBarrier.",
+      "At the start of combat, gain #yBarrier equal to #b30% of your Max HP and #b1 #yJudgment. NL Whenever you kill a #ynon-Minion enemy, store Barrier equal to #b5% of your Max HP. NL Healing from Potions, Events, and Resting is converted into #yBarrier (stored out of combat). NL Currently stored: #b"
     ]
   },
   "thePenance:Innocent": {

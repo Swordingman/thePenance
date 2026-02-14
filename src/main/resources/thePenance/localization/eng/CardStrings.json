@@ -240,7 +240,10 @@
   },
   "thePenance:CumulativePrecedent": {
     "NAME": "Cumulative Precedent",
-    "DESCRIPTION": "Whenever you play a Skill, gain !M! Barrier."
+    "DESCRIPTION": "Whenever you play a Skill, gain !M! Barrier.",
+    "EXTENDED_DESCRIPTION": [
+      "Whenever you play a Skill, gain !B! Block and !M! Barrier."
+    ]
   },
   "thePenance:CitationOfLaw": {
     "NAME": "Citation of Law",
@@ -260,11 +263,13 @@
   },
   "thePenance:ProceduralJustice": {
     "NAME": "Procedural Justice",
-    "DESCRIPTION": "Whenever you gain Block, gain an equal amount of Barrier."
+    "DESCRIPTION": "Whenever you gain Block, gain an equal amount of Barrier.",
+    "EXTENDED_DESCRIPTION": ["Whenever you gain Block, gain 2 Barrier."]
   },
   "thePenance:IroncladDoctrine": {
     "NAME": "Ironclad Doctrine",
-    "DESCRIPTION": "At the start of your turn, remove !M! Barrier to heal 3 HP."
+    "DESCRIPTION": "At the start of your turn, consume !M! Barrier to heal 3 HP.",
+    "EXTENDED_DESCRIPTION": ["At the start of your turn, consume !M! Barrier to gain 3 Max HP."]
   },
   "thePenance:GuiltyAsCharged": {
     "NAME": "Guilty as Charged!",
@@ -350,7 +355,9 @@
   },
   "thePenance:GlowOfSuffering": {
     "NAME": "Glow of Suffering",
-    "DESCRIPTION": "Whenever you lose HP from a card effect, gain Barrier equal to !thePenance:Multiplier! times the amount lost, and !M! Thorns."
+    "DESCRIPTION": "Whenever you lose HP from a card effect, gain Barrier and Thorn Aura equal to the amount lost.",
+    "UPGRADE_DESCRIPTION": "Whenever you lose HP from a card effect, gain Barrier and Thorn Aura equal to 2 times the amount lost.",
+    "EXTENDED_DESCRIPTION": ["Whenever you lose HP from a card effect, gain Barrier and Thorn Aura equal to 1.5 times the amount lost."]
   },
   "thePenance:ToothForTooth": {
     "NAME": "Tooth for Tooth",
@@ -363,5 +370,21 @@
   "thePenance:Censure": {
     "NAME": "Censure",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Judgement."
+  },
+  "ThePenance:DifficultyOption": {
+    "NAME": "Select Difficulty",
+    "DESCRIPTION": "Placeholder"
+  },
+  "ThePenance:DiffNormal": {
+    "NAME": "Purification",
+    "DESCRIPTION": "Standard game experience. NL No special modifications."
+  },
+  "ThePenance:DiffHard": {
+    "NAME": "Condemnation",
+    "DESCRIPTION": "A challenging experience. NL Upgrades Starting Relic. NL Decreases Max HP."
+  },
+  "thePenance:DiffHell": {
+    "NAME": "Tribulation",
+    "DESCRIPTION": "An extremely difficult challenge. NL Based on [Condemnation], NL values of most cards are adjusted."
   }
 }

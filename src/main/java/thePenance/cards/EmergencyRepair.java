@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -14,7 +15,7 @@ public class EmergencyRepair extends BaseCard {
 
     private static final int COST = 1;
     private static final int BARRIER = 4;
-    private static final int UPG_BARRIER = 3; // 4 -> 7
+    private static final int UPG_BARRIER = 3;
 
     public EmergencyRepair() {
         super(ID, new CardStats(
@@ -25,7 +26,11 @@ public class EmergencyRepair extends BaseCard {
                 COST
         ));
 
-        setMagic(BARRIER, UPG_BARRIER);
+        int finalBarrier = BARRIER;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrier = 3;
+
+        setMagic(finalBarrier, UPG_BARRIER);
     }
 
     @Override

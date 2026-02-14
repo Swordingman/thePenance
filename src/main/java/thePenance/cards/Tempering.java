@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -26,7 +27,11 @@ public class Tempering extends BaseCard {
                 COST
         ));
 
-        setMagic(BARRIER, UPG_BARRIER);
+        int finalBarrier = BARRIER;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrier = 10;
+
+        setMagic(finalBarrier, UPG_BARRIER);
     }
 
     @Override

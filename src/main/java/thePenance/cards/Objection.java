@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.powers.JudgementPower;
 import thePenance.powers.ThornAuraPower;
@@ -24,7 +25,7 @@ public class Objection extends BaseCard {
     private static final int UPG_EFFECT_SMALL = 1; // 2->3
 
     private static final int EFFECT_LARGE = 8; // 屏障
-    private static final int UPG_EFFECT_LARGE = 2; // 6->8
+    private static final int UPG_EFFECT_LARGE = 2;
 
     public Objection() {
         super(ID, new CardStats(
@@ -36,10 +37,19 @@ public class Objection extends BaseCard {
         ));
 
         setDamage(DAMAGE);
+
+        int finalEffectS = EFFECT_SMALL;
+        int finalEffectL = EFFECT_LARGE;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL){
+            finalEffectS = 2;
+            finalEffectL = 4;
+        }
+
         // MagicNumber 用来存小数值 (裁决/荆棘)
-        setMagic(EFFECT_SMALL, UPG_EFFECT_SMALL);
+        setMagic(finalEffectS, UPG_EFFECT_SMALL);
         // 自定义变量存大数值 (屏障)
-        setCustomVar("LargeAmt", EFFECT_LARGE, UPG_EFFECT_LARGE);
+        setCustomVar("LargeAmt", finalEffectL, UPG_EFFECT_LARGE);
     }
 
     @Override

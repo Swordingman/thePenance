@@ -1,40 +1,39 @@
 package thePenance.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePenance.PenanceMod;
 import thePenance.relics.LetterOfGratitude;
 
 public class BarrierPower extends BasePower implements CloneablePowerInterface {
     public static final String POWER_ID = PenanceMod.makeID("BarrierPower");
-    // 不需要再手动定义 PowerStrings, NAME, DESCRIPTIONS，BasePower 已经处理了
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
+    public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public BarrierPower(AbstractCreature owner, int amount) {
-        super(
-                POWER_ID,          // ID
-                PowerType.BUFF,    // 类型
-                false,             // isTurnBased (屏障通常不是回合制的，除非回合结束自动消失)
-                owner,             // 拥有者
-                null,              // 来源 (source)，这里设为 null
-                amount,            // 层数
-                true,              // initDescription (是否立即初始化描述)
-                true              // loadImage
-        );
+        // 使用你的 BasePower 构造函数，或者标准的 super
+        // 这里保留你之前的参数结构
+        super(POWER_ID, PowerType.BUFF, false, owner, amount);
 
-        this.canGoNegative = false; // 屏障不能为负数
+        // 直接赋值，不再计算敏捷
+        this.amount = amount;
+        this.canGoNegative = false;
+
+        updateDescription();
     }
 
-    // BasePower 继承自 AbstractPower，所以 stackPower 逻辑保留即可
-    // 你的原版代码里加了 updateDescription()，这很好，保留它
     @Override
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
 
-         if (owner.isPlayer && ((AbstractPlayer) owner).hasRelic(LetterOfGratitude.ID)) {
-             stackAmount += Math.max(1, (int)(stackAmount * 0.2f));
-         }
+        if (owner.isPlayer && ((AbstractPlayer) owner).hasRelic(LetterOfGratitude.ID)) {
+            stackAmount += Math.max(1, (int)(stackAmount * 0.2f));
+        }
 
         this.amount += stackAmount;
         updateDescription();
@@ -42,7 +41,6 @@ public class BarrierPower extends BasePower implements CloneablePowerInterface {
 
     @Override
     public void updateDescription() {
-        // 直接使用父类 BasePower 提供的 DESCRIPTIONS 数组
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 

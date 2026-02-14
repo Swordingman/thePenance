@@ -1,7 +1,7 @@
 {
   "thePenance:JudgementPower": {
     "NAME": "Judgment",
-    "DESCRIPTIONS": ["Whenever your Barrier is attacked, deal #b", " damage to the attacker."]
+    "DESCRIPTIONS": ["Whenever your #yBarrier is attacked, deal #b", " damage to the attacker."]
   },
   "thePenance:BarrierPower": {
     "NAME": "Barrier",
@@ -25,7 +25,7 @@
   },
   "thePenance:GuardianOfTheLawPower": {
     "NAME": "Guardian of Law",
-    "DESCRIPTIONS": ["Whenever your Barrier takes damage, gain ", " Judgment."]
+    "DESCRIPTIONS": ["Whenever your #yBarrier takes damage, gain ", " #yJudgment."]
   },
   "thePenance:LawIsCanonPower": {
     "NAME": "Law is Canon",
@@ -73,7 +73,12 @@
   },
   "thePenance:CumulativePrecedentPower": {
     "NAME": "Cumulative Precedent",
-    "DESCRIPTIONS": ["Whenever you play a Skill, gain #b", " Barrier."]
+    "DESCRIPTIONS": [
+      "Whenever you play a Skill, gain #b",
+      " #yBarrier.",
+      "and #b",
+      " #yBlock."
+    ]
   },
   "thePenance:InescapableNetPower": {
     "NAME": "Inescapable Net",
@@ -81,11 +86,21 @@
   },
   "thePenance:ProceduralJusticePower": {
     "NAME": "Procedural Justice",
-    "DESCRIPTIONS": ["Whenever you gain #yBlock, gain an equal amount of #yBarrier."]
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gain an equal amount of #yBarrier.",
+      "Whenever you gain #yBlock, gain #b",
+      " #yBarrier."
+    ]
   },
   "thePenance:IroncladDoctrinePower": {
     "NAME": "Ironclad Doctrine",
-    "DESCRIPTIONS": ["At the start of your turn, remove #b", " #yBarrier to heal #b", " HP."]
+    "DESCRIPTIONS": [
+      "At the start of your turn, if you have enough #yBarrier, consume #b",
+      " #yBarrier to heal #b",
+      " HP.",
+      " #yBarrier to gain #b",
+      " #yMax #yHP."
+    ]
   },
   "thePenance:JustifiedDefensePower": {
     "NAME": "Self-Defense",
@@ -109,7 +124,11 @@
   },
   "thePenance:GlowOfSufferingPower": {
     "NAME": "Glow of Suffering",
-    "DESCRIPTIONS": ["Whenever you lose HP from card effects, gain #yBarrier equal to #b", " times the amount lost, and #b", " #yThorn #yAura."]
+    "DESCRIPTIONS": [
+      "Whenever you lose HP from card effects, gain #yBarrier equal to #b",
+      " times the amount lost, and #yThorn #yAura equal to #b",
+      " times the amount lost."
+    ]
   },
   "thePenance:LoseSlowPower": {
     "NAME": "Temporary Slow",

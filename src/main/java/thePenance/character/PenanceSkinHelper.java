@@ -184,7 +184,6 @@ public class PenanceSkinHelper {
         // 正数向右/上，负数向左/下。一定要乘 Settings.scale 以适配分辨率
         float skinOffsetX = 0f * Settings.scale;    // 例如：向右移 50f 就填 50f
         float skinOffsetY = 25f * Settings.scale; // 例如：向下移 100f 就填 -100f
-
         // --- 绘制 UI (使用 uiCenter) ---
 
         // 绘制箭头 (位置不变)

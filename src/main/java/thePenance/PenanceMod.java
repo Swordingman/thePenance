@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.character.PenanceSkinHelper;
 import thePenance.events.*;
 import thePenance.potions.BarrierPotion;
@@ -109,7 +110,8 @@ public class PenanceMod implements
         // --- 读取皮肤配置 ---
         try {
             Properties defaults = new Properties();
-            defaults.setProperty("skinIndex", "0"); // 默认是 0
+            defaults.setProperty("skinIndex", "0");
+            defaults.setProperty("difficulty", "0");
 
             // "ThePenance" 是你的模组ID (不要带前缀如果不需要)，"PenanceConfig" 是文件名
             penanceConfig = new SpireConfig("ThePenance", "PenanceConfig", defaults);
@@ -122,6 +124,8 @@ public class PenanceMod implements
             if (PenanceSkinHelper.currentSkinIndex >= PenanceSkinHelper.SKINS.length || PenanceSkinHelper.currentSkinIndex < 0) {
                 PenanceSkinHelper.currentSkinIndex = 0;
             }
+
+            PenanceDifficultyHelper.loadDifficulty();
 
         } catch (Exception e) {
             e.printStackTrace();

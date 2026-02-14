@@ -37,7 +37,7 @@ public class VolsiniiCivilian extends AbstractMonster {
         // 如果游戏崩溃，请检查 json 文件中 "animations" 下的键名（可能是 "idle", "animation", "stand" 等）
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
 
-        this.flipHorizontal = true;
+        this.flipHorizontal = false;
     }
 
     @Override

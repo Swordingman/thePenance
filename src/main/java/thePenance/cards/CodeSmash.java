@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.util.CardStats;
 
 public class CodeSmash extends BaseCard {
@@ -27,7 +28,11 @@ public class CodeSmash extends BaseCard {
                 COST
         ));
 
-        setDamage(DAMAGE, UPG_DAMAGE);
+        int finalDamage = DAMAGE;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalDamage = 5;
+
+        setDamage(finalDamage, UPG_DAMAGE);
         setExhaust(true);
     }
 

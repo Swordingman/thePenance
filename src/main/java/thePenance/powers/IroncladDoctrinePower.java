@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import thePenance.PenanceMod;
+import thePenance.character.PenanceDifficultyHelper;
 
 public class IroncladDoctrinePower extends BasePower {
     public static final String POWER_ID = PenanceMod.makeID("IroncladDoctrinePower");
@@ -12,6 +13,7 @@ public class IroncladDoctrinePower extends BasePower {
     // 我们用 amount 来存储 "需要消耗的屏障量" (10/8)
     // 恢复量固定为 3，如果需要升级可变，可以引入 amount2 或者 magic number
     private static final int HEAL_AMT = 3;
+    private static final int HP_AMT = 3;
 
     public IroncladDoctrinePower(AbstractCreature owner, int costAmount) {
         super(POWER_ID, PowerType.BUFF, false, owner, costAmount);
@@ -35,7 +37,11 @@ public class IroncladDoctrinePower extends BasePower {
                     @Override
                     public void update() {
                         thePenance.patches.PenanceHealPatches.isWhitelistedHeal = true;
-                        owner.heal(HEAL_AMT);
+                        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL){
+                            owner.increaseMaxHp(HP_AMT, true);
+                        } else {
+                            owner.heal(HEAL_AMT);
+                        }
                         thePenance.patches.PenanceHealPatches.isWhitelistedHeal = false;
                         this.isDone = true;
                     }
@@ -46,6 +52,14 @@ public class IroncladDoctrinePower extends BasePower {
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + HEAL_AMT + DESCRIPTIONS[2];
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL) {
+            // Hell 描述: 回合开始时，消耗 X 屏障，获得 1 点最大生命。
+            // 对应 JSON DESCRIPTIONS[3], [4]
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[3] + HP_AMT + DESCRIPTIONS[4];
+        } else {
+            // 普通 描述: 回合开始时，消耗 X 屏障，恢复 3 点生命。
+            // 对应 JSON DESCRIPTIONS[0], [1], [2]
+            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + HEAL_AMT + DESCRIPTIONS[2];
+        }
     }
 }

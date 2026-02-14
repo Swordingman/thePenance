@@ -35,9 +35,13 @@ public class ResoluteAction extends AbstractGameAction {
         }
 
         // 如果拥有遗物“化学物 X”，X 值 +2
-        if (this.p.hasRelic(ChemicalX.ID)) {
-            effect += 2;
-            this.p.getRelic(ChemicalX.ID).flash();
+        if (p.relics != null) {
+            for (com.megacrit.cardcrawl.relics.AbstractRelic r : p.relics) {
+                if (ChemicalX.ID.equals(r.relicId)) {
+                    effect += 2;
+                    r.flash();
+                }
+            }
         }
 
         if (effect > 0 || upgraded) {

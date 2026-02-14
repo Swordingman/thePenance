@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -14,7 +15,7 @@ public class CitationOfLaw extends BaseCard {
     private static final int COST = 1;
     private static final int BASE_BARRIER = 5;
     private static final int PERCENT = 50;
-    private static final int UPG_PERCENT = 20; // 50% -> 70%
+    private static final int UPG_PERCENT = 20;
 
     public CitationOfLaw() {
         super(ID, new CardStats(
@@ -24,8 +25,16 @@ public class CitationOfLaw extends BaseCard {
                 CardTarget.SELF,
                 COST
         ));
-        setCustomVar("BaseBarrier", BASE_BARRIER);
-        setMagic(PERCENT, UPG_PERCENT);
+
+        int finalBarrier = BASE_BARRIER;
+        int finalPercent = PERCENT;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL) {
+            finalBarrier = 3;
+            finalPercent = 30;
+        }
+
+        setCustomVar("BaseBarrier", finalBarrier);
+        setMagic(finalPercent, UPG_PERCENT);
         setExhaust(true);
     }
 

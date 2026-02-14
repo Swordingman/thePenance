@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class SelfIncrimination extends BaseCard {
     public static final String ID = makeID("SelfIncrimination");
     private static final int COST = 1;
+    private static final int UPGRADE_COST = 0;
 
     public SelfIncrimination() {
         super(ID, new CardStats(
@@ -24,6 +25,7 @@ public class SelfIncrimination extends BaseCard {
                 COST
         ));
         setExhaust(true);
+        setCostUpgrade(UPGRADE_COST);
         // 预览衍生卡
         this.cardsToPreview = new ExhibitA();
         this.cardsToPreview = new Perjury();

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.powers.JudgementPower;
 import thePenance.util.CardStats;
@@ -28,7 +29,12 @@ public class Silence extends BaseCard {
                 COST
         ));
 
-        setMagic(BARRIER_AMT, UPGRADE_PLUS_BARRIER);
+        int finalBarrier = BARRIER_AMT;
+
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrier = 6;
+
+        setMagic(finalBarrier, UPGRADE_PLUS_BARRIER);
     }
 
     @Override

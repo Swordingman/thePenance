@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import thePenance.character.Penance;
+import thePenance.character.PenanceDifficultyHelper;
 import thePenance.powers.BarrierPower;
 import thePenance.util.CardStats;
 
@@ -28,8 +29,12 @@ public class WallBreakerSmash extends BaseCard {
                 COST
         ));
 
+        int finalBarrierCost = BARRIER_COST;
+        if (PenanceDifficultyHelper.currentDifficulty == PenanceDifficultyHelper.DifficultyLevel.HELL)
+            finalBarrierCost = 8;
+
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(BARRIER_COST); // 用 Magic 显示消耗量
+        setMagic(finalBarrierCost); // 用 Magic 显示消耗量
     }
 
     @Override
