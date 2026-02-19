@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import thePenance.PenanceMod;
+import thePenance.relics.CarnivalMoment;
 
 import java.util.ArrayList;
 
@@ -33,10 +34,16 @@ public class WolfCurseHelper {
     public static AbstractCard getRandomWolfCurse() {
         ArrayList<AbstractCard> list = getAllWolfCurses();
         if (list.isEmpty()) {
-            // 防止崩溃，如果没找到卡返回一个默认诅咒
             return new com.megacrit.cardcrawl.cards.curses.Clumsy();
         }
-        return list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
+        AbstractCard randomCurse = list.get(AbstractDungeon.cardRandomRng.random(list.size() - 1));
+        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(CarnivalMoment.ID)) {
+            if (!randomCurse.upgraded) {
+                randomCurse.upgrade();
+            }
+            AbstractDungeon.player.getRelic(CarnivalMoment.ID).flash();
+        }
+        return randomCurse;
     }
 
     // 选择狼群诅咒
@@ -56,9 +63,14 @@ public class WolfCurseHelper {
             if (this.duration == Settings.ACTION_DUR_FAST) {
                 // 直接调用外面的静态方法获取列表
                 ArrayList<AbstractCard> sourceCards = WolfCurseHelper.getAllWolfCurses();
-
                 CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+
+                boolean hasCarnivalRelic = AbstractDungeon.player.hasRelic(CarnivalMoment.ID);
+
                 for (AbstractCard c : sourceCards) {
+                    if (hasCarnivalRelic && c.canUpgrade()) {
+                        c.upgrade();
+                    }
                     group.addToTop(c);
                 }
 
@@ -76,6 +88,12 @@ public class WolfCurseHelper {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
                 for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                     AbstractCard copy = c.makeStatEquivalentCopy();
+
+                    if (AbstractDungeon.player.hasRelic(CarnivalMoment.ID) && !copy.upgraded) {
+                        copy.upgrade();
+                        AbstractDungeon.player.getRelic(CarnivalMoment.ID).flash();
+                    }
+
                     if (AbstractDungeon.player.hand.size() < 10) {
                         AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(copy, (float)Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
                     } else {

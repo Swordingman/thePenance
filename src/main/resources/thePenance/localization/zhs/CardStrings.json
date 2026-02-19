@@ -109,7 +109,8 @@
   },
   "thePenance:FinaleCatastrophe": {
     "NAME": "终幕·浩劫",
-    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 造成 !M! 点伤害，随机分配给场上的所有单位（包括你自己）。"
+    "DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 造成 !M! 点伤害，随机分配给场上的所有单位（包括你自己）。",
+    "UPGRADE_DESCRIPTION": "抽到时释放。 NL 消耗 。 NL 造成 !M! 点伤害，随机分配给场上的所有单位（包括你自己）。现在有更高的概率命中敌人！"
   },
   "thePenance:DignityOfTheLeader": {
     "NAME": "领袖的尊严",
@@ -386,5 +387,37 @@
   "thePenance:DiffHell": {
     "NAME": "披荆斩棘",
     "DESCRIPTION": "极高难度的挑战。 NL 在 [问罪裁罚] 的基础上， NL 大部分卡牌数值获得调整。"
+  },
+  "thePenance:PresetOptionCard": {
+    "NAME": "预设选择",
+    "DESCRIPTION": "占位符"
+  },
+  "thePenance:PreDefault": {
+    "NAME": "公事公办",
+    "DESCRIPTION": "默认的卡组，无特殊修改。"
+  },
+  "thePenance:PreRehearsal": {
+    "NAME": "排练日",
+    "DESCRIPTION": "初始获得20张 *庭审预演 。"
+  },
+  "thePenance:PreWolves": {
+    "NAME": "狼性文化",
+    "DESCRIPTION": "将你的初始卡组替换为和 *狼群诅咒 相关的卡牌。 NL 且初始获得遗物 *荆棘法典 与 *狂欢时刻 。"
+  },
+  "thePenance:PreCurses": {
+    "NAME": "诅咒之力",
+    "DESCRIPTION": "初始获得卡牌 *刚正不阿 和遗物 *毒巫娃娃 。 NL 获得诅咒 *死灵诅咒 和 *铃铛的诅咒 。"
+  },
+  "thePenance:PreDrink": {
+    "NAME": "酒是老英雄",
+    "DESCRIPTION": "初始获得卡牌 *小酌一杯 和遗物 *干瘪之手 。"
+  },
+  "thePenance:PreHealth": {
+    "NAME": "生命在于生命值",
+    "DESCRIPTION": "初始获得卡牌 *律法之重 和 *终审判决 。"
+  },
+  "thePenance:PreDebate": {
+    "NAME": "百家争鸣",
+    "DESCRIPTION": "初始获得遗物 *棱镜碎片 和 *星系仪 。"
   }
 }

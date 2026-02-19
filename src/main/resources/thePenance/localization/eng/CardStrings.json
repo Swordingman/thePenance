@@ -104,42 +104,43 @@
   },
   "thePenance:ContinuousRain": {
     "NAME": "Unrelenting Downpour",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL characters.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL enemies, and 1 to yourself."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL characters.",
+    "UPGRADE_DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Deal !D! damage to ALL characters. NL Apply 2 Vulnerable and Frail to ALL enemies, and 1 to yourself."
   },
   "thePenance:FinaleCatastrophe": {
     "NAME": "Finale: Catastrofe",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Deal !M! damage randomly distributed among ALL characters (including you)."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Deal !M! damage randomly distributed among ALL characters (including you).",
+    "UPGRADE_DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Deal !M! damage randomly distributed among ALL characters (including you). Now have more chances to hit your enemies!"
   },
   "thePenance:DignityOfTheLeader": {
     "NAME": "Packleader's Dignity",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Apply 1 Armistice to ALL characters. Gain !M! [E] ."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Apply 1 Armistice to ALL characters. Gain !M! [E] ."
   },
   "thePenance:ArtOfTheHidingFox": {
     "NAME": "La Volpe Nascosta",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier. NL Retain your hand this turn."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier.",
+    "UPGRADE_DESCRIPTION": "When drawn, play this card. NL Exhaust. NL End your turn immediately. Gain !M! Strength, !M! Judgment, !M! Thorns, and !thePenance:Barrier! Barrier. NL Retain your hand this turn."
   },
   "thePenance:FameOfTheCrownSlayer": {
     "NAME": "Crownslayer's Glory",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Give all enemies intending to attack 3 Temporary Strength. NL Draw !M! cards."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Give all enemies intending to attack 3 Temporary Strength. NL Draw !M! cards."
   },
   "thePenance:AmbushShadow": {
     "NAME": "Umbral Ambush",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly discard !M! cards. NL Gain 1 Intangible."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Randomly discard !M! cards. NL Gain 1 Intangible."
   },
   "thePenance:FoxFireFading": {
     "NAME": "Foxfire Haze",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Until next turn, apply 2 Slow to yourself, NL apply !M! Slow to ALL enemies."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Until next turn, apply 2 Slow to yourself, NL apply !M! Slow to ALL enemies."
   },
   "thePenance:TangledThreads": {
     "NAME": "Lockstitch",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X times to random enemies (damage is equal to the total cost of exhausted cards).",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X+X times to random enemies (damage is equal to the total cost of exhausted cards)."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X times to random enemies (damage is equal to the total cost of exhausted cards).",
+    "UPGRADE_DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Randomly Exhaust X cards from your hand. NL Deal damage X+X times to random enemies (damage is equal to the total cost of exhausted cards)."
   },
   "thePenance:WandAntiGravity": {
     "NAME": "Arcane Staff - Anti-Gravity Mode",
-    "DESCRIPTION": "Unplayable. NL When drawn, play this card. NL Exhaust. NL Gain Confused this turn. NL Draw !M! cards."
+    "DESCRIPTION": "When drawn, play this card. NL Exhaust. NL Gain Confused this turn. NL Draw !M! cards."
   },
   "thePenance:Upright": {
     "NAME": "Upright",
@@ -386,5 +387,33 @@
   "thePenance:DiffHell": {
     "NAME": "Tribulation",
     "DESCRIPTION": "An extremely difficult challenge. NL Based on [Condemnation], NL values of most cards are adjusted."
+  },
+  "thePenance:PreDefault": {
+    "NAME": "By the Book",
+    "DESCRIPTION": "The default starting deck. No special modifications."
+  },
+  "thePenance:PreRehearsal": {
+    "NAME": "Rehearsal Day",
+    "DESCRIPTION": "Start with 20 extra *Court *Rehearsal ."
+  },
+  "thePenance:PreWolves": {
+    "NAME": "Inside You There Are Many Wolves",
+    "DESCRIPTION": "Replace your starting deck with cards related to *Wolfpack *Curses . NL Start with the *Thornbound *Codex and *Carnival *Moment relics."
+  },
+  "thePenance:PreCurses": {
+    "NAME": "Oops! All Curses",
+    "DESCRIPTION": "Start with the card *Upright and the *Du-Vu *Doll relic. NL Obtain the *Necronomicurse and *Curse *of *the *Bell ."
+  },
+  "thePenance:PreDrink": {
+    "NAME": "Sips",
+    "DESCRIPTION": "Start with the card *A *Sip and the *Mummified *Hand relic."
+  },
+  "thePenance:PreHealth": {
+    "NAME": "Health is Wealth",
+    "DESCRIPTION": "Start with the cards *Weight *of *Law and *Final *Verdict ."
+  },
+  "thePenance:PreDebate": {
+    "NAME": "Kangaroo Court",
+    "DESCRIPTION": "Start with the *Prismatic *Shard and *Orrery relics."
   }
 }

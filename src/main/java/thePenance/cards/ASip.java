@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.helpers.GameDictionary; // 必须导入
@@ -40,40 +41,67 @@ public class ASip extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int currentMagicValue = this.magicNumber;
 
+        // ======== 快照当前卡状态，避免后续被 reset / 修改 ========
+        final int costToPaySnapshot = this.magicNumber;
+        final int newBaseMagic = this.baseMagicNumber + COST_INCREMENT;
+        final boolean upgradedSnapshot = this.upgraded;
+        final int timesUpgradedSnapshot = this.timesUpgraded;
+
+        // ======== 扣除屏障 / 生命 ========
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                int costToPay = currentMagicValue;
+
                 int barrierToLose = 0;
+
                 if (p.hasPower(BarrierPower.POWER_ID)) {
                     AbstractPower barrier = p.getPower(BarrierPower.POWER_ID);
                     if (barrier.amount > 0) {
-                        barrierToLose = Math.min(barrier.amount, costToPay);
-                        barrier.amount -= barrierToLose;
-                        barrier.updateDescription();
-                        barrier.flash();
+                        barrierToLose = Math.min(barrier.amount, costToPaySnapshot);
+                        addToTop(new ReducePowerAction(p, p, BarrierPower.POWER_ID, barrierToLose));
                     }
                 }
-                int hpToLose = costToPay - barrierToLose;
+
+                int hpToLose = costToPaySnapshot - barrierToLose;
                 if (hpToLose > 0) {
                     addToTop(new LoseHPAction(p, p, hpToLose));
                 }
+
                 this.isDone = true;
             }
         });
 
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_AMT), STRENGTH_AMT));
+        // ======== 加力量 ========
+        addToBot(new ApplyPowerAction(p, p,
+                new StrengthPower(p, STRENGTH_AMT),
+                STRENGTH_AMT));
 
+        // ======== 生成复制卡（完全防御性构造） ========
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                AbstractCard c = ASip.this.makeStatEquivalentCopy();
 
+                // 永远创建全新实例
+                AbstractCard c = new ASip();
+
+                // 如果原卡是升级过的，恢复升级状态
+                if (upgradedSnapshot) {
+                    for (int i = 0; i < timesUpgradedSnapshot; i++) {
+                        c.upgrade();
+                    }
+                }
+
+                // 手动设置新的 magic 数值
+                c.baseMagicNumber = newBaseMagic;
+                c.magicNumber = newBaseMagic;
+                c.isMagicNumberModified = false;
+
+                // 添加 Ethereal
                 CardModifierManager.addModifier(c, new EtherealMod());
-                c.baseMagicNumber += COST_INCREMENT;
-                c.magicNumber += COST_INCREMENT;
+
+                // 重新应用 powers，确保显示正确
+                c.applyPowers();
                 c.initializeDescription();
 
                 addToBot(new MakeTempCardInHandAction(c));
@@ -82,4 +110,5 @@ public class ASip extends BaseCard {
             }
         });
     }
+
 }

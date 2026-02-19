@@ -29,11 +29,10 @@ import com.megacrit.cardcrawl.rooms.RestRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 // 引入你的卡牌和遗物
-import thePenance.cards.Censure;
-import thePenance.cards.Defend;
-import thePenance.cards.Resolute;
-import thePenance.cards.Strike;
+import thePenance.cards.*;
+import thePenance.relics.CarnivalMoment;
 import thePenance.relics.PenanceBasicRelic;
+import thePenance.relics.ThornboundCodex;
 import thePenance.util.Sounds;
 
 // --- 关键：引用 Shade 后的 Spine 3.8 包 ---
@@ -268,16 +267,119 @@ public class Penance extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Censure.ID);
-        retVal.add(Resolute.ID);
+        switch (PenancePresetHelper.currentPreset) {
+            case REHEARSAL:
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(CourtRehearsal.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                break;
+            case WOLVES:
+                retVal.add(ToothForTooth.ID);
+                retVal.add(ToothForTooth.ID);
+                retVal.add(BloodDebtClause.ID);
+                retVal.add(BloodDebtClause.ID);
+                retVal.add(FamilyArbitration.ID);
+                retVal.add(FamilyArbitration.ID);
+                retVal.add(SyracusanWolves.ID);
+                retVal.add(SyracusanWolves.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                break;
+            case CURSES:
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                retVal.add(Upright.ID);
+                retVal.add("Curse of the Bell");
+                retVal.add("Necronomicurse");
+                break;
+            case DRINK:
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                retVal.add(ASip.ID);
+                break;
+            case HEALTH:
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                retVal.add(WeightOfLaw.ID);
+                retVal.add(FinalVerdict.ID);
+                break;
+            case DEBATE:
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                break;
+            case DEFAULT:
+            default:
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Strike.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Defend.ID);
+                retVal.add(Censure.ID);
+                retVal.add(Resolute.ID);
+                break;
+        }
         return retVal;
     }
 
@@ -285,6 +387,25 @@ public class Penance extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(PenanceBasicRelic.ID);
+        switch (PenancePresetHelper.currentPreset) {
+            case WOLVES:
+                retVal.add(ThornboundCodex.ID);
+                retVal.add(CarnivalMoment.ID);
+                break;
+            case CURSES:
+                retVal.add("Du-Vu Doll");
+                break;
+            case DRINK:
+                retVal.add("Mummified Hand");
+                break;
+            case DEBATE:
+                retVal.add("Prismatic Shard");
+                retVal.add("Orrery");
+                break;
+            case DEFAULT:
+            default:
+                break;
+        }
         return retVal;
     }
 

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import thePenance.PenanceMod;
+import thePenance.actions.WolfCurseHelper;
 import thePenance.cards.*; // 引用所有卡牌
 
 import java.util.ArrayList;
@@ -14,12 +15,6 @@ public class ThornboundCodex extends BaseRelic {
 
     public ThornboundCodex() {
         super(ID, "ThornboundCodex", RelicTier.BOSS, LandingSound.HEAVY);
-    }
-
-    // 回合开始获得能量
-    @Override
-    public void atTurnStart() {
-        AbstractDungeon.player.gainEnergy(1);
     }
 
     @Override
@@ -38,21 +33,10 @@ public class ThornboundCodex extends BaseRelic {
         this.flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 
-        // 随机选一张
-        AbstractCard curse = getRandomWolfCurse();
+        // 直接调用 Helper 统一的方法获取随机狼之诅咒
+        AbstractCard curse = WolfCurseHelper.getRandomWolfCurse();
 
-        // 塞入牌库顶 (toBottom = false)
+        // 塞入牌库 (根据你原来的参数：toBottom = false, randomSpot = true)
         addToBot(new MakeTempCardInDrawPileAction(curse, 1, false, true));
-    }
-
-    private AbstractCard getRandomWolfCurse() {
-        ArrayList<AbstractCard> curses = new ArrayList<>();
-        curses.add(new ContinuousRain());
-        curses.add(new FinaleCatastrophe());
-        curses.add(new DignityOfTheLeader());
-        curses.add(new ArtOfTheHidingFox());
-        curses.add(new FameOfTheCrownSlayer());
-
-        return curses.get(AbstractDungeon.cardRandomRng.random(curses.size() - 1));
     }
 }

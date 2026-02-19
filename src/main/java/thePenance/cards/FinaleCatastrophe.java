@@ -20,7 +20,7 @@ public class FinaleCatastrophe extends BaseCard {
 
     public static final String ID = makeID("FinaleCatastrophe");
     private static final int COST = 1;
-    private static final int UPG_COST = 0;
+    // 删除了 UPG_COST
     private static final int TOTAL_DAMAGE = 30;
 
     public FinaleCatastrophe() {
@@ -31,7 +31,7 @@ public class FinaleCatastrophe extends BaseCard {
                 CardTarget.ALL,
                 COST
         ));
-        setCostUpgrade(UPG_COST);
+        // 删除原来的 setCostUpgrade(UPG_COST);
         setMagic(TOTAL_DAMAGE);
         setExhaust(true);
 
@@ -40,45 +40,37 @@ public class FinaleCatastrophe extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // 传入总次数，以及每次打击的间隔时间 (0.1秒一次，30次大约持续3秒)
-        addToBot(new CatastropheAction(magicNumber, 0.1f));
+        // 在这里把 this.upgraded 传给 Action
+        addToBot(new CatastropheAction(magicNumber, 0.1f, this.upgraded));
     }
 
     @Override
     public void triggerWhenDrawn() {
-        // 直接调用 BaseCard 里的通用方法
         triggerWolfAutoplay();
     }
 
-    // --- 内部 Action 类 ---
     public static class CatastropheAction extends AbstractGameAction {
-        private int timesLeft;       // 剩余打击次数
-        private float interval;      // 每次打击的间隔时间
-        private float timer;         // 计时器
+        private int timesLeft;
+        private float interval;
+        private float timer;
+        private boolean isUpgraded;  // 新增：记录是否升级
 
-        public CatastropheAction(int times, float interval) {
+        // 构造函数增加 isUpgraded 参数
+        public CatastropheAction(int times, float interval, boolean isUpgraded) {
             this.timesLeft = times;
             this.interval = interval;
-            this.timer = 0.0f; // 立即开始第一次打击
+            this.timer = 0.0f;
             this.actionType = ActionType.DAMAGE;
+            this.isUpgraded = isUpgraded;
         }
 
         @Override
         public void update() {
-            // 减去流逝的时间
             timer -= Gdx.graphics.getDeltaTime();
-
-            // 如果计时器归零，进行一次打击
             if (timer <= 0) {
-                // 重置计时器 (加上 interval)
                 timer += interval;
-
                 doRandomDamage();
-
-                // 扣除次数
                 timesLeft--;
-
-                // 如果次数用完，标记动作结束
                 if (timesLeft <= 0) {
                     this.isDone = true;
                 }
@@ -87,39 +79,55 @@ public class FinaleCatastrophe extends BaseCard {
 
         private void doRandomDamage() {
             AbstractPlayer p = AbstractDungeon.player;
-            ArrayList<AbstractCreature> targets = new ArrayList<>();
+            ArrayList<AbstractMonster> validMonsters = new ArrayList<>();
 
-            // 必须每次打击都重新检查目标列表，因为上一次打击可能已经把怪打死了
-            if (!p.isDeadOrEscaped()) {
-                targets.add(p);
-            }
+            // 1. 筛选活着的怪物
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (!m.isDeadOrEscaped()) {
-                    targets.add(m);
+                    validMonsters.add(m);
                 }
             }
 
-            // 如果场上没有目标了（虽然不太可能，因为有玩家），直接结束
-            if (targets.isEmpty()) {
+            boolean hasPlayer = p != null && !p.isDeadOrEscaped();
+            boolean hasMonsters = !validMonsters.isEmpty();
+
+            // 如果场上全空（通常不可能），直接结束
+            if (!hasPlayer && !hasMonsters) {
                 this.isDone = true;
                 return;
             }
 
-            // 随机选一个目标
-            AbstractCreature target = targets.get(AbstractDungeon.cardRandomRng.random(targets.size() - 1));
+            AbstractCreature target = null;
 
-            // 造成1点伤害
-            // 使用 THORNS 避免触发荆棘/反伤，也可以改成 HP_LOSS
+            // 2. 核心概率判定
+            if (hasPlayer && hasMonsters) {
+                // 如果升级了，打玩家概率30%；未升级则为50%
+                float hitPlayerChance = this.isUpgraded ? 0.3f : 0.5f;
+
+                // 生成 0.0 到 1.0 的随机数
+                if (AbstractDungeon.cardRandomRng.random() < hitPlayerChance) {
+                    target = p; // 打玩家
+                } else {
+                    // 打怪物（从存活的怪物中随机挑一个）
+                    target = validMonsters.get(AbstractDungeon.cardRandomRng.random(validMonsters.size() - 1));
+                }
+            } else if (hasPlayer) {
+                // 只有玩家活着（场上没怪了），全打玩家
+                target = p;
+            } else {
+                // 只有怪物活着，全打怪物
+                target = validMonsters.get(AbstractDungeon.cardRandomRng.random(validMonsters.size() - 1));
+            }
+
+            // 3. 造成伤害与特效 (这部分保持不变)
             target.damage(new DamageInfo(p, 1, DamageInfo.DamageType.THORNS));
 
-            // 特效：根据目标大小微调位置
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(
                     target.hb.cX + MathUtils.random(-20f, 20f),
                     target.hb.cY + MathUtils.random(-20f, 20f),
                     AttackEffect.BLUNT_LIGHT
             ));
 
-            // 可选：每几次攻击震动一下屏幕，增加打击感
             if (timesLeft % 5 == 0) {
                 CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false);
             }
