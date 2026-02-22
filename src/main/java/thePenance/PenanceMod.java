@@ -9,13 +9,18 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import thePenance.character.Penance;
 import thePenance.character.PenanceDifficultyHelper;
+import thePenance.character.PenancePresetHelper;
 import thePenance.character.PenanceSkinHelper;
 import thePenance.events.*;
 import thePenance.potions.BarrierPotion;
@@ -58,7 +63,10 @@ public class PenanceMod implements
         AddAudioSubscriber,       // 订阅音频添加事件
         PostInitializeSubscriber, // 订阅初始化后处理事件（用于添加徽章等）
         EditCardsSubscriber,      // 订阅卡牌编辑事件
-        EditRelicsSubscriber{    // 订阅遗物编辑事件
+        EditRelicsSubscriber,     // 订阅遗物编辑事件
+        PostDungeonInitializeSubscriber, // 订阅进入地牢事件
+        PostCreateStartingRelicsSubscriber,
+        PostUpdateSubscriber{
 
     public static ModInfo info;
     public static String modID; // 修改你的 pom.xml 文件来改变这个ID
@@ -254,6 +262,64 @@ public class PenanceMod implements
     public void receiveAddAudio() {
         // 自动加载音频
         loadAudio(Sounds.class);
+    }
+
+    public static boolean needToGiveOrrery = false;
+    @Override
+    public void receivePostDungeonInitialize() {
+        // 检查：1. 是否是第一层开局 2. 玩家身份 3. 预设条件
+        if (AbstractDungeon.floorNum == 0 &&
+                AbstractDungeon.player instanceof Penance &&
+                PenancePresetHelper.currentPreset == PenancePresetHelper.PresetLevel.DEBATE) {
+
+            // 激活开关，等待房间加载完毕
+            needToGiveOrrery = true;
+
+        } else {
+            // 确保其他角色或中途读档时不会意外触发
+            needToGiveOrrery = false;
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        // 只有当开关开着，且当前节点和房间都已经完全生成时，才执行
+        if (needToGiveOrrery && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null) {
+
+            needToGiveOrrery = false; // 立刻关闭开关，防止每一帧都给一个星象仪！
+
+            // 此时房间已经存在，星象仪的 onEquip 生成卡牌奖励就不会崩溃了
+            AbstractDungeon.getCurrRoom().spawnRelicAndObtain(
+                    Settings.WIDTH / 2.0f,
+                    Settings.HEIGHT / 2.0f,
+                    RelicLibrary.getRelic("Orrery").makeCopy()
+            );
+        }
+    }
+
+    @Override
+    public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass chosenClass, ArrayList<String> addRelicsToMe) {
+        // 确保只有当玩家选择了“斥罪”时才发预设遗物
+        if (chosenClass == Penance.Meta.PENANCE) {
+            switch (PenancePresetHelper.currentPreset) {
+                case WOLVES:
+                    addRelicsToMe.add(ThornboundCodex.ID);
+                    addRelicsToMe.add(CarnivalMoment.ID);
+                    break;
+                case CURSES:
+                    addRelicsToMe.add("Du-Vu Doll");
+                    break;
+                case DRINK:
+                    addRelicsToMe.add("Mummified Hand");
+                    break;
+                case DEBATE:
+                    addRelicsToMe.add("PrismaticShard");
+                    break;
+                case DEFAULT:
+                default:
+                    break;
+            }
+        }
     }
 
     private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; // 还有更多有效类型，但不值得在这里全部检查

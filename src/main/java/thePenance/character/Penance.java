@@ -387,25 +387,6 @@ public class Penance extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(PenanceBasicRelic.ID);
-        switch (PenancePresetHelper.currentPreset) {
-            case WOLVES:
-                retVal.add(ThornboundCodex.ID);
-                retVal.add(CarnivalMoment.ID);
-                break;
-            case CURSES:
-                retVal.add("Du-Vu Doll");
-                break;
-            case DRINK:
-                retVal.add("Mummified Hand");
-                break;
-            case DEBATE:
-                retVal.add("Prismatic Shard");
-                retVal.add("Orrery");
-                break;
-            case DEFAULT:
-            default:
-                break;
-        }
         return retVal;
     }
 
