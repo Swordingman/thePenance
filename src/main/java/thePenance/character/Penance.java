@@ -324,7 +324,7 @@ public class Penance extends CustomPlayer {
                 retVal.add(Censure.ID);
                 retVal.add(Resolute.ID);
                 retVal.add(Upright.ID);
-                retVal.add("Curse of the Bell");
+                retVal.add("CurseOfTheBell");
                 retVal.add("Necronomicurse");
                 break;
             case DRINK:
@@ -379,6 +379,9 @@ public class Penance extends CustomPlayer {
                 retVal.add(Censure.ID);
                 retVal.add(Resolute.ID);
                 break;
+        }
+        for (String id : retVal) {
+            System.out.println("正在检查卡牌 ID: " + id);
         }
         return retVal;
     }
