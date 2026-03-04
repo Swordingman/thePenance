@@ -223,10 +223,6 @@ public class PenanceMod implements
                 localizationPath(lang, "UIStrings.json"));
     }
 
-    public static class Keyword {
-        public String[] NAMES;       // 对应 JSON 中的 "NAMES"
-        public String DESCRIPTION;   // 对应 JSON 中的 "DESCRIPTION"
-    }
 
     @Override
     public void receiveEditKeywords() {
@@ -235,15 +231,17 @@ public class PenanceMod implements
         String lang = Settings.language == Settings.GameLanguage.ZHS ? "zhs" : "eng";
         String path = PenanceMod.localizationPath(lang, "Keywords.json");
 
-        Keyword[] loaded = gson.fromJson(
+        // 1. 改为使用你文件底部自带 PROPER_NAME 字段的 LocalKeyword 类
+        LocalKeyword[] loaded = gson.fromJson(
                 Gdx.files.internal(path).readString(StandardCharsets.UTF_8.name()),
-                Keyword[].class
+                LocalKeyword[].class
         );
 
         if (loaded != null) {
-            for (Keyword k : loaded) {
+            for (LocalKeyword k : loaded) {
+                // 2. 传入完整的 4 个参数，把 k.PROPER_NAME 作为标题传进去
                 BaseMod.addKeyword(
-                        PenanceMod.modID,
+                        k.PROPER_NAME,
                         k.NAMES,
                         k.DESCRIPTION
                 );
