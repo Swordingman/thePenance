@@ -2,6 +2,7 @@ package thePenance;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.eventUtil.AddEventParams;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
@@ -101,11 +102,24 @@ public class PenanceMod implements
 
         // 设置游戏内模组菜单中显示的模组信息。
         // 这些信息取自你的 pom.xml 文件。
-        BaseMod.addEvent(RainyNightInspectionEvent.ID, RainyNightInspectionEvent.class, Exordium.ID);
-        BaseMod.addEvent(OpeningMomentEvent.ID, OpeningMomentEvent.class, TheCity.ID);
-        BaseMod.addEvent(GreyDealEvent.ID, GreyDealEvent.class, TheCity.ID);
-        BaseMod.addEvent(VolsiniiCourtEvent.ID, VolsiniiCourtEvent.class, TheCity.ID);
-        BaseMod.addEvent(CaseFile1184Event.ID, CaseFile1184Event.class, TheBeyond.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(RainyNightInspectionEvent.ID, RainyNightInspectionEvent.class)
+                .dungeonID(Exordium.ID)
+                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(OpeningMomentEvent.ID, OpeningMomentEvent.class)
+                .dungeonID(TheCity.ID)
+                .playerClass(Penance.Meta.PENANCE)
+                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(GreyDealEvent.ID, GreyDealEvent.class)
+                .dungeonID(TheCity.ID)
+                .playerClass(Penance.Meta.PENANCE)
+                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(VolsiniiCourtEvent.ID, VolsiniiCourtEvent.class)
+                .dungeonID(TheCity.ID)
+                .playerClass(Penance.Meta.PENANCE)
+                .create());
+        BaseMod.addEvent(new AddEventParams.Builder(CaseFile1184Event.ID, CaseFile1184Event.class)
+                .dungeonID(TheBeyond.ID)
+                .create());
 
         BaseMod.addPotion(BarrierPotion.class, Color.SKY, null, null, BarrierPotion.ID);
         BaseMod.addPotion(BottleOfWolfBlood.class, Color.FIREBRICK, Color.SCARLET, null, BottleOfWolfBlood.ID, Penance.Meta.PENANCE);

@@ -72,7 +72,8 @@
     "DESCRIPTIONS": [
       "The gavel hangs in mid-air; the entire courtroom is silent. NL The Godfather in the defendant's seat looks at you with a mocking smile. You know he will walk out of here tomorrow and continue the slaughter. NL Hidden in your sleeve is a set of forged accounts—the only #y\"Evidence\" that can send him to the gallows. NL If you submit it: You trample the procedural justice you have guarded all your life. NL If you pass on it: The dignity of the law is preserved, but the innocent will continue to bleed. NL NL Where should the gavel fall?",
       "You submit the forged accounts. The Godfather's smile freezes. NL You won. Syracusa has one less villain, and one more lying judge.",
-      "\"Insufficient evidence. Released.\" NL The gavel falls with a hollow sound. You held the bottom line of the law, but as you walk out of the court, the spit of the public and the retreating figure of the Godfather fill you with immense distress."
+      "\"Insufficient evidence. Released.\" NL The gavel falls with a hollow sound. You held the bottom line of the law, but as you walk out of the court, the spit of the public and the retreating figure of the Godfather fill you with immense distress.",
+      "Clear."
     ],
     "OPTIONS": [
       "[Submit Perjury] Gain #y99 Gold. #yUpgrade 2 random Attacks. Gain 1 #rDoubt .",

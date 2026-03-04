@@ -119,7 +119,7 @@ public class CaseFile1184Event extends AbstractImageEvent {
             AbstractDungeon.combatRewardScreen.open();
 
             // 4. 更新事件背景文字，并提供一个离开按钮作为兜底
-            this.imageEventText.updateBodyText("清理完毕。");
+            this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
             this.imageEventText.clearAllDialogs();
             this.imageEventText.setDialogOption(OPTIONS[3]);
         }
