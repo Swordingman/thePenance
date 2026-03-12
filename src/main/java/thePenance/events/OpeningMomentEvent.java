@@ -98,35 +98,34 @@ public class OpeningMomentEvent extends AbstractImageEvent {
 
             // 处理升级逻辑
             if (this.state == State.UPGRADING) {
-                if (this.state == State.UPGRADING) {
-                    AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+                AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
 
-                    // 1. 执行升级逻辑
-                    c.upgrade();
-                    // 检查是否影响瓶装卡（虽然是事件，但这是好习惯）
-                    AbstractDungeon.player.bottledCardUpgradeCheck(c);
+                // 1. 执行升级逻辑
+                c.upgrade();
+                // 检查是否影响瓶装卡（虽然是事件，但这是好习惯）
+                AbstractDungeon.player.bottledCardUpgradeCheck(c);
 
-                    // 2. 播放特效
-                    // 播放绿色升级闪光
-                    AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                    // 展示卡牌（使用 makeStatEquivalentCopy 以防止直接操作原卡对象导致显示位置错乱）
-                    AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
+                // 2. 播放特效
+                // 播放绿色升级闪光
+                AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                // 展示卡牌（使用 makeStatEquivalentCopy 以防止直接操作原卡对象导致显示位置错乱）
+                AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
 
-                    // 清空选择
-                    AbstractDungeon.gridSelectScreen.selectedCards.clear();
+                // 清空选择
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
 
-                    // 3. 状态流转：升级完成后，立刻打开删除界面
-                    this.state = State.REMOVING;
-                    AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 1, OPTIONS[8], false, false, false, true);
+                // 3. 状态流转：升级完成后，立刻打开删除界面
+                this.state = State.REMOVING;
+                AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 1, OPTIONS[8], false, false, false, true);
 
-                } else if (this.state == State.REMOVING) {
-                    AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
-                    AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                    AbstractDungeon.player.masterDeck.removeCard(c);
-                    AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            } else if (this.state == State.REMOVING) {
+                // 处理删除逻辑
+                AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+                AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+                AbstractDungeon.player.masterDeck.removeCard(c);
+                AbstractDungeon.gridSelectScreen.selectedCards.clear();
 
-                    this.state = State.FINISHED;
-                }
+                this.state = State.FINISHED;
             }
         }
     }
