@@ -27,7 +27,14 @@ public class ASip extends BaseCard {
     private static final int STRENGTH_AMT = 2;
     private static final int COST_INCREMENT = 2;
 
+    // 🌟 核心修复：记录这张卡在“未升级状态”下的基础消耗数值
+    private int unupgradedBaseCost;
+
     public ASip() {
+        this(COST_AMOUNT);
+    }
+
+    public ASip(int inheritedUnupgradedCost) {
         super(ID, new CardStats(
                 Penance.Meta.CARD_COLOR,
                 CardType.SKILL,
@@ -35,26 +42,35 @@ public class ASip extends BaseCard {
                 CardTarget.SELF,
                 COST
         ));
-        setMagic(COST_AMOUNT, UPG_COST_AMOUNT);
+        // 保存未升级时的数值（比如 3, 5, 7...）
+        this.unupgradedBaseCost = inheritedUnupgradedCost;
+
+        // setMagic 会把 baseMagicNumber 设为未升级的数值。
+        // 等到后续调用 upgrade() 时，系统会自动从这个数值上减去 1
+        setMagic(this.unupgradedBaseCost, UPG_COST_AMOUNT);
         setExhaust(true);
+    }
+
+    @Override
+    public AbstractCard makeCopy() {
+        // 复制时永远传递它“未升级时的基础值”
+        return new ASip(this.unupgradedBaseCost);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        // ======== 快照当前卡状态，避免后续被 reset / 修改 ========
         final int costToPaySnapshot = this.magicNumber;
-        final int newBaseMagic = this.baseMagicNumber + COST_INCREMENT;
-        final boolean upgradedSnapshot = this.upgraded;
-        final int timesUpgradedSnapshot = this.timesUpgraded;
 
-        // ======== 扣除屏障 / 生命 ========
+        // 🌟 核心修复：使用 unupgradedBaseCost 来计算下一次的累积值
+        // 如果当前是第一张卡，这里算出来就是 3 + 2 = 5
+        final int nextUnupgradedCost = this.unupgradedBaseCost + COST_INCREMENT;
+
+        // ======== 扣除屏障 / 生命 (保持上一次的修复逻辑) ========
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-
                 int barrierToLose = 0;
-
                 if (p.hasPower(BarrierPower.POWER_ID)) {
                     AbstractPower barrier = p.getPower(BarrierPower.POWER_ID);
                     if (barrier.amount > 0) {
@@ -73,42 +89,30 @@ public class ASip extends BaseCard {
         });
 
         // ======== 加力量 ========
-        addToBot(new ApplyPowerAction(p, p,
-                new StrengthPower(p, STRENGTH_AMT),
-                STRENGTH_AMT));
+        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STRENGTH_AMT), STRENGTH_AMT));
 
-        // ======== 生成复制卡（完全防御性构造） ========
+        // ======== 生成复制卡 ========
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
+                // 用下一次的“未升级基础值”创建新卡 (例如传进去 5)
+                ASip copy = new ASip(nextUnupgradedCost);
 
-                // 永远创建全新实例
-                AbstractCard c = new ASip();
-
-                // 如果原卡是升级过的，恢复升级状态
-                if (upgradedSnapshot) {
-                    for (int i = 0; i < timesUpgradedSnapshot; i++) {
-                        c.upgrade();
-                    }
+                // 如果原卡是升级过的，现在再赋予它升级属性
+                // 这时 copy.upgrade() 会将它减 1，变成 4。
+                // 完美实现了： 2 -> 4 -> 6 的累积！
+                if (ASip.this.upgraded) {
+                    copy.upgrade();
                 }
 
-                // 手动设置新的 magic 数值
-                c.baseMagicNumber = newBaseMagic;
-                c.magicNumber = newBaseMagic;
-                c.isMagicNumberModified = false;
+                CardModifierManager.addModifier(copy, new EtherealMod());
 
-                // 添加 Ethereal
-                CardModifierManager.addModifier(c, new EtherealMod());
+                copy.applyPowers();
+                copy.initializeDescription();
 
-                // 重新应用 powers，确保显示正确
-                c.applyPowers();
-                c.initializeDescription();
-
-                addToBot(new MakeTempCardInHandAction(c));
-
+                addToBot(new MakeTempCardInHandAction(copy));
                 this.isDone = true;
             }
         });
     }
-
 }
