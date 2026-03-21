@@ -1,0 +1,32 @@
+[
+  {
+    "PROPER_NAME": "보호막",
+    "NAMES": ["Barrier", "barrier", "보호막"],
+    "DESCRIPTION": "특수한 방어 수치입니다. 방어도가 소진되면, 보호막이 남은 피해를 막아냅니다. 보호막 중첩은 턴이 끝나도 사라지지 않습니다."
+  },
+  {
+    "PROPER_NAME": "판결",
+    "NAMES": ["Judgment", "judgement", "판결"],
+    "DESCRIPTION": "보호막이 적에게서 피해를 받을 때마다, 당신이 보유한 #y판결 중첩만큼 공격자에게 피해를 줍니다."
+  },
+  {
+    "PROPER_NAME": "가시의 고리",
+    "NAMES": ["Thorn Aura", "thorn_aura", "가시의_고리"],
+    "DESCRIPTION": "내 턴 종료 시, 적 전체에게 당신의 #y가시의 #y고리 중첩만큼 피해를 줍니다."
+  },
+  {
+    "PROPER_NAME": "휴전",
+    "NAMES": ["Armistice", "ceasefire", "휴전"],
+    "DESCRIPTION": "#y휴전 효과를 보유한 플레이어는 공격 카드를 사용할 수 없습니다. #y휴전 효과를 보유한 적은 공격 의도 상태일시 그 적이 턴을 넘깁니다."
+  },
+  {
+    "PROPER_NAME": "늑대 무리의 저주",
+    "NAMES": ["Wolfpack Curse", "wolves_curse", "늑대_저주"],
+    "DESCRIPTION": "시라쿠사의 늑대 무리가 가져오는 이 저주는 강력한 효과를 가지고 있으나, 동시에 혼란을 초래할 수도 있습니다."
+  },
+  {
+    "PROPER_NAME": "정당방위",
+    "NAMES": ["Self-Defense", "justified_defense", "정당방위"],
+    "DESCRIPTION": "이 능력이 활성화되어 있는 동안에는, 피해를 받을 때마다 추가 에너지를 얻고 카드를 1장 뽑습니다."
+  }
+]

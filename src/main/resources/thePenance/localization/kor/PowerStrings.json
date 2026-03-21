@@ -1,0 +1,139 @@
+{
+  "thePenance:JudgementPower": {
+    "NAME": "판결",
+    "DESCRIPTIONS": ["#y보호막 이 공격받을 때마다, 공격자에게 피해를 #b", " 줍니다."]
+  },
+  "thePenance:BarrierPower": {
+    "NAME": "보호막",
+    "DESCRIPTIONS": ["피해를 #b", " 흡수합니다."]
+  },
+  "thePenance:ThornAuraPower": {
+    "NAME": "가시의 고리",
+    "DESCRIPTIONS": ["내 턴 종료 시, 적 전체에게 피해를 #b", " 줍니다."]
+  },
+  "thePenance:CodeOfRevengePower": {
+    "NAME": "복수의 법전",
+    "DESCRIPTIONS": ["매번 #y판결 로 피해를 줄 때마다, #y보호막 을 #b", " 얻습니다."]
+  },
+  "thePenance:ThornyPathPower": {
+    "NAME": "가시밭길",
+    "DESCRIPTIONS": ["내 턴 종료 시, 보유한 판결 중첩의 #b", "% 에 해당하는 #y가시의 #y고리를 얻습니다."]
+  },
+  "thePenance:SilenceWrathPower": {
+    "NAME": "침묵 속의 분노",
+    "DESCRIPTIONS": ["#y보호막 이 파괴될 때마다, #y힘을 #b", " 얻고 적 전체에게 #y약화 를 #b", " 부여합니다."]
+  },
+  "thePenance:GuardianOfTheLawPower": {
+    "NAME": "율법의 수호자",
+    "DESCRIPTIONS": ["#y내 보호막 이 피해를 받을 때마다, #y판결 을 ", " 얻습니다."]
+  },
+  "thePenance:LawIsCanonPower": {
+    "NAME": "법대로 따르라",
+    "DESCRIPTIONS": ["내 턴 종료 시, #y보호막 이 남아있다면, 보유한 #y힘 수치만큼 #y판결 중첩을 얻습니다."]
+  },
+  "thePenance:InTheNameOfTheLawPower": {
+    "NAME": "법의 이름으로",
+    "DESCRIPTIONS": ["이제 #y판결 의 피해량이 #y힘 의 영향을 받습니다."]
+  },
+  "thePenance:UnwaveringPower": {
+    "NAME": "결의에 찬 고행",
+    "DESCRIPTIONS": ["이제 모든 #y공격 카드는 사용시 #y소멸 합니다. NL 받는 모든 피해가 #b30% 감소합니다. NL 내 턴 종료 시, #y가시의 #y고리 를 #b", " 얻습니다."]
+  },
+  "thePenance:StunMonsterPower": {
+    "NAME": "기절함",
+    "DESCRIPTIONS": ["이 생물은 기절했습니다. 이번 턴 동안 행동할 수 없습니다."]
+  },
+  "thePenance:AsceticismPower": {
+    "NAME": "금욕",
+    "DESCRIPTIONS": ["#y보호막 이 피해를 받을 때마다, #y가시의 #y고리 를 #b", " 얻습니다."]
+  },
+  "thePenance:CeasefirePower": {
+    "NAME": "휴전",
+    "DESCRIPTIONS": [
+      "공격 카드를 사용할 수 없습니다.",
+      "이 생물의 현재 의도가 공격이라면, 이 생물은 자신의 턴을 넘깁니다."
+    ]
+  },
+  "thePenance:CrownOfThornsPower": {
+    "NAME": "가시 면류관",
+    "DESCRIPTIONS": ["내 턴 시작 시, 체력을 #b", " 잃고 #y가시의 #y고리 를 #b", " 얻습니다."]
+  },
+  "thePenance:SceneInvestigationPower": {
+    "NAME": "현장 조사",
+    "DESCRIPTIONS": [
+      "내 턴 동안 : NL 공격 카드를 2장 연속 사용시 #b ",
+      " 장의 무작위 스킬 카드 획득; NL 스킬 카드를 2장 연속 사용시 #b ",
+      " 장의 무작위 공격 카드 획득; NL 파워 카드를 2장 연속 사용시 #b ",
+      " [E] 획득. NL (생성된 카드는 #y소멸 및 #y휘발성 상태)"
+    ]
+  },
+  "thePenance:PlayerFacingPower": {
+    "NAME": "포위당함",
+    "DESCRIPTIONS": ["당신은 포위당했습니다. #y공격 카드를 사용하면 바라보는 방향을 바꿉니다. NL 당신의 #y뒤쪽에 적이 있다면, 그 적들은 시민을 대상으로 삼게 됩니다."]
+  },
+  "thePenance:CumulativePrecedentPower": {
+    "NAME": "누적되는 판례",
+    "DESCRIPTIONS": [
+      "스킬 카드를 사용할 때마다, #y보호막 을 #b",
+      " 얻습니다.",
+      "그리고 #y방어도를 #b",
+      " 얻습니다."
+    ]
+  },
+  "thePenance:InescapableNetPower": {
+    "NAME": "천라지망",
+    "DESCRIPTIONS": ["다음 턴 시작 시, 보호막 을 #b", " 얻고 카드를 1 장 뽑습니다."]
+  },
+  "thePenance:ProceduralJusticePower": {
+    "NAME": "절차적 정의",
+    "DESCRIPTIONS": [
+      "방어도를 얻을 때마다, 그만큼 #y보호막 을 얻습니다.",
+      "방어도를 얻을 때마다, 그#y보호막 을 #b",
+      " 얻습니다."
+    ]
+  },
+  "thePenance:IroncladDoctrinePower": {
+    "NAME": "철저한 원칙",
+    "DESCRIPTIONS": [
+      "내 턴 시작 시, 충분한 양의 #y보호막 을 보유했다면, #y보호막 을 #b",
+      " 소모하여 체력을 #b",
+      " 회복합니다.",
+      " 소모하여 #y최대 #y체력을 #b",
+      " 얻습니다."
+    ]
+  },
+  "thePenance:JustifiedDefensePower": {
+    "NAME": "정당방위",
+    "DESCRIPTIONS": ["공격 받으면, 이 중첩이 1 감소합니다. NL 다음 턴 시작 시, 제거된 중첩만큼 에너지를 얻고 카드를 뽑습니다. NL 내 턴 시작 시 모든 정당방위 중첩을 잃습니다."]
+  },
+  "thePenance:JustifiedDefenseTriggeredPower": {
+    "NAME": "정당방위 (발동)",
+    "DESCRIPTIONS": ["다음 턴 시작 시, 에너지를 #b", " 얻고 카드를 #b", " 장 뽑습니다."]
+  },
+  "thePenance:PunishmentForTransgressionPower": {
+    "NAME": "선을 넘지 말 것",
+    "DESCRIPTIONS": ["한 턴 동안 공격 카드를 사용하지 않았다면, 턴 종료 시 #y정당방위 를 #b", " 얻습니다."]
+  },
+  "thePenance:JudgmentHasBegunPower": {
+    "NAME": "판결을 집행한다",
+    "DESCRIPTIONS": ["공격 카드를 사용할 때마다, 보호막 을 #b", " 얻고, 힘과 판결 을 #b", " 얻습니다. NL 공격 카드를 #b", " 장 사용하면, 에너지 2개를 얻습니다."]
+  },
+  "thePenance:UnwrittenLawPower": {
+    "NAME": "불문율",
+    "DESCRIPTIONS": ["불문율으로 뽑은 카드를 이번 턴에 사용했다면, 해당 카드가 2 번 사용됩니다."]
+  },
+  "thePenance:GlowOfSufferingPower": {
+    "NAME": "고난의 빛",
+    "DESCRIPTIONS": [
+      "카드의 효과로 체력을 잃을 때마다, 그 효과로 잃은 체력 수치의 #b",
+      " 배만큼 #y보호막 과 #b",
+      " #y배만큼의 #y가시의 #y고리를 얻습니다."
+    ]
+  },
+  "thePenance:LoseSlowPower": {
+    "NAME": "임시 둔화",
+    "DESCRIPTIONS": [
+      "턴 시작 시, 모든 #y둔화 효과가 제거됩니다."
+    ]
+  }
+}

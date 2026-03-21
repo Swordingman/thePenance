@@ -1,0 +1,423 @@
+{
+  "thePenance:Strike": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "thePenance:Defend": {
+    "NAME": "수비",
+    "DESCRIPTION": "방어도를 !B! 얻습니다."
+  },
+  "thePenance:Resolute": {
+    "NAME": "굳은 결심",
+    "DESCRIPTION": "보호막 을 3 얻습니다. NL 보호막 !M! 을 X 번 얻고, 판결 을 X 번 얻습니다.",
+    "UPGRADE_DESCRIPTION": "보호막 을 3 얻습니다. NL 보호막 !M! 을 X 번 얻고, 판결 을 X+1 번 얻습니다."
+  },
+  "thePenance:LawModification": {
+    "NAME": "법규 수정",
+    "DESCRIPTION": "소멸. NL 보존. NL 보유한 방어도를 전부 보호막 으로 전환합니다."
+  },
+  "thePenance:ImmediateExecution": {
+    "NAME": "즉행",
+    "DESCRIPTION": "판결 을 !M! 얻습니다. NL 보유한 판결 중첩만큼 피해를 줍니다."
+  },
+  "thePenance:CodeOfRevenge": {
+    "NAME": "복수의 법전",
+    "DESCRIPTION": "매번 판결 로 피해를 줄 때마다, 보호막 을 !M! 얻습니다."
+  },
+  "thePenance:Castigation": {
+    "NAME": "징벌",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 보호막 을 !thePenance:Barrier! 얻습니다. (획득량이 힘 의 영향을 받습니다)"
+  },
+  "thePenance:ReadCharges": {
+    "NAME": "죄상 낭독",
+    "DESCRIPTION": "판결 을 3 얻습니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "thePenance:Purge": {
+    "NAME": "추방",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다.  NL 막히지 않은 피해만큼 보호막 을 얻습니다."
+  },
+  "thePenance:Silence": {
+    "NAME": "침묵",
+    "DESCRIPTION": "보호막 을 !M! 얻습니다. NL 현재 체력이 50% 이하일시, 추가로 판결 을 3 얻습니다."
+  },
+  "thePenance:ThornyPath": {
+    "NAME": "가시밭길",
+    "DESCRIPTION": "내 턴 종료 시, 보유한 판결 중첩의 !M!% 에 해당하는 가시의_고리 를 얻습니다."
+  },
+  "thePenance:Sting": {
+    "NAME": "뾰족한 고통",
+    "DESCRIPTION": "체력을 3 잃습니다. NL 가시의_고리 를 !M! 얻고 판결 을 !thePenance:Judge! 얻습니다."
+  },
+  "thePenance:SilenceWrath": {
+    "NAME": "침묵 속의 분노",
+    "DESCRIPTION": "보호막 이 파괴될 때마다, 힘을 !M! 얻고, 적 전체에게 약화 를 !M! 부여합니다."
+  },
+  "thePenance:GuardianOfTheLaw": {
+    "NAME": "율법의 수호자",
+    "DESCRIPTION": "내 보호막 이 피해를 받을 때마다, 판결 을 !M! 얻습니다."
+  },
+  "thePenance:TheTrial": {
+    "NAME": "재판",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드는 힘 의 효과가 *곱셈 방식으로 적용됩니다."
+  },
+  "thePenance:TippingScales": {
+    "NAME": "기울어진 저울",
+    "DESCRIPTION": "판결 을 전부 잃습니다. NL 이 효과로 잃은 판결 !M! 당, 힘 을 !thePenance:Str! 얻습니다."
+  },
+  "thePenance:ConsultTheDossier": {
+    "NAME": "사건 검토",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 이 효과로 파워 카드를 뽑을 때마다, 판결 을 !thePenance:Judge! 얻습니다."
+  },
+  "thePenance:GavelStrike": {
+    "NAME": "내려치는 법봉",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 만약 대상이 엘리트 또는 보스가 아니며 내 보호막 중첩이 대상의 체력보다 높으면 대상을 즉사 시킵니다."
+  },
+  "thePenance:BreakTheShackles": {
+    "NAME": "족쇄를 끊어라",
+    "DESCRIPTION": "가시의_고리 를 3 얻습니다.  NL 현재 보유한 심판 중첩의 !M!% 만큼 추가로 가시의 고리를 얻습니다.",
+    "EXTENDED_DESCRIPTION": [" NL (추가 획득량은 ", " .)"]
+  },
+  "thePenance:LawIsCanon": {
+    "NAME": "법대로 따르라",
+    "DESCRIPTION": "내 턴 종료 시, 보호막 이 남아있다면, 보유한 힘 수치만큼 판결 중첩을 얻습니다. "
+  },
+  "thePenance:InTheNameOfTheLaw": {
+    "NAME": "법의 이름으로",
+    "DESCRIPTION": "이제 판결 의 피해량이 힘의 영향을 받습니다."
+  },
+  "thePenance:Unwavering": {
+    "NAME": "결의에 찬 고행",
+    "DESCRIPTION": "이제 모든 공격 카드는 사용시 소멸 합니다. NL 받는 모든 피해가 30% 감소합니다. NL 내 턴 종료 시, 가시의_고리 를 !M! 얻습니다. "
+  },
+  "thePenance:SolidDefense": {
+    "NAME": "견고한 수비",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 보호막 을 !M! 얻습니다."
+  },
+  "thePenance:FlailSmash": {
+    "NAME": "최종 판결",
+    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. 휴전 을 1 부여합니다."
+  },
+  "thePenance:SyracusanWolves": {
+    "NAME": "시라쿠사의 늑대 무리",
+    "DESCRIPTION": "뽑을 카드 더미에 무작위 늑대_저주 5장을 섞어 넣습니다.",
+    "UPGRADE_DESCRIPTION": "뽑을 카드 더미에 *강화된 무작위 늑대_저주 5장을 섞어 넣습니다."
+  },
+  "thePenance:ContinuousRain": {
+    "NAME": "끊임없는 소나기",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸.  NL 당신을 포함한 모든 생물에게 피해를 !D! 줍니다. NL 모든 생물에게 취약 과 손상 를 2 부여합니다.",
+    "UPGRADE_DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸.  NL 당신을 포함한 모든 생물에게 피해를 !D! 줍니다. NL 모든 생물에게 취약 과 손상 를 2 부여하며 당신에게는 1 만 부여됩니다."
+  },
+  "thePenance:FinaleCatastrophe": {
+    "NAME": "종막 - 재난",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 당신을 포함한 모든 생물에게 !M! 의 피해를 무작위로 분배하여 줍니다. ",
+    "UPGRADE_DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 당신을 포함한 모든 생물에게 !M! 의 피해를 무작위로 분배하여 줍니다. 이제 적에게 적중할 확률이 높아졌습니다!"
+  },
+  "thePenance:DignityOfTheLeader": {
+    "NAME": "두목의 위엄",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 맵 내의 당신을 포함한 모든 생물에게 휴전 을 1 부여합니다. [E] !M! 개를 얻습니다."
+  },
+  "thePenance:ArtOfTheHidingFox": {
+    "NAME": "은밀한 여우의 예술",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 턴을 종료합니다. 힘 !M! , 판결 !M! , 가시의_고리 !M! , 보호막 !thePenance:Barrier! 을 얻습니다.",
+    "UPGRADE_DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 턴을 종료합니다. 힘 !M! , 판결 !M! , 가시의_고리 !M! , 보호막 !thePenance:Barrier! 을 얻습니다. NL 이번 턴 동안 손패의 카드를 보존 합니다."
+  },
+  "thePenance:FameOfTheCrownSlayer": {
+    "NAME": "크라운슬레이어의 명예",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 공격할 의도가 있는 모든 적에게 임시 힘 을 3 부여합니다. NL 카드를 !M! 장 뽑습니다. "
+  },
+  "thePenance:AmbushShadow": {
+    "NAME": "매복의 그림자",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 무작위 카드를 !M! 장 버립니다. NL 불가침 을 1 얻습니다."
+  },
+  "thePenance:FoxFireFading": {
+    "NAME": "희미한 여우불",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 다음 턴까지 지속되는 임시 둔화 2 를 얻습니다. NL 적 전체에게 임시 둔화 를 !M! 부여합니다."
+  },
+  "thePenance:TangledThreads": {
+    "NAME": "재봉실 속박",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 손패의 무작위 카드 X 장을 소멸 시킵니다. NL 무작위 적에게 피해를 X 줍니다. (피해량은 이 카드가 소멸시킨 카드의 총합 에너지만큼입니다)",
+    "UPGRADE_DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 손패의 무작위 카드 X 장을 소멸 시킵니다. NL 무작위 적에게 피해를 X+X 줍니다. (피해량은 이 카드가 소멸시킨 카드의 총합 에너지만큼입니다)"
+  },
+  "thePenance:WandAntiGravity": {
+    "NAME": "아케인스태프-반중력",
+    "DESCRIPTION": "이 카드는 뽑히면 자동으로 사용됩니다. NL 소멸. NL 이번 턴 동안 혼란 을 얻습니다. NL 카드를 !M! 장 뽑습니다."
+  },
+  "thePenance:Upright": {
+    "NAME": "강직함",
+    "DESCRIPTION": "힘을 !thePenance:StrGain! 얻습니다. NL (획득량은 뽑을 카드 더미, 버린 카드 더미, 소멸 카드 더미의 저주 카드 수량에 해당)"
+  },
+  "thePenance:Asceticism": {
+    "NAME": "금욕",
+    "DESCRIPTION": "보호막 이 피해를 받을 때마다, 가시의_고리 를 !M! 얻습니다."
+  },
+  "thePenance:LastStand": {
+    "NAME": "최후의 저항",
+    "DESCRIPTION": "소멸. NL 보호막 을 !thePenance:Barrier! 얻습니다. NL 휴전 을 !M! 얻습니다."
+  },
+  "thePenance:BadOpera": {
+    "NAME": "구린 오페라",
+    "DESCRIPTION": "소멸. NL 무작위 공격 카드 2 장을 얻습니다.",
+    "UPGRADE_DESCRIPTION": "소멸 NL *강화된 무작위 공격 카드 2 장을 얻습니다."
+  },
+  "thePenance:ASip": {
+    "NAME": "작은 술 한 잔",
+    "DESCRIPTION": "소멸. NL 보호막 을 !M! 잃습니다. 부족하다면, 대신 체력을 잃습니다. NL 힘 을 2 얻습니다. NL 사용시 이 카드를 복사하여 얻습니다. 해당 카드는 휘발성 및 보호막 감소량이 2 증가한 상태입니다."
+  },
+  "thePenance:CodeSmash": {
+    "NAME": "법전 강타",
+    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. NL 이 카드로 입힌 막히지 않은 피해 7당, [E] 를 얻습니다."
+  },
+  "thePenance:CourtRehearsal": {
+    "NAME": "재판 리허설",
+    "DESCRIPTION": "보존. 소멸. NL 이 카드는 손패에 있다면 매 턴마다 다른 무작위 카드로 변화 합니다.",
+    "UPGRADE_DESCRIPTION": "보존. 소멸. NL 이 카드는 손패에 있다면 매 턴마다 다른 *강화된 무작위 카드로 변화 합니다."
+  },
+  "thePenance:CrownOfThorns": {
+    "NAME": "가시 면류관",
+    "DESCRIPTION": "내 턴 시작 시, 체력 을 2 잃고 가시의_고리 를 !M! 얻습니다."
+  },
+  "thePenance:BurdenedJourney": {
+    "NAME": "무거운 발걸음",
+    "DESCRIPTION": "판결 을 !M! 얻습니다. NL 가시의_고리 를 !M! 얻습니다."
+  },
+  "thePenance:MaliciousCompetition": {
+    "NAME": "악의적인 경쟁",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 대상의 체력이 내 체력보다 높다면, 보호막 을 !thePenance:Barrier! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다.  NL 대상의 체력이 내 체력의 50% 이상이라면, 보호막 을 !thePenance:Barrier! 얻습니다."
+  },
+  "thePenance:Adjourn": {
+    "NAME": "휴정",
+    "DESCRIPTION": "소멸. 턴을 종료합니다. NL 이번 턴에 사용했던 카드 1장당, 보호막 을 2 얻습니다. NL (체력이 50% 이하일시, 대신 체력을 2 회복합니다)"
+  },
+  "thePenance:Objection": {
+    "NAME": "이의 있음!",
+    "DESCRIPTION": "피해를 !D! 줍니다. 대상의 의도가... : NL 공격 이라면, 판결 을 !M! 얻습니다. NL 방어도 라면, 가시의_고리 를 !M! 얻습니다.  NL 그 외라면, 보호막 을 !thePenance:LargeAmt! 얻습니다."
+  },
+  "thePenance:BarbedRebuke": {
+    "NAME": "가소롭군!",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 가시의_고리 효과를 1회 발동합니다. NL 대상의 의도가 공격 이라면, 가시의_고리 효과의 절반에 해당하는 추가 피해를 입힙니다."
+  },
+  "thePenance:Tempering": {
+    "NAME": "뜨임",
+    "DESCRIPTION": "체력을 3 잃습니다. NL 보호막 을 !M! 얻습니다."
+  },
+  "thePenance:EmergencyRepair": {
+    "NAME": "긴급 수리",
+    "DESCRIPTION": "보호막 을 !M! 얻습니다. NL 카드를 1 장 뽑습니다."
+  },
+  "thePenance:ForcedSummons": {
+    "NAME": "강제 소환",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 1 장 뽑습니다. 대상의 의도가 공격 이라면, 대신 카드를 2 장 뽑습니다. "
+  },
+  "thePenance:LawEnforcement": {
+    "NAME": "법 집행",
+    "DESCRIPTION": "현재 보호막 중첩의 !M!% 에 해당하는 피해를 줍니다. NL 입힌 피해량이 10 이하라면, 그 피해량의 2배에 해당하는 보호막 을 얻습니다. ",
+    "EXTENDED_DESCRIPTION": ["(현재 !D! 의 피해를 줍니다)"]
+  },
+  "thePenance:WallBreakerSmash": {
+    "NAME": "박살 강타",
+    "DESCRIPTION": "보호막 을 !M! 잃습니다. NL 피해를 !D! 줍니다."
+  },
+  "thePenance:JointLiability": {
+    "NAME": "연대책임",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 보유한 판결 중첩 1당 이 카드의 피해량이 1 증가합니다."
+  },
+  "thePenance:FinalVerdict": {
+    "NAME": "최후의 심판",
+    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. (피해량은 판결 의 영향을 받음) NL 이 카드로 하수인 이 아닌 적을 처치하면, 최대 체력을 !M! 얻습니다."
+  },
+  "thePenance:WeightOfLaw": {
+    "NAME": "법의 무게",
+    "DESCRIPTION": "소멸. NL 체력을 6 잃습니다. NL 최대 체력을 !M! 얻습니다."
+  },
+  "thePenance:SceneInvestigation": {
+    "NAME": "현장 조사",
+    "DESCRIPTION": "동일한 유형의 카드를 연속으로 2장 사용하면 다음 보상을 얻습니다 : NL 공격 -> 무작위 스킬 ; NL 스킬 -> 무작위 공격 ; NL 파워 -> !M! 개의 [E]  NL （이 효과로 생성된 카드는 소멸 과 휘발성 보유 ）",
+    "UPGRADE_DESCRIPTION": "선천성. NL 동일한 유형의 카드를 연속으로 2장 사용하면 다음 보상을 얻습니다 : NL 공격 -> 강화된 무작위 스킬 ; NL 스킬 -> 강화된 무작위 공격 ; NL 파워 -> !M! 개의 [E]  NL （이 효과로 생성된 카드는 소멸 과 휘발성 보유 ）"
+  },
+  "thePenance:DeadlyEnemy": {
+    "NAME": "철천지원수",
+    "DESCRIPTION": "소멸. 보존. NL 이 카드가 손에 있다면, 받는 모든 피해가 1 증가합니다."
+  },
+  "thePenance:CumulativePrecedent": {
+    "NAME": "누적되는 판례",
+    "DESCRIPTION": "스킬 카드를 사용할 때마다, 보호막 을 !M! 얻습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "스킬 카드를 사용할 때마다, 방어도를 !B! 얻고 보호막 을 !M! 얻습니다."
+    ]
+  },
+  "thePenance:CitationOfLaw": {
+    "NAME": "법률 조항 인용",
+    "DESCRIPTION": "소멸. NL 보호막 을 !thePenance:BaseBarrier! 얻습니다. NL 그 후 현재 보호막 보유량의 !M!% 에 해당하는 보호막을 얻습니다."
+  },
+  "thePenance:Overrule": {
+    "NAME": "기각",
+    "DESCRIPTION": "피해를 !D! 줍니다. 약화 를 1 부여합니다. NL 대상에게 약화가 부여되어있다면, 보호막 을 !thePenance:Barrier! 얻습니다."
+  },
+  "thePenance:InescapableNet": {
+    "NAME": "천라지망",
+    "DESCRIPTION": "다음 턴 시작 시, 보호막 을 !M! 얻고 카드를 1 장 뽑습니다."
+  },
+  "thePenance:JudicialDiscretion": {
+    "NAME": "사법 의논",
+    "DESCRIPTION": "보호막 을 !thePenance:BarrierCost! 잃습니다. NL [E] 1개를 얻습니다. 카드를 !M! 장 뽑습니다."
+  },
+  "thePenance:ProceduralJustice": {
+    "NAME": "절차적 정의",
+    "DESCRIPTION": "방어도를 얻을 때마다, 그만큼 보호막 을 얻습니다.",
+    "EXTENDED_DESCRIPTION": ["방어도를 얻을 때마다, 보호막 을 2 얻습니다."]
+  },
+  "thePenance:IroncladDoctrine": {
+    "NAME": "철저한 원칙",
+    "DESCRIPTION": "내 턴 시작 시, 보호막 을 !M! 잃고, 체력을 회복합니다.",
+    "EXTENDED_DESCRIPTION": ["내 턴 시작 시, 보호막 을 !M! 잃고, 최대 체력을 3 얻습니다."]
+  },
+  "thePenance:GuiltyAsCharged": {
+    "NAME": "유죄!",
+    "DESCRIPTION": "대상의 방어도를 전부 제거합니다. 피해를 !D! 줍니다. NL 다음 효과 10중첩당 추가 효과를 얻습니다. NL 판결 : 판결 중첩만큼의 피해를 줍니다 NL 가시의_고리 : 휴전 을 1 부여합니다 NL 힘 : 위의 효과를 2 번 발동합니다"
+  },
+  "thePenance:SelfIncrimination": {
+    "NAME": "자기부죄거부",
+    "DESCRIPTION": "소멸. NL 이 카드는 손패의 저주 1장을 반드시 소멸시켜야만 사용할 수 있습니다. NL 뽑을 카드 더미에 증거 와 위증 을 섞어 넣습니다."
+  },
+  "thePenance:ExhibitA": {
+    "NAME": "증거",
+    "DESCRIPTION": "소멸. NL 의심 1 장을 얻습니다. 카드를 2 장 뽑습니다."
+  },
+  "thePenance:Perjury": {
+    "NAME": "위증",
+    "DESCRIPTION": "소멸. NL 후회 1 장을 얻습니다. [E] 2 개를 얻습니다."
+  },
+  "thePenance:JustifiedRetaliation": {
+    "NAME": "정당한 보복",
+    "DESCRIPTION": "보호막 을 !M! 얻습니다. NL 정당방위 를 1 얻습니다."
+  },
+  "thePenance:HourOfReckoning": {
+    "NAME": "청산의 시간",
+    "DESCRIPTION": "휘발성. NL 피해를 !D! 줍니다. NL 이번 전투에서 잃은 체력 1당, 이 카드의 피해량이 1 증가합니다."
+  },
+  "thePenance:BloodForBlood": {
+    "NAME": "눈에는 눈",
+    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. NL 정당방위 를 1 얻습니다."
+  },
+  "thePenance:CaseReconstruction": {
+    "NAME": "사건 내용 정리",
+    "DESCRIPTION": "예지 !thePenance:Scry! . NL 카드를 !M! 장 뽑습니다."
+  },
+  "thePenance:PunishmentForTransgression": {
+    "NAME": "선을 넘지 말 것",
+    "DESCRIPTION": "한 턴 동안 공격 카드를 사용하지 않았다면, 턴 종료 시 정당방위 를 !M! 얻습니다."
+  },
+  "thePenance:PendingJudgment": {
+    "NAME": "재정 대기",
+    "DESCRIPTION": "공격할 의도가 있는 적 하나당 보호막 을 !M! 얻습니다."
+  },
+  "thePenance:JudgmentHasBegun": {
+    "NAME": "판결을 집행한다",
+    "DESCRIPTION": "소멸. NL 이번 턴에 사용한 공격 카드 1장당 보호막 5, 힘 1, 판결 1 을 얻습니다. NL 공격 카드 3장을 사용하면, [E] 2개를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "보존. 소멸. NL 이번 턴에 사용한 공격 카드 1장당 보호막 5, 힘 1, 판결 1 을 얻습니다. NL 공격 카드 3장을 사용하면, [E] 2개를 얻습니다."
+  },
+  "thePenance:UnwrittenLaw": {
+    "NAME": "불문율",
+    "DESCRIPTION": "뽑을 카드 더미에서 무작위 파워 카드 1장을 손으로 가져옵니다. NL 이 효과로 뽑은 카드를 이번 턴에 사용했다면, 해당 카드가 2 번 사용됩니다."
+  },
+  "thePenance:JudgementBacklash": {
+    "NAME": "판결 반발",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 보유한 판결 중첩 3당, 1회 더 발동합니다."
+  },
+  "thePenance:PenaltyRegression": {
+    "NAME": "벌점 다범주 회귀",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 나에게 부여된 모든 해로운 효과의 중첩을 1 감소시킵니다."
+  },
+  "thePenance:FamilyArbitration": {
+    "NAME": "패밀리 중재",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 버린 카드 더미에 무작위 늑대_저주 1장을 섞어 넣습니다."
+  },
+  "thePenance:PreExecutionPrep": {
+    "NAME": "집행 전 준비",
+    "DESCRIPTION": "소멸. NL 손이 가득 찰 때까지 카드를 뽑습니다. 뽑은 카드가... : NL 공격 이라면, 판결 을 1 얻습니다. : NL 스킬 이라면, 가시의_고리 를 1 얻습니다. : NL 파워 라면, 힘 을 1 얻습니다. : NL 저주 카드라면 : [E] 를 얻습니다."
+  },
+  "thePenance:NoSentenceNeeded": {
+    "NAME": "불필요한 선고",
+    "DESCRIPTION": "소멸. NL 이 카드는 보호막 이 0일때만 사용할 수 있습니다. NL 피해를 !D! 줍니다."
+  },
+  "thePenance:GavelBarrage": {
+    "NAME": "의사봉 콤보",
+    "DESCRIPTION": "피해를 !D! 만큼 X 번 줍니다. NL 이 효과로 피해를 입힐 때마다, 판결 및 가시의_고리 를 1 얻습니다.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 만큼 X+1 번 줍니다. NL 이 효과로 피해를 입힐 때마다, 판결 및 가시의_고리 를 1 얻습니다."
+  },
+  "thePenance:Quell": {
+    "NAME": "폭동 제압",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 보호막 을 보유하고 있다면, 약화 를 !M! 부여합니다."
+  },
+  "thePenance:ClearTheScene": {
+    "NAME": "현장 정리",
+    "DESCRIPTION": "체력을 3 잃습니다. NL 적 전체에게 피해를 !D! 줍니다."
+  },
+  "thePenance:GlowOfSuffering": {
+    "NAME": "고난의 빛",
+    "DESCRIPTION": "카드의 효과로 체력을 잃을 때마다, 그만큼 보호막 과 가시의_고리 를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "카드의 효과로 체력을 잃을 때마다, 그 수치의 2배에 해당하는 보호막 과 가시의_고리 를 얻습니다.",
+    "EXTENDED_DESCRIPTION": ["카드의 효과로 체력을 잃을 때마다, 그 수치의 1.5배에 해당하는 보호막 과 가시의_고리 를 얻습니다."]
+  },
+  "thePenance:ToothForTooth": {
+    "NAME": "이에는 이",
+    "DESCRIPTION": "체력을 2 잃습니다. NL 피해를 !D! 줍니다. NL 버린 카드 더미에 늑대_저주 1장을 섞어 넣습니다. NL 현재 체력이 50% 이하일시, 카드를 !M! 장 뽑습니다."
+  },
+  "thePenance:BloodDebtClause": {
+    "NAME": "혈족 채무의 조항",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL 이 카드로 피해를 입힌 적 하나당, 버린 카드 더미에 늑대_저주 1장을 섞어 넣습니다."
+  },
+  "thePenance:Censure": {
+    "NAME": "질책",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 판결 을 !M! 얻습니다."
+  },
+  "thePenance:DifficultyOption": {
+    "NAME": "난이도 선택",
+    "DESCRIPTION": "자리 표시자"
+  },
+  "thePenance:DiffNormal": {
+    "NAME": "정의의 수호자",
+    "DESCRIPTION": "표준적인 게임 플레이. NL 변경사항 없음."
+  },
+  "thePenance:DiffHard": {
+    "NAME": "단죄 판결",
+    "DESCRIPTION": "좀 더 도전적인 게임 플레이. NL 시작 유물이 강화 됩니다. NL 최대 체력이 감소합니다."
+  },
+  "thePenance:DiffHell": {
+    "NAME": "고난 극복",
+    "DESCRIPTION": "고난이도의 도전. NL [단죄 판결] 의 변경사항을 따르며, NL 대부분의 카드 수치가 조정됩니다."
+  },
+  "thePenance:PresetOptionCard": {
+    "NAME": "사전 설정 선택",
+    "DESCRIPTION": "자리 표시자"
+  },
+  "thePenance:PreDefault": {
+    "NAME": "원칙주의",
+    "DESCRIPTION": "기본적인 덱. 특별한 변경 사항 없음."
+  },
+  "thePenance:PreRehearsal": {
+    "NAME": "리허설의 날",
+    "DESCRIPTION": "*재판 *리허설 카드 20장이 시작 덱에 추가됩니다."
+  },
+  "thePenance:PreWolves": {
+    "NAME": "늑대의 문화",
+    "DESCRIPTION": "시작 덱을 *늑대 *무리의 *저주 와 관련된 카드로 교체합니다. NL 추가로 *가시넝쿨 *법전 유물과 *축제의 *시간 유물을 얻습니다."
+  },
+  "thePenance:PreCurses": {
+    "NAME": "저주의 힘",
+    "DESCRIPTION": "시작 덱에 *강직함 카드가 추가되고 *부두 인형 유물을 얻습니다. NL *네크로노미콘의 *저주 및 *방울의 *저주 카드가 추가됩니다."
+  },
+  "thePenance:PreDrink": {
+    "NAME": "술 한 잔의 기쁨",
+    "DESCRIPTION": "시작 덱에 *술 *한 *잔 카드가 추가되고 *미라의 *손 유물을 얻습니다."
+  },
+  "thePenance:PreHealth": {
+    "NAME": "목숨의 가치는 중하다",
+    "DESCRIPTION": "시작 덱에 *법의 *무게 및 *최후의 *심판 카드가 추가됩니다."
+  },
+  "thePenance:PreDebate": {
+    "NAME": "백가쟁명",
+    "DESCRIPTION": "*프리즘 *조각 및 *태양계 *모형 유물을 얻습니다. "
+  }
+}

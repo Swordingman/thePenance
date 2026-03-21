@@ -1,0 +1,27 @@
+{
+  "thePenance:VolsiniiCivilian": {
+    "NAME": "불포 시민",
+    "MOVES": [],
+    "DIALOG": [
+      "살려주세요!",
+      "으어억...",
+      "감사합니다! 정말 감사합니다!"
+    ]
+  },
+  "thePenance:VolsiniiMob": {
+    "NAME": "불포 폭도",
+    "MOVES": [],
+    "DIALOG": [
+      "불포 척후병",
+      "불포 폭도"
+    ]
+  },
+  "thePenance:MafiaGodfather": {
+    "NAME": "마피아 대부",
+    "MOVES": []
+  },
+  "thePenance:FamilyCleaner": {
+    "NAME": "패밀리 멸살자",
+    "MOVES": []
+  }
+}

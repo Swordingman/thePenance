@@ -1,0 +1,23 @@
+{
+  "thePenance:BarrierPotion": {
+    "NAME": "보호막 포션",
+    "DESCRIPTIONS": [
+      "#y보호막 을 #b",
+      " 얻습니다."
+    ]
+  },
+  "thePenance:BottleOfWolfBlood": {
+    "NAME": "병 속의 늑대 혈액",
+    "DESCRIPTIONS": [
+      "#y늑대 #y저주 #b",
+      " 장을 선택해 얻습니다."
+    ]
+  },
+  "thePenance:JudgementPotion": {
+    "NAME": "판결 포션",
+    "DESCRIPTIONS": [
+      "#y판결 을 #b",
+      " 얻습니다."
+    ]
+  }
+}
