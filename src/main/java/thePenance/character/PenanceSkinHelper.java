@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import basemod.ReflectionHacks;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import java.util.ArrayList;
@@ -27,35 +28,40 @@ public class PenanceSkinHelper {
 
     // --- 数据结构 ---
     public static class SkinInfo {
-        public String name;
+        public final int nameIndex;
         public String atlas;
         public String json;
         public float scale;
 
-        public SkinInfo(String name, String atlas, String json, float scale) {
-            this.name = name;
+        public SkinInfo(int nameIndex, String atlas, String json, float scale) {
+            this.nameIndex = nameIndex;
             this.atlas = atlas;
             this.json = json;
             this.scale = scale;
+        }
+
+        public String getLocalizedName() {
+            UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("thePenance:SkinName");
+            return uiStrings.TEXT[this.nameIndex];
         }
     }
 
     // --- 皮肤列表 ---
     public static final SkinInfo[] SKINS = new SkinInfo[] {
             new SkinInfo(
-                    "默认",
+                    0,
                     "thePenance/char/penance/animation/1/char_4065_judge.atlas",
                     "thePenance/char/penance/animation/1/char_4065_judge.json",
                     1.5f
             ),
             new SkinInfo(
-                    "偶尔醉陶",
+                    1,
                     "thePenance/char/penance/animation/2/char_4065_judge_snow_6.atlas",
                     "thePenance/char/penance/animation/2/char_4065_judge_snow_6.json",
                     1.5f
             ),
             new SkinInfo(
-                    "记叙",
+                    2,
                     "thePenance/char/penance/animation/3/char_4065_judge_epoque_33.atlas",
                     "thePenance/char/penance/animation/3/char_4065_judge_epoque_33.json",
                     1.5f
@@ -194,7 +200,7 @@ public class PenanceSkinHelper {
         sb.draw(ImageMaster.CF_RIGHT_ARROW, skinRightHb.cX - 24f, skinRightHb.cY - 24f, 24f, 24f, 48f, 48f, Settings.scale, Settings.scale, 0f, 0, 0, 48, 48, false, false);
 
         // 绘制文字 (位置不变)
-        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, getCurrentSkin().name, uiCenterX, uiCenterY, Settings.GOLD_COLOR);
+        FontHelper.renderFontCentered(sb, FontHelper.buttonLabelFont, getCurrentSkin().getLocalizedName(), uiCenterX, uiCenterY, Settings.GOLD_COLOR);
 
         // --- 绘制 Spine 预览 (使用 uiCenter + Offset) ---
 

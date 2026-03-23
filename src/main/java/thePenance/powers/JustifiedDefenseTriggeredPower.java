@@ -11,7 +11,6 @@ public class JustifiedDefenseTriggeredPower extends BasePower {
 
     public JustifiedDefenseTriggeredPower(AbstractCreature owner, int amount) {
         super(POWER_ID, PowerType.BUFF, false, owner, amount);
-        this.name = "正当防卫(已触发)"; // 玩家可见，提示下回合有收益
     }
 
     @Override
@@ -23,5 +22,10 @@ public class JustifiedDefenseTriggeredPower extends BasePower {
 
         // 移除自己
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+    }
+
+    @Override
+    public void updateDescription() {
+        this.description = DESCRIPTIONS[0];
     }
 }

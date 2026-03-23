@@ -372,15 +372,15 @@
     "NAME": "Censure",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Judgement."
   },
-  "ThePenance:DifficultyOption": {
+  "thePenance:DifficultyOption": {
     "NAME": "Select Difficulty",
     "DESCRIPTION": "Placeholder"
   },
-  "ThePenance:DiffNormal": {
+  "thePenance:DiffNormal": {
     "NAME": "Purification",
     "DESCRIPTION": "Standard game experience. NL No special modifications."
   },
-  "ThePenance:DiffHard": {
+  "thePenance:DiffHard": {
     "NAME": "Condemnation",
     "DESCRIPTION": "A challenging experience. NL Upgrades Starting Relic. NL Decreases Max HP."
   },

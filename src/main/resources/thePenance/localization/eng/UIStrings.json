@@ -3,5 +3,12 @@
     "TEXT": [
       "Choose One"
     ]
+  },
+  "thePenance:SkinName": {
+    "TEXT": [
+      "Base",
+      "Occasionally Flushed",
+      "Scribing"
+    ]
   }
 }
